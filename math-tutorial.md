@@ -7,6 +7,8 @@ permalink: /math-tutorial/
 
 updated by Cornelia Ferm&uuml;ller (1/21/2019)
 
+updated by Cornelia Ferm&uuml;ller (1/21/2019)
+
 The Table of Contents:
 
 - [Hilbert Space, Vectors, Dot and Cross Products](#hilbert)
