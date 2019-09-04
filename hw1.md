@@ -37,7 +37,7 @@ The 2D points data is provided in the form of .csv files (click [here](/cmsc426f
   <div style="clear:both;"></div>
 </div>
 
-Please note that dataset 5 was generated specifically to test overfitting and to fine tune the regularization parameter, $$lambda$$. Try, multiple values of $$lambda$$ to see its effect on overfitting.
+Please note that dataset 5 was generated specifically to test overfitting and to fine tune the regularization parameter, $$lambda$$ to overcome overfitting.
 <a name='pro'></a>
 ### Problem Statement 
 
