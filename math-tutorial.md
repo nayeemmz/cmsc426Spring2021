@@ -117,7 +117,7 @@ You might be wondering what the intuition to Eigen-decomposition is. The eigenva
 
 
 <div class="fig figcenter fighighlight">
-  <img src="/assets/math/eigenvectors.png" width="60%">
+  <img src="/cmsc426fall2019/assets/math/eigenvectors.png" width="60%">
   <div class="figcaption">Eigenvectors of a covariance matrix of data shown in blue. Data is drawn from a gaussian distribution.</div>
 </div>
 
@@ -125,9 +125,9 @@ For a detailed explanation of the visualization look at [this link](http://www.v
 
 
 <div class="fig figcenter fighighlight">
-  <img src="/assets/math/eigenface1.PNG" width="35%">
+  <img src="/cmsc426fall2019/assets/math/eigenface1.PNG" width="35%">
   <div class="figcaption">Sample images in the database/training set.</div>
-  <img src="/assets/math/eigenface2.PNG" width="70%">
+  <img src="/cmsc426fall2019/assets/math/eigenface2.PNG" width="70%">
   <div class="figcaption">
    Top row: Eigenfaces. Bottom row: How any face can be represented as a linear combination of eigenfaces.</div>
 </div>
@@ -147,9 +147,9 @@ Note that \\(\Sigma\\) here does not refer to the covariance matrix. Here, \\(U\
 The matrix \\(U\\) (left singular values) of \\(A\\) gives us the eigenvectors of \\(AA^T\\). Similarly, as you expect, the matrix \\(V\\) (right singular values) of \\(A\\) gives us the eigenvectors of \\(A^TA\\).  The non-zero singular values of \\(A\\) (found on diagonal entries of \\(\Sigma\\)) are the square roots of non-zero eigenvalues of both \\(AA^T\\) and \\(A^TA\\). 
 
 <div class="fig figcenter fighighlight">
-  <img src="/assets/math/svd.png" width="35%">
+  <img src="/cmsc426fall2019/assets/math/svd.png" width="35%">
   <div class="figcaption">Visualization of the matrix multiplications in singular value decomposition.</div>
-  <img src="/assets/math/svdanimation.gif" width="50%">
+  <img src="/cmsc426fall2019/assets/math/svdanimation.gif" width="50%">
   <div class="figcaption">
   Visualization of how different components of SVD make up the matrix \(A\).</div>
 </div>
@@ -160,7 +160,7 @@ The matrix \\(U\\) (left singular values) of \\(A\\) gives us the eigenvectors o
 Let us define the problem in hand first. Assume that we have \\(N\\) points in \\(\mathbb{R}^n\\), for purposes of simplicity without loss in any generality let \\(n=2\\). We want to fit a line (the equivalent is a plane in \\(\mathbb{R}^n\\) and a hyperplane in \\(\mathbb{R}^n\\)). When \\(N = 1\\), one can fit \\(\infty\\) number of lines which satisfy the constraint of passing though the point and hence has no unique exact (the line passes through the point) solution. Now, when \\(N = 2\\), one can fit a unique and exact solution because we have exactly the same number of parameters (number of unknowns in the line equation) as the number of constraints (equations). However, things get tricky when \\(N > 2\\). One might wonder when we would encouter such a situtation, this is more common than you think. Assume that we want to fit a line to a number of pixels in an image, possible to detect a lane on an self driving car.
 
 <div class="fig figcenter fighighlight">
-  <img src="/assets/math/lane1.png" width="70%">
+  <img src="/cmsc426fall2019/assets/math/lane1.png" width="70%">
   <div class="figcaption">Left: Input image to a self driving car for lane detection. Right: Pixel candidates where one would fit a line to find the lane, notice that there are multiple lines possible, for the purposes of the example assume that we want to fit a line to the pixels inside the red ellipse.</div>
 </div>
 
@@ -175,7 +175,7 @@ $$
 \\(\underset{\Theta}{\operatorname{argmin}}\\) means that we want to minimize and find the parameters \\(\Theta\\) which gives us the minimum value. The function \\(R\\) defines the best-fit here which is what the user has chosen. Let us **choose** \\(R\\) to be a function which computes the distance (offsets) from any point \\([x,y]^T\\) to the line \\(ax+by+c=0\\). This can be of two variants, i.e., vertical distances/ offsets and/or perpendicular distance/offsets. 
 
 <div class="fig figcenter fighighlight">
-  <img src="/assets/math/offsets.gif" width="70%">
+  <img src="/cmsc426fall2019/assets/math/offsets.gif" width="70%">
   <div class="figcaption">Left: Vertical distances/offsets. Right: Perpendicular distances/offsets.</div>
 </div>
 
@@ -266,7 +266,7 @@ $$
 Here, \\(\mathbf{x}\\) represents the vector in a space \\(\mathbb{R}^n\\). In our line-fitting example, \\(n=2\\). Sample datapoints with their linear least-squares line solution is shown below:
 
 <div class="fig figcenter fighighlight">
-  <img src="/assets/math/linearregression.png" width="70%">
+  <img src="/cmsc426fall2019/assets/math/linearregression.png" width="70%">
   <div class="figcaption">Random data points and their linear least-squares line solution.</div>
 </div>
 
@@ -350,59 +350,4 @@ $$
 
 Here, \\(I\\) is the identity matrix. The reason why Ridge regression can handle noise better than linear regression is that it improves the condition number of \\( \mathbf{X}^T \mathbf{X} \\). The new condition number becomes \\( \frac{\sigma_{max}^2 + \lambda}{\sigma_{min}^2 + \lambda}\\). This value is lower than the original condition number we had which means that the solution is less sensitive to noise. This is similar to adding prior information to the optimization problem which acts as a noise removal filter. In Bayesian terms, this is finding the Maximum a-posteriori (MAP) estimate for the Gaussian noise assumption. 
 
-<a name='ransac'></a>
-## Random Sample Consensus (RANSAC) for outlier rejection
-All the above methods work well for noise but not for outliers. The outliers shift the result in the direction of the outliers (see figure below).
 
-<div class="fig figcenter fighighlight">
-  <img src="/assets/math/leastsquaresnoise.png" width="70%">
-  <div class="figcaption">Fitted line is heavily affected by outliers.</div>
-</div>
-
-
-The image below shows what we want RANSAC to do. The red points show the points excluded as outliers for solving the line fitting problem. The blue points are the points included in the line fitting solution. The blue line shows the fitted line without outliers. 
-
-<div class="fig figcenter fighighlight">
-  <img src="/assets/math/ransac.png" width="35%">
-  <div class="figcaption">Fitted line with RANSAC. Observe that outliers have no influence on the result.</div>
-</div>
-
-The idea of RANSAC is voting. RANSAC makes the following assumptions:
-
-**Assumption 1:** Noise features will not vote consistently for any single model ("few" outliers when compared to inliers).
-
-**Assumption 2:** There are enough features to agree on a good model ("few" missing data).
-
-RANSAC algorithm is very simple and can be implemented in less than 40 lines in MATLAB. The algorithm is as follows:
-
-**Step 1:** Select random sample of minimum required size to fit model (in our case 2, a minimum of 2 points are required to fit a line).
-
-**Step 2:** Fit the best model from sample set (line passing through both points). 
-
-**Step 3:** Compute the set of inliers to this model from whole data set (inliers are defined as those points whose distance to the fitted line are less than some user chosen threshold).
-
-Repeat Steps 1-3 until model with the most inliers over all samples is found (or for some set number of iterations or until an inlier set is a certain percentage of the data, like 90%).
-
-
-<div class="fig figcenter fighighlight">
-  <img src="/assets/math/ransacdata.png" width="35%">
-  <div class="figcaption">All the data points given. We want to ignore the outliers and fit a least squares line.</div>
-  <img src="/assets/math/ransac1.png" width="35%">
-  <div class="figcaption">Select 2 points at random.</div>
-  <img src="/assets/math/ransac2.png" width="35%">
-  <div class="figcaption">Fit a line to the selected 2 points.</div>
-  <img src="/assets/math/ransac3.png" width="35%">
-  <div class="figcaption">Measure number of inliers. Here we have 4 inliers.</div>
-  <img src="/assets/math/ransac4.png" width="35%">
-  <div class="figcaption">Repeat steps 1-3.  Here we have 12 inliers. These awesome figures are adapted from Prof. Silvo Savarese's slides.</div>  
-</div>
-
-The number of iterations \\(N\\) needed to have a probability \\(p\\) of success with 2 points being chosen at every iteration to fit a line and at an outlier ratio \\(e\\) chosen at each step is given by
-
-$$
-N = \frac{\log\left(1-p\right)}{\log\left(1-\left( 1 - e\right)^2 \right)}
-$$
-
-To put this in perspective, we **only need 17 iterations to be 95% sure that we'll find a good solution even with 50% outliers.** 
-
-Another voting scheme which works well for fitting curves with a smaller number of parameters is the [Hough Transform](https://en.wikipedia.org/wiki/Hough_transform). This is left as a self-reading article. 
