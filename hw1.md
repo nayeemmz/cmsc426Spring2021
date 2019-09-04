@@ -23,7 +23,7 @@ Table of Contents:
 This home work is designed to test your understanding of mathematics tutorial discussed in this [link](https://nayeemmz.github.io/cmsc426fall2019/math-tutorial/). The task is to fit the line to two dimensional data points using different linear least square techniques discussed in the tutorials:
 
 - Line fitting using Linear Least Squares
-- Outliers rejection using Regularization
+- Reduce overfitting using Regularization (ridge regression)
 
 <a name='problem'></a>
 ## What you need to do
@@ -65,7 +65,7 @@ YourDirectoryID_hw1.zip.
 For each section of the homework, explain briefly what you did, and describe any interesting problems you encountered and/or solutions you implemented.  You must include the following details in your writeup:
 
 - Your understanding of eigenvectors and eigenvalues
-- Outlier rejection for each dataset
+- Reducing overfitting for each dataset
 - Limitation of ridge regression
 
 
