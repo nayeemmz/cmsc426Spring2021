@@ -40,8 +40,9 @@ The 2D points data is provided in the form of .csv files (click [here](/cmsc426f
 <a name='pro'></a>
 ### Problem Statement 
 
-- Write matlab code to visualize geometric interpretation of eigenvalues/covariance matrix as discussed in this [link](http://www.visiondummy.com/2014/04/geometric-interpretation-covariance-matrix/) [40 points]  
-- Decide the best outlier rejection technique for each of these datasets and write matlab code to fit the line. Also, discuss why your choice of technique is optimal [60 points] 
+- Write Python code to visualize geometric interpretation of eigenvalues/covariance matrix as discussed in this  [link](http://www.visiondummy.com/2014/04/geometric-interpretation-covariance-matrix/) [40 points]  
+- Write Python code for least squares line fitting with and without regularization ( ridge regression ) [40 points] 
+- Discuss your results for line fitting in a report. [20 points]
 
 <a name='sub'></a>
 ## Submission Guidelines
@@ -50,12 +51,12 @@ The 2D points data is provided in the form of .csv files (click [here](/cmsc426f
 
 ### File tree and naming
 
-Your submission on Canvas must be a zip file, following the naming convention **YourDirectoryID_hw1.zip**.  For example, xyz123_hw1.zip.  The file **must have the following directory structure**, based on the starter files
+Your submission on Canvas must be a zip file, following the naming convention **YourDirectoryID_hw1.zip**.  For example, xyz123_hw1.zip.  The file **must have the following directory structure**, 
 
 YourDirectoryID_hw1.zip.
  - data/. 
- - plot_eigen.m.
- - least_square.m.
+ - plot_eigen.ipynb
+ - least_square.ipynb
  - report.pdf
 
 
@@ -63,12 +64,12 @@ YourDirectoryID_hw1.zip.
 For each section of the homework, explain briefly what you did, and describe any interesting problems you encountered and/or solutions you implemented.  You must include the following details in your writeup:
 
 - Your understanding of eigenvectors and eigenvalues
-- Your choice of outlier rejection technique for each dataset
-- Limitation of each outliers rejection technique
+- Outlier rejection for each dataset
+- Limitation of ridge regression
 
 
 As usual, your report must be full English sentences,**not** commented code. There is a word limit of 750 words and no minimum length requirement
 
 <a name='coll'></a>
 ## Collaboration Policy
-You are encouraged to discuss the ideas with your peers. However, the code should be your own, and should be the result of you exercising your own understanding of it. If you reference anyone else's code in writing your project, you must properly cite it in your code (in comments) and your writeup.  For the full honor code refer to the CMSC426 Spring 2019 website
+You are encouraged to discuss the ideas with your peers. However, the code should be your own, and should be the result of you exercising your own understanding of it. If you reference anyone else's code in writing your project, you must properly cite it in your code (in comments) and your writeup.  For the full honor code refer to the CMSC426 Fall 2019 website
