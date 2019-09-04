@@ -34,7 +34,7 @@ The dot product between two vectors \\( \vec{AB}, \vec{BC} \\) is defined as \\(
 
 
 <div class="fig figleft fighighlight">
-  <img src="/assets/math/proj.png" width="35%">
+  <img src="assets/math/proj.png" width="35%">
   <div class="figcaption">
     Projection of \(a\) on \(b\) (\(a1\)), and subtraction of \(a\) from \(b\) (\(a2\)).
   </div>
