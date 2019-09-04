@@ -163,7 +163,13 @@ Let us define the problem in hand first. Assume that we have \\(N\\) points in \
   <div class="figcaption">Left: Input image to a self driving car for lane detection. Right: Pixel candidates where one would fit a line to find the lane, notice that there are multiple lines possible, for the purposes of the example assume that we want to fit a line to the pixels inside the red ellipse.</div>
 </div>
 
-Let us model the problem mathematically, we have \\(N\\) points in \\(\mathbb{R}^2\\) to which we want to fit the **best-fit** line. The best-line has to be defined before we proceed. One could argue that I can pick any random two points and fit a line and call that the best-fit. However, this solution is the best for those two points and not for all points. If all the points lie on a line one could say that we have an **exact** and **unique** solution, but this rarely happens. The more common version of this problem is that the best-fit line generally would not pass through any of the points. 
+Let us model the problem mathematically, we have \\(N\\) points in \\(\mathbb{R}^2\\) to which we want to fit the **best-fit** line. The best-line has to be defined before we proceed. One could argue that I can pick any random two points and fit a line and call that the best-fit. However, this solution is the best for those two points and not for all points. If all the points lie on a line one could say that we have an **exact** and **unique** solution, but this rarely happens. The more common version of this problem is that the best-fit line generally would not pass through any of the points. Sample datapoints with their linear least-squares line solution is shown below:
+
+<div class="fig figcenter fighighlight">
+  <img src="/assets/math/linearregression.png" width="70%">
+  <div class="figcaption">Random data points and their linear least-squares line solution.</div>
+</div>
+
 <a name='axeqb'></a>
 ## \\(A\mathbf{x}=\mathbf{b}\\)
 You might be wondering what the title means. The last method (\\(A\mathbf{x}=\mathbf{0}\\)) we solved is called Linear Homogeneous set of equations and \\(A\mathbf{x}=\mathbf{b}\\) is called Linear Inhomogeneous set of equations. The problem formulation is slightly different from the earlier case as one would except. 
