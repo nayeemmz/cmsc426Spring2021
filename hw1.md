@@ -37,7 +37,7 @@ The 2D points data is provided in the form of .csv files (click [here](/cmsc426f
   <div style="clear:both;"></div>
 </div>
 
-Please note that dataset 4 was generated using the same configuration as data set 1. So you could fine tune the regularization parameter, $$lambda$$, to reduce the errors w.r.t. the first data set which would help you validate your parameter tuning.
+Please note that dataset 5 was generated specifically to test overfitting and to fine tune the regularization parameter, $$lambda$$. Try, multiple values of $$lambda$$ to see its effect on overfitting.
 <a name='pro'></a>
 ### Problem Statement 
 
