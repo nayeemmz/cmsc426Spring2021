@@ -163,30 +163,7 @@ Let us define the problem in hand first. Assume that we have \\(N\\) points in \
   <div class="figcaption">Left: Input image to a self driving car for lane detection. Right: Pixel candidates where one would fit a line to find the lane, notice that there are multiple lines possible, for the purposes of the example assume that we want to fit a line to the pixels inside the red ellipse.</div>
 </div>
 
-Let us model the problem mathematically, we have \\(N\\) points in \\(\mathbb{R}^2\\) to which we want to fit the **best-fit** line. The best-line has to be defined before we proceed. One could argue that I can pick any random two points and fit a line and call that the best-fit. However, this solution is the best for those two points and not for all points. If all the points lie on a line one could say that we have an **exact** and **unique** solution, but this rarely happens. The more common version of this problem is that the best-fit line generally would not pass through any of the points. You might be wondering why then is it the best line? Well, it depends on how we are going to define best-fit, and that the points are **noisy**. Let us define best-fit right now.
-
-Let the equation of the line be \\(ax+by+c=0\\) where we want to find the parameters \\(\Theta=\begin{bmatrix} a & b & c \end{bmatrix}^T\\) such that:
-
-$$
-\underset{\Theta}{\operatorname{argmin}}\sum_{i=1}^N R(x_i,y_i \vert \Theta)^2
-$$
-
-\\(\underset{\Theta}{\operatorname{argmin}}\\) means that we want to minimize and find the parameters \\(\Theta\\) which gives us the minimum value. The function \\(R\\) defines the best-fit here which is what the user has chosen. Let us **choose** \\(R\\) to be a function which computes the distance (offsets) from any point \\([x,y]^T\\) to the line \\(ax+by+c=0\\). This can be of two variants, i.e., vertical distances/ offsets and/or perpendicular distance/offsets. 
-
-<div class="fig figcenter fighighlight">
-  <img src="/cmsc426fall2019/assets/math/offsets.gif" width="70%">
-  <div class="figcaption">Left: Vertical distances/offsets. Right: Perpendicular distances/offsets.</div>
-</div>
-
-
-
-Here, \\(\mathbf{x}\\) represents the vector in a space \\(\mathbb{R}^n\\). In our line-fitting example, \\(n=2\\). Sample datapoints with their linear least-squares line solution is shown below:
-
-<div class="fig figcenter fighighlight">
-  <img src="/cmsc426fall2019/assets/math/linearregression.png" width="70%">
-  <div class="figcaption">Random data points and their linear least-squares line solution.</div>
-</div>
-
+Let us model the problem mathematically, we have \\(N\\) points in \\(\mathbb{R}^2\\) to which we want to fit the **best-fit** line. The best-line has to be defined before we proceed. One could argue that I can pick any random two points and fit a line and call that the best-fit. However, this solution is the best for those two points and not for all points. If all the points lie on a line one could say that we have an **exact** and **unique** solution, but this rarely happens. The more common version of this problem is that the best-fit line generally would not pass through any of the points. 
 <a name='axeqb'></a>
 ## \\(A\mathbf{x}=\mathbf{b}\\)
 You might be wondering what the title means. The last method (\\(A\mathbf{x}=\mathbf{0}\\)) we solved is called Linear Homogeneous set of equations and \\(A\mathbf{x}=\mathbf{b}\\) is called Linear Inhomogeneous set of equations. The problem formulation is slightly different from the earlier case as one would except. 
