@@ -166,7 +166,7 @@ Let us define the problem in hand first. Assume that we have \\(N\\) points in \
 Let us model the problem mathematically, we have \\(N\\) points in \\(\mathbb{R}^2\\) to which we want to fit the **best-fit** line. The best-line has to be defined before we proceed. One could argue that I can pick any random two points and fit a line and call that the best-fit. However, this solution is the best for those two points and not for all points. If all the points lie on a line one could say that we have an **exact** and **unique** solution, but this rarely happens. The more common version of this problem is that the best-fit line generally would not pass through any of the points. Sample datapoints with their linear least-squares line solution is shown below:
 
 <div class="fig figcenter fighighlight">
-  <img src="/assets/math/linearregression.png" width="70%">
+  <img src="/cmsc426fall2019/assets/math/linearregression.png" width="70%">
   <div class="figcaption">Random data points and their linear least-squares line solution.</div>
 </div>
 
