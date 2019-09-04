@@ -64,7 +64,7 @@ An animation of the cross product is shown below:
   <div style="clear:both;"></div>
 </div>
 
-The cross product is used to find the normal vector to a plane in Computer Vision. This is especially useful in aligning 3D point clouds (images with depth information). This method is extensively used in self driving cars to make a map using LIDAR scans. If you are curious, have a look at the [Point to Plane Iterative Closest Point algorithm](https://www-new.comp.nus.edu.sg/~lowkl/publications/lowk_point-to-plane_icp_techrep.pdf) to understand how this works.  Note that the cross prodct is  anticommutative (\\(\mathbf{a}\times \mathbf{b} = -\mathbf{b}\times\mathbf{a}\\)) and **not** associative. Other properties can be found [here](https://en.wikipedia.org/wiki/Dot_product).
+The cross product is used to find the normal vector to a plane in Computer Vision. This is especially useful in aligning 3D point clouds (images with depth information). This method is extensively used in self driving cars to make a map using LIDAR scans. If you are curious, have a look at the [Point to Plane Iterative Closest Point algorithm](https://www.comp.nus.edu.sg/~lowkl/publications/lowk_point-to-plane_icp_techrep.pdf) to understand how this works.  Note that the cross prodct is  anticommutative (\\(\mathbf{a}\times \mathbf{b} = -\mathbf{b}\times\mathbf{a}\\)) and **not** associative. Other properties can be found [here](https://en.wikipedia.org/wiki/Dot_product).
 
 <a name='eigen'></a>
 ## Eigenvalues and Eigenvectors
