@@ -58,7 +58,7 @@ The cross product between two vectors \\(\mathbf{a}, \mathbf{b}\\) is defined as
 An animation of the cross product is shown below:
 
 <div class="fig figleft fighighlight">
-  <img src="/assets/math/crossproductanimation.gif" width="35%">
+  <img src="/cmsc426fall2019/assets/math/crossproductanimation.gif" width="35%">
   <div class="figcaption">
    The cross product \( \mathbf{a} \times \mathbf{b}\) (vertical, in purple) changes as the angle between the vectors \( \mathbf{a} \) (blue) and \( \mathbf{b} \) (red) changes. The cross product is always orthogonal to both vectors, and has magnitude zero when the vectors are parallel and maximum magnitude \( \vert \vert \mathbf{a} \vert \vert \vert \vert \mathbf{b} \vert \vert \) when they are orthogonal.
   </div>
