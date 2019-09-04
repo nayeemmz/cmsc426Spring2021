@@ -18,7 +18,6 @@ The Table of Contents:
 	- [Null-space](#nullspace)
 - [\\(A\mathbf{x}=\mathbf{b}\\)](#axeqb)
 - [Effect of outliers on \\(A\mathbf{x}=\mathbf{b}\\) and Regularization to combat them](#reg)
-- [Random Sample Consensus (RANSAC) for outlier rejection](#ransac)
 
 <a name='hilbert'></a>
 ## Hilbert Space, Vectors, Dot and Cross Products
