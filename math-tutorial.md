@@ -47,7 +47,7 @@ It is incovinent to write the vector superscript everytime, so a boldface text i
 The cross product between two vectors \\(\mathbf{a}, \mathbf{b}\\) is defined as \\( \mathbf{a} \times \mathbf{b} = \vert \vert \mathbf{a} \vert \vert \vert \vert \mathbf{b} \vert \vert \sin \theta \mathbf{n}\\). Here \\( \mathbf{n}\\) is the vector perpendicular/normal to the plane containing the two vectors \\( \mathbf{a}, \mathbf{b} \\) and \\(\theta\\) is the angle between the two vectors. The direction of the cross product is found using the right hand rule in a right handed coordinate system. 
 
 <div class="fig figleft fighighlight">
-  <img src="../assets/math/crossproduct.png" width="35%">
+  <img src="/assets/math/crossproduct.png" width="35%">
   <div class="figcaption">
     Finding the direction of the cross product by the right-hand rule.
   </div>
