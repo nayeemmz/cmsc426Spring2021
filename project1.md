@@ -29,6 +29,8 @@ Face recognition is 1:K matching problem. That means we have K images in a galle
   <div style="clear:both;"></div>
 </div>
 
+For a live demo of face recognition in the real time, check out the following [link](https://www.youtube.com/watch?v=wr4rx0Spihs).
+
 <a name='problem'></a>
 ## What you need to do
 To make logistics easier, we have collected camera data from Nao robot on behalf of you and saved the data in the form of color images. Click [here](https://drive.google.com/file/d/17XiM86JqHqko4JC00-E4w4sPKnzh2iMz/view?usp=sharing) to download. The image names represent the depth of the ball from Nao robot in centimeters. **The test dataset is [here](https://drive.google.com/file/d/17tNn3YIVR-8kqoBgJNK58YY4UBnQmm4q/view?usp=sharing) to download**.
