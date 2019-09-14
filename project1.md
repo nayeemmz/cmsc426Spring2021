@@ -23,7 +23,7 @@ Table of Contents:
 Face recognition is 1:K matching problem. That means we have K images in a gallery and a test image. We want to match this test image to every image in the gallery and find a match that is the most similar to the test image. For example, if you are trying to find a match for a test image in a gallery of three images, the face recognition algorithm should find the middle image of the gallery to be the most similar.
 
 <div class="fig fighighlight">
-  <img src="/2019/assets/proj1/faces.png" width="100%">
+  <img src="/cmsc426fall2019/assets/proj1/faces.png" width="100%">
   <div class="figcaption">
   </div>
   <div style="clear:both;"></div>
