@@ -41,7 +41,7 @@ You are **NOT** allowed to use any built-in MATLAB function(s) like `fitgmdist()
 
 
 <div class="fig fighighlight">
-  <img src="/assets/proj1/proj1_image.PNG" width="100%">
+  <img src="/assets/proj1/faces.png" width="100%">
   <div class="figcaption">
   </div>
   <div style="clear:both;"></div>
