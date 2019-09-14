@@ -1,7 +1,7 @@
 ---
 layout: page
 mathjax: true
-title: Color Segmentation using GMM
+title: Eigenfaces for face recognition
 permalink: /2019/proj/p1/
 ---
 
