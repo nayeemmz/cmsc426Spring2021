@@ -33,6 +33,8 @@ For a live demo of face recognition in the real time, check out the following [l
 
 In this project the goal is to practice implementation of principal components analysis technique to represent faces in a lower dimensional space and to recognize them. This technique was first presented by Turk and Pentland in their seminal paper [Eigenfaces for Recognition](http://www.face-rec.org/algorithms/PCA/jcn.pdf). You will be implementing this paper following the implementation of the following [case study](http://www.vision.jhu.edu/teaching/vision08/Handouts/case_study_pca1.pdf). 
 
+A starter code file to read, display an image and display the pixel values alongwith the training and the test datasets can be downloaded from [here]().
+
 <a name='problem'></a>
 ## What you need to do
 You are required to do the following:
