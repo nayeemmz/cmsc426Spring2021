@@ -20,20 +20,9 @@ Table of Contents:
 <a name='intro'></a>
 ## Introduction
 
-Have you ever played with these adorable Nao robots? Click on the image to watch a cool demo.  
-
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=Gy_wbhQxd_0
-" target="_blank"><img src="http://img.youtube.com/vi/Gy_wbhQxd_0/0.jpg"
-alt=" Nao robot demo " width="480" height="360" border="0" /></a>
+Face recognition is 1:K matching problem. That means we have K images in a gallery and a test image. We want to match this test image to every image in the gallery and find a match that is the most similar to the test image. For example, if your gallery consisted of the following three images, 
 
 
-Nao robots are star players in RoboCup, an annual autonomous robot soccer competitions.
-We are planning to build the Maryland RoboCup team to compete in RoboCup 2019, we need your help.
-Would you like to help us in Nao's soccer training? We need to train Nao to detect a soccer ball and estimate the depth of the ball to know how far to kick.
-
-Nao's training has two phases:
-- Color Segmentation using Gaussian Mixture Model (GMM)
-- Ball Distance Estimation
 
 <a name='problem'></a>
 ## What you need to do
