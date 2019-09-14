@@ -40,43 +40,25 @@ You are required to do the following:
 - Display top K eigenvectors also called the eigenfaces.
 - Show few examples of faces represented as a linear combination of the K eigenvectors and compare it with the original image 
 - Perform face recognition in the lower dimensional space on the test images.
-- Write a report and discuss the following:
-  - how you picked the the lower dimensional basis vectors, 
-  - the lower dimensional representation of a face and how similar or dissimilar it is to the original image.
-  - Report the accuracy of face recognition. Accuracy is defined as the ratio of the number of the number of test images     correctly recognized to the total number of test images.
-
-<a name='pro'></a>
-### Problem Statement
-0. Prepare the data: Extract the regions of the ball from each of the training images. For example, you can use the *roipoly* function to do so. The image points obtained this way are the data that you will use to train your color model.
-1. Write MATLAB code to cluster the orange ball using a [Single Gaussian](https://cmsc426spring2019.github.io/colorseg/#gaussian) [30 points]
-2. Write MATLAB code to cluster the orange ball using a [Gaussian Mixture Model](https://cmsc426spring2019.github.io/colorseg/#gmm) [40 points] and estimate the [distance](https://cmsc426spring2019.github.io/colorseg/#distest) to the ball [20 points]. Also, plot all the GMM ellipsoids [10 points].
-
-You are **NOT** allowed to use any built-in MATLAB function(s) like `fitgmdist()` or `gmdistribution.fit()` for GMM. To help you with code implementation, we have given the pseudocode :-)
-
-
+- Write a report.
+ 
 
 
 <a name='sub'></a>
 ## Submission Guidelines
 
-<b> We will deduct points if your submission does not comply with the following guidelines.</b>
+You may work on this project in groups of three at the most.
 
 Please submit the project <b> once </b> for your group -- there's no need for each member to submit
-it.
+it. Make sure you write the names of all the students who worked on the project.
 
 ### File tree and naming
 
 Your submission on Canvas must be a zip file, following the naming convention **YourDirectoryID_proj1.zip**.  For example, xyz123_proj1.zip.  The file **must have the following directory structure**.
 
 YourDirectoryID_proj1.zip.
- - train_images/.
- - test_images/.
  - results/.
- - GMM.m
- - trainGMM.m
- - testGMM.m
- - measureDepth.m
- - plotGMM.m
+ - pca.ipynb
  - report.pdf
 
 ### Report
@@ -88,10 +70,10 @@ Logistics and bookkeeping you **must** include at the top of your report (-5 poi
 
 For each section of the project, explain briefly what you did, and describe any interesting problems you encountered and/or solutions you implemented.  You must include the following details in your writeup:
 
-- Your choice of color space, initialization method and number of gaussians in the GMM.
-- Explain why GMM is better than a single gaussian.
-- Present your distance estimate and cluster segmentation results for each test image.
-- Explain strengths and limitations of your algorithm. Also, explain why the algorithm failed on some test images.
+- how you picked the the lower dimensional basis vectors,
+- the lower dimensional representation of a face and how similar or dissimilar it is to the original image.
+- Report the accuracy of face recognition. Accuracy is defined as the ratio of the number of test images correctly recognized to the total number of test images.
+- discuss briefly what you learned in the project.
 
 As usual, your report must be full English sentences, **not** commented code. There is a word limit of 1500 words and no minimum length requirement
 
