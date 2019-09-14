@@ -25,10 +25,6 @@ Face recognition is 1:K matching problem. That means we have K images in a galle
 <div class="fig fighighlight">
   <img src="/assets/proj1/proj1_image.PNG" width="100%">
   
-  <img src="/assets/proj1/proj1_image.PNG" width="33%">
-  
-  <img src="/assets/proj1/proj1_image.PNG" width="33%">
-  
 </div>
 
 <a name='problem'></a>
