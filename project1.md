@@ -24,18 +24,15 @@ Face recognition is 1:K matching problem. That means we have K images in a galle
 
 <div class="fig fighighlight">
   <img src="/assets/proj1/proj1_image.PNG" width="33%">
-  <div class="figcaption">
-  </div>
-  <div style="clear:both;"></div>
+  
+  
+  <img src="/assets/proj1/proj1_image.PNG" width="33%">
+  
   <img src="/assets/proj1/proj1_image.PNG" width="33%">
   <div class="figcaption">
   </div>
   <div style="clear:both;"></div>
-  <img src="/assets/proj1/proj1_image.PNG" width="33%">
-  <div class="figcaption">
-  </div>
-  <div style="clear:both;"></div>
-</div
+</div>
 
 <a name='problem'></a>
 ## What you need to do
