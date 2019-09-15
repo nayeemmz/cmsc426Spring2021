@@ -30,7 +30,7 @@ Face recognition is 1:K matching problem. That means we have K images in a galle
 
 For a live demo of face recognition in the real time, check out the following [link](https://www.youtube.com/watch?v=wr4rx0Spihs).
 
-In this project the goal is to practice implementation of principal components analysis technique to represent faces in a lower dimensional space and to recognize them. This technique was first presented by Turk and Pentland in their seminal paper [Eigenfaces for Recognition](http://www.face-rec.org/algorithms/PCA/jcn.pdf). You will be implementing this paper following the implementation of the following [case study](http://www.vision.jhu.edu/teaching/vision08/Handouts/case_study_pca1.pdf). 
+In this project the goal is to practice implementation of principal components analysis technique to represent faces in a lower dimensional space and to recognize them. This technique was first presented by Turk and Pentland in their seminal paper [Eigenfaces for Recognition](http://www.face-rec.org/algorithms/PCA/jcn.pdf). You will be implementing this paper following the implementation of the following [case study](http://www.vision.jhu.edu/teaching/vision08/Handouts/case_study_pca1.pdf). You may see some differences between the way the covariance matrix is computed in the original paper and the case study. We will be following the case study so that your implementation is consistent with the rest of the implementation. 
 
 A starter code file to read, display an image and display the pixel values alongwith the training and the test datasets can be downloaded from [here](/cmsc426fall2019/assets/proj1/StarterFiles.zip).
 
