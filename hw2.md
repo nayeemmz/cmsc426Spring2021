@@ -1,11 +1,9 @@
 ---
 layout: page
 mathjax: true
-title: Color Segmentation using GMM
+title: Clustering using GMM
 permalink: /2019/hw/hw2/
 ---
-**This article is written by [Chethan Parameshwara](http://analogicalnexus.github.io).**
-Please contact **Chethan Parameshwara** if there are any errors.
 
 Table of Contents:
 - [Deadline](#due)
