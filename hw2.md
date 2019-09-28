@@ -20,7 +20,8 @@ Table of Contents:
 <a name='intro'></a>
 ## Introduction
 
-The purpose of this homework is to practice Gaussian Mixture Model (GMM).
+A linear combination of Gaussian distributions forms a superposition formulated as a probabilistic model known as a Gaussian Mixture Model.
+The purpose of this homework is to practice Gaussian Mixture Models (GMM).  
 
 
 Nao's training has two phases:
