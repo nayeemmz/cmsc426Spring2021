@@ -20,13 +20,13 @@ Table of Contents:
 <a name='intro'></a>
 ## Introduction
 
-A linear combination of Gaussian distributions forms a superposition formulated as a probabilistic model known as a Gaussian Mixture Model.
-The purpose of this homework is to practice Gaussian Mixture Models (GMM).  
+A linear combination of Gaussian distributions forms a superposition formulated as a probabilistic model known as a Gaussian Mixture Model. 
+The purpose of this homework is to practice Gaussian Mixture Models (GMM). More specifically you are required to use GMM's to cluster 2D data that will be provided to you.
 
 
-Nao's training has two phases:
-- Color Segmentation using Gaussian Mixture Model (GMM)
-- Ball Distance Estimation
+There are two types of models that you will be building for this project:
+- Data clustering using a single Gaussian Model.
+- Data clustering using a Gaussian Mixture Model (GMM).
 
 <a name='problem'></a>
 ## What you need to do
