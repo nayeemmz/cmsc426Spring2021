@@ -35,7 +35,7 @@ The data for this homework has been generated using three different Gaussian dis
 You may download the data from [here](/cmsc426fall2019/assets/hw2/data.csv). This data can be visualized as follows:
 
 <div class="fig fighighlight">
-  <img src="/cmsc426fall2019/assets/hw2/hw2_data.png" width="100%">
+  <img src="/cmsc426fall2019/assets/hw2/hw2_data.png" width="50%">
   <div class="figcaption">
   </div>
   <div style="clear:both;"></div>
@@ -51,7 +51,7 @@ You are **NOT** allowed to use any built-in MATLAB function(s) like `fitgmdist()
 
 
 <div class="fig fighighlight">
-  <img src="/assets/proj1/proj1_image.PNG" width="100%">
+  <img src="/assets/proj1/proj1_image.PNG" width="50%">
   <div class="figcaption">
   </div>
   <div style="clear:both;"></div>
