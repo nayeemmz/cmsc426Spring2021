@@ -32,8 +32,14 @@ There are two types of models that you will be building for this project:
 ## What you need to do
 The data for this homework has been generated using three different Gaussian distributions, mixed together and shuffled. As a result there are three different distributions forming three different clusters. Your goal is to find those clusters.
 
-You may download the data from [here](
-To make logistics easier, we have collected camera data from Nao robot on behalf of you and saved the data in the form of color images. Click [here](https://drive.google.com/file/d/17XiM86JqHqko4JC00-E4w4sPKnzh2iMz/view?usp=sharing) to download. The image names represent the depth of the ball from Nao robot in centimeters. **The test dataset is [here](https://drive.google.com/file/d/17tNn3YIVR-8kqoBgJNK58YY4UBnQmm4q/view?usp=sharing) to download**.
+You may download the data from [here](/cmsc426fall2019/assets/hw2/data.csv). This data can be visualized as follows:
+
+<div class="fig fighighlight">
+  <img src="/assets/hw2/hw2_data.png" width="100%">
+  <div class="figcaption">
+  </div>
+  <div style="clear:both;"></div>
+</div>
 
 <a name='pro'></a>
 ### Problem Statement
