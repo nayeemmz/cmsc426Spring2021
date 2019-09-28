@@ -33,13 +33,14 @@ There are two types of models that you will be building for this project:
 The data for this homework has been generated using three different Gaussian distributions, mixed together and shuffled. As a result there are three different distributions forming three different clusters. Your goal is to find those clusters.
 
 You may download the data from [here](/cmsc426fall2019/assets/hw2/data.csv). This data can be visualized as follows:
-
+<center>
 <div class="fig fighighlight">
   <img src="/cmsc426fall2019/assets/hw2/hw2_data.png" width="50%">
   <div class="figcaption">
   </div>
   <div style="clear:both;"></div>
 </div>
+</center>
 
 <a name='pro'></a>
 ### Problem Statement
