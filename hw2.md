@@ -34,8 +34,8 @@ To make logistics easier, we have collected camera data from Nao robot on behalf
 <a name='pro'></a>
 ### Problem Statement
 0. Prepare the data: Extract the regions of the ball from each of the training images. For example, you can use the *roipoly* function to do so. The image points obtained this way are the data that you will use to train your color model.
-1. Write MATLAB code to cluster the orange ball using a [Single Gaussian](https://cmsc426fall2019.github.io/colorseg/#gaussian) [30 points]
-2. Write MATLAB code to cluster the orange ball using a [Gaussian Mixture Model](https://cmsc426fall2019.github.io/colorseg/#gmm) [40 points] and estimate the [distance](https://cmsc426fall2019.github.io/colorseg/#distest) to the ball [20 points]. Also, plot all the GMM ellipsoids [10 points].
+1. Write MATLAB code to cluster the orange ball using a [Single Gaussian](https://nayeemmz.github.io/cmsc426fall2019/colorseg/#gaussian) [30 points]
+2. Write MATLAB code to cluster the orange ball using a [Gaussian Mixture Model](https://nayeemmz.github.io/cmsc426fall2019/colorseg/#gau#gmm) [40 points] and estimate the [distance](https://nayeemmz.github.io/cmsc426fall2019/colorseg/#distest) to the ball [20 points]. Also, plot all the GMM ellipsoids [10 points].
 
 You are **NOT** allowed to use any built-in MATLAB function(s) like `fitgmdist()` or `gmdistribution.fit()` for GMM. To help you with code implementation, we have given the pseudocode :-)
 
