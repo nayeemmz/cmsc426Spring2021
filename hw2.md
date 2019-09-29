@@ -59,7 +59,7 @@ Your submission on Canvas must be a zip file, following the naming convention **
 
 YourDirectoryID_proj1.zip.
  - results/.  - your plots
- - GMM.py - include both Single Gaussian as well as GMM code.
+ - GMM.ipynb - include both Single Gaussian as well as GMM code.
  - report.pdf
 
 ### Report
