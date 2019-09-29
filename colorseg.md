@@ -7,43 +7,14 @@ permalink: /colorseg/
 Table of Contents:
 
 - [Color Classification](#colorclassification)
-	- [Color Thresholding](#colorthresh)
 	- [Color Classification using a Single Gaussian](#gaussian)
 	- [Color Classification using a Gaussian Mixture Model (GMM)](#gmm)
   - [Different cases for $$\Sigma$$ in GMM](#gmmcases)
 
-<a name='colorclassification'></a>
-## Color Classification
-Back to project 1: the Nao robot wants to classify each pixel as a set of discrete colors (i.e., green of the grass field, orange of the soccer ball, and yellow of the goal post). Particularly, we are interested in finding the orange pixels because this represents the ball. As mentioned before, in RGB color space each pixel is represented as a vector in $$ \mathbb{R}^3$$. Let us define the problem mathematically. Say each pixel is represented by $$x=[r,g,b]^T \in \mathbb{R}^3$$. There exist $$l$$ color classes. We want to model the probability of a pixel belonging to a color class $$C_l$$ given the pixel value $$x$$, denoted by $$p(C_l \vert x)$$.
-
-
-<a name='colorthresh'></a>
-### Color Thresholding
-If we assume each pixel belongs to only one color class, i.e., color classes are mutually exlusive \[1\], the hard classification problem can be mathematically defined as follows:
-
-<!-- https://stackoverflow.com/questions/36174987/how-to-typeset-argmin-and-argmax-in-markdown -->
-$$ 
-C_l^*(x) = \underset{C_k}{\operatorname{argmax}} p(C_k\vert x) 
-$$
-
-Here, $$C_l^*(x)$$ represents the most probable color class that pixel belongs to. For eg. if the color is closer to orange than red then the pixel will be called orange. This can be done using the [Color Thresholder app](https://www.mathworks.com/help/images/ref/colorthresholder-app.html) in MATLAB. In RGB space, thresholding can be thought of selecting pixels in a cube defined by some minimum and maximum value in each channel (RGB), i.e., you are selecting all the pixels in a cube whose faces are defined by the minimum and maxmimum value in each channel. This can be mathematically formulated as:
-
-$$
-x_{sel} = \{x \vert x^r \in [R_{min}, R_{max}], x^g \in [G_{min}, G_{max}], x^b \in [B_{min}, B_{max}]\}
-$$
-
-where $$x^r, x^g, x^b$$ represent the red, green and blue channel values of a particular pixel. 
-
-<div class="fig figcenter fighighlight">
-  <img src="/assets/colorseg/colorthresholderapp.png">
-  <div class="figcaption">Color Thresholder app in MATLAB with a sample input image from a nao's camera.</div>
-</div>
-
-\[1\] This is like saying "if a pixel is classified as orange it cannot be classified as red" though in reality a red pixel could have some amount of orange and vice-versa.  This comes from that fact that the camera sensor percieves a 3-dimensional projection of the $$\infty$$-dimensional hilbert space projection of the light spectrum.
 
 <a name='gaussian'></a>
-### Color Classification using a Single Gaussian
-This is good for most basic cases but is bad for robotics because we said that everything (sensors and actuators) is noisy and we want to model the world in a probabilistic manner. This means that instead of saying a pixel is orange/red we want to say that the pixel is orange with 70% probability and red with 30% probability. This is denoted as $$p(C_l\vert x)$$ as mentioned before. Because we are in 2018 and everything is machine learning driven, let us treat the problem in hand as a machine learning problem. Let us say each pixel is being classified by a binary classifier per class (i.e., we have one classifier per color we want to classify). If we want to classify a pixel as red, orange or green we have a total of three classifiers one for each color. Let us formulate the problem mathematically. In each classifier, we want to find $$p(C_l \vert x)$$. Here $$C_l$$ denotes the color label, in our case they will be green or orange or yellow. So as you expect the green classifier will give you the following $$p(Green \vert x)$$, i.e., probability that the pixel is green. Note that $$1 - p(Green \vert x)$$ gives the probability that the pixel is not green which includes both orange and yellow pixels. 
+### Clustering using a Single Gaussian
+You may think of this problem as assigning a color label to each pixel. Each distribution represents a red, green or blue cluster. We want to classify a pixel as red, orange or green we have a total of three classifiers one for each color. Let us formulate the problem mathematically. In each classifier, we want to find $$p(C_l \vert x)$$. Here $$C_l$$ denotes the color label, in our case they will be green or orange or yellow. So as you expect the green classifier will give you the following $$p(Green \vert x)$$, i.e., probability that the pixel is green. Note that $$1 - p(Green \vert x)$$ gives the probability that the pixel is not green which includes both orange and yellow pixels. 
 
 Estimating $$p(C_l \vert x)$$ directly is too difficult. Luckily, we have Bayes rule to rescue us! Bayes rule applied onto $$p(C_l \vert x)$$ gives us the following:
 
