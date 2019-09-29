@@ -52,52 +52,27 @@ You may download the data from [here](/cmsc426fall2019/assets/hw2/data.csv). Thi
 
 You are **NOT** allowed to use any built-in Python library code for GMM. To draw ellipses you may find the following [documentation](https://matplotlib.org/devdocs/gallery/statistics/confidence_ellipse.html) helpful.
 
-<div class="fig fighighlight">
-  <img src="/assets/proj1/proj1_image.PNG" width="50%">
-  <div class="figcaption">
-  </div>
-  <div style="clear:both;"></div>
-</div>
-
-<a name='sub'></a>
-## Submission Guidelines
-
-<b> We will deduct points if your submission does not comply with the following guidelines.</b>
-
-Please submit the project <b> once </b> for your group -- there's no need for each member to submit
-it.
 
 ### File tree and naming
 
 Your submission on Canvas must be a zip file, following the naming convention **YourDirectoryID_proj1.zip**.  For example, xyz123_proj1.zip.  The file **must have the following directory structure**.
 
 YourDirectoryID_proj1.zip.
- - train_images/.
- - test_images/.
- - results/.
- - GMM.m
- - trainGMM.m
- - testGMM.m
- - measureDepth.m
- - plotGMM.m
+ - results/.  - your plots
+ - GMM.py - include both Single Gaussian as well as GMM code.
  - report.pdf
 
 ### Report
-Logistics and bookkeeping you **must** include at the top of your report (-5 points for each one that's missing):
-
- - The name of each group member.
- - A brief (one paragraph or less) description of what each group member contributed to the project.
-
 
 For each section of the project, explain briefly what you did, and describe any interesting problems you encountered and/or solutions you implemented.  You must include the following details in your writeup:
 
-- Your choice of color space, initialization method and number of gaussians in the GMM.
+- Your choice of initialization method.
 - Explain why GMM is better than a single gaussian.
-- Present your distance estimate and cluster segmentation results for each test image.
-- Explain strengths and limitations of your algorithm. Also, explain why the algorithm failed on some test images.
+- Present your clustering results for the datasets and show the 1D Gaussians for each.
+- Explain strengths and limitations of clustering using GMM. 
 
 As usual, your report must be full English sentences, **not** commented code. There is a word limit of 1500 words and no minimum length requirement
 
 <a name='coll'></a>
 ## Collaboration Policy
-You are encouraged to discuss the ideas with your peers. However, the code should be your own, and should be the result of you exercising your own understanding of it. If you reference anyone else's code in writing your project, you must properly cite it in your code (in comments) and your writeup. For the full honor code refer to the CMSC426 Fall 2018 website.
+You are encouraged to discuss the ideas with your peers. However, the code should be your own, and should be the result of you exercising your own understanding of it. If you reference anyone else' code in writing your project, you must properly cite it in your code (in comments) and your writeup. For the full honor code refer to the CMSC426 Fall 2019 website.
