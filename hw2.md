@@ -50,8 +50,7 @@ You may download the data from [here](/cmsc426fall2019/assets/hw2/data.csv). Thi
 3. Plot all the GMM ellipsoids [10 points].
 4. Write a report [20 points]
 
-You are **NOT** allowed to use any built-in MATLAB function(s) like `fitgmdist()` or `gmdistribution.fit()` for GMM. To help you with code implementation, we have given the pseudocode :-)
-
+You are **NOT** allowed to use any built-in Python library code for GMM. To draw ellipses you may find the following [documentation](https://matplotlib.org/devdocs/gallery/statistics/confidence_ellipse.html) helpful.
 
 <div class="fig fighighlight">
   <img src="/assets/proj1/proj1_image.PNG" width="50%">
