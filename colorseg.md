@@ -66,72 +66,37 @@ $$
 \underset{\{ \mu_1, \mu_2, \cdots, \mu_k, \Sigma_1, \Sigma_2, \cdots, \Sigma_k, \pi_1, \pi_2, \cdots, \pi_k\}}{\operatorname{argmax}} \sum_{i=1}^N \ln \sum_{k=1}^K\pi_k\mathcal{N}(x_i \vert \mu_k, \Sigma_k
 $$
 
-where $$N$$ is the number of training samples. The above is not a simple function and generally has no closed form solution. To solve for the parameters $$\Theta = \{ \mu_1, \mu_2, \cdots, \mu_k, \Sigma_1, \Sigma_2, \cdots, \Sigma_k, \pi_1, \pi_2, \cdots, \pi_k\}$$ of the above problem, we have to use an iterative procedure, called the Expectation-Maximization algorithm. 
+where $$N$$ is the number of training samples. The above is not a simple function and generally has no closed form solution. To solve for the parameters $$\Theta = \{ \mu_1, \mu_2, \cdots, \mu_k, \Sigma_1, \Sigma_2, \cdots, \Sigma_k, \pi_1, \pi_2, \cdots, \pi_k\}$$ of the above problem, we have to use an iterative procedure, called the Expectation-Maximization algorithm presented as follows: 
 
 - Initialization:
-Randomly choose $$\pi_i, \mu_i, \Sigma_i \qquad \forall i \in [1, k]$$
+Randomly choose $$\pi_i, \mu_i, \Sigma_i \qquad \forall i \in [1, k]$$. Evaluate log likelihood.
 - Alternate until convergence:
 	- Expectation Step or E-step: Evaluate the model/Assign points to clusters
-	Cluster Weight $$ \alpha_{i,j} = \frac{\pi_i p(x_j \vert C_i)}{\sum_{i=1}^k \pi_i p(x_j \vert C_i)} $$
+	Cluster Weight $$ \gamma_{i,j} = \frac{\pi_i p(x_j \vert C_i)}{\sum_{i=1}^k \pi_i p(x_j \vert C_i)} $$
 	\\(j\\) is the data point index, \\(i\\) is the cluster index.
 	- Maximization Step or M-step: Evaluate best parameters $$ \Theta $$ to best fit the points
 	
 	$$ 
-	\mu_i = \frac{\sum_{j=1}^N \alpha_{i,j} x_j}{\sum_{j=1}^N \alpha_{i,j}}
+	\mu_i = \frac{\sum_{j=1}^N \alpha_{i,j} x_j}{\sum_{j=1}^N \gamma_{i,j}}
 	$$
 	
 
 	$$ 
-	\Sigma_k = \frac{\sum_{j=1}^N \alpha_{i,j} (x_j-\mu_i)(x_j-\mu_i)^T}{\sum_{j=1}^N \alpha_{i,j}}
+	\Sigma_k = \frac{\sum_{j=1}^N \alpha_{i,j} (x_j-\mu_i)(x_j-\mu_i)^T}{\sum_{j=1}^N \gamma_{i,j}}
 	$$
 
 	$$ 
-	\pi_i = \frac{1}{N}\sum_j \alpha_{i,j}
+	\pi_i = \frac{1}{N}\sum_j \gamma_{i,j}
 	$$
 	
-Convergence is defined as $$\sum_i\vert \vert \mu_i^{t+1} -  \mu_i^{t}\vert \vert \le \tau$$ where $$i$$ denotes the cluster number, $$t$$ denotes the iteration number and $$\tau$$ is some user defiened threshold. To understand more about the mathematical derivation which is fairly involved go to [this link](https://alliance.seas.upenn.edu/~cis520/dynamic/2017/wiki/index.php?n=Lectures.EM).
+Convergence is defined as $$\sum_i\vert \vert \mu_i^{t+1} -  \mu_i^{t}\vert \vert \le \tau$$ where $$i$$ denotes the cluster number, $$t$$ denotes the iteration number and $$\tau$$ is some user defined threshold. To understand more about the mathematical derivation which is fairly involved go to [this link](https://alliance.seas.upenn.edu/~cis520/dynamic/2017/wiki/index.php?n=Lectures.EM).
 
 Now that we have estimated/learnt all the parameters in our model, i.e., $$\Theta = \{ \mu_1, \mu_2, \cdots, \mu_k, \Sigma_1, \Sigma_2, \cdots, \Sigma_k, \pi_1, \pi_2, \cdots, \pi_k\}$$ we can estimate the posterior probability using the following equation:
 
 $$
-p(C_l \vert x) = \sum_{i=1}^k \pi_i \mathcal{N}(x, \mu_i, \Sigma_i)
+p(C_i \vert x) = \sum_{i=1}^k \pi_i \mathcal{N}(x, \mu_i, \Sigma_i)
 $$ 
 
-Finally, one can use the following expression to identify pixels which are 'Orange' (or confidently Orange). 
-
-$$
-p(C_l \vert x) \ge \tau
-$$
-
-here $$\tau$$ is some user defined threshold. 
-
-<a name='gmmcases'></a>
-### Different cases for $$\Sigma$$ in GMM
-We said that we were modelling our fancy functions as a sum of simple functions like a gaussian. One might wonder why cant we make further asumptions about the gaussian. Yes we can! The gaussian we described before uses an ellipsoid, i.e., all the diagonal elements of $$\Sigma$$ are different. One can say that all our diagonal elements are the same and non-diagonal elements are zero, i.e., $$\Sigma$$ has the following form:
-
-$$
-\Sigma = \sigma^2\begin{bmatrix}
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & 1\\
-\end{bmatrix}
-$$
-
-
-here $$\sigma$$ is a parameter to be estimated. You might be wondering what shape a $$\Sigma$$ like the one described above represents. It's simple, a sphere! This gives lesser flexibility in fitting the model as the shape is simpler but has lesser number of parameters. A comparison of GMM fit on the data using spherical $$\Sigma$$ and elliposoidal $$\Sigma$$ is shown below:
-
-
-<div class="fig figcenter fighighlight">
-  <img src="/assets/colorseg/rgbgmm.png">
-  <div class="figcaption">Left: Datapoints of the orange ball and GMM fit using spherical \(\Sigma\). Right: GMM fit using ellipsoidal \(\Sigma\). Notice that the ellipsoidal variant has less non-orange pixels which will be classified as orange, i.e., lesser false positives and false negatives and is more accurate.</div>
-</div>
-
-One might think, what if I design a custom transformation to create a new colorspace from RGB where the data points are enclosed in a simple shape like an ellipsoid? That would work wonderfully well. I designed a custom colorspace to do exactly that (which is my secret recipe). You will have to figure out your own secret recipe to do it. The datapoints and the GMM fit for this colorspace is shown below:
-
-<div class="fig figcenter fighighlight">
-  <img src="/assets/colorseg/customcolorspace3.png">
-  <div class="figcaption">Left: Datapoints of the orange ball in the custom colorspace. Look at how the datapoint space looks like an ellipsoid Right: GMM fit using ellipsoidal \(\Sigma\). Notice that the GMM fit looks exactly like one single gaussian which shows that the performance of GMM over this colorspace would exactly be the same as a single gaussian fit. This is very beneficial because we can reduce the computation cost of training and testing significantly.</div>
-</div>
 
 
 
