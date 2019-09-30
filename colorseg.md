@@ -52,27 +52,21 @@ Clearly, $$\mu \in \mathbb{2 \times 1}$$ and $$\Sigma \in \mathbb{R}^{2 \times 2
 The co-variance matrix $$\Sigma$$ is a square matrix of size $$d \times d$$ where $$d$$ is the length of the vector $$x$$, i.e., $$\Sigma \in \mathbb{R}^{d \times d}$$ if $$x \in \mathbb{R}^{d \times 1}$$. 
 
 <a name='gmm'></a>
-### Color Classification using a Gaussian Mixture Model (GMM)
-However, if you are trying to find a color in different lighting conditions a simple gaussian model will not suffice because the colors may not be bounded well by an ellipsoid. 
-
-<div class="fig figcenter fighighlight">
-  <img src="/assets/colorseg/ballindiffcolorspaces.png">
-  <div class="figcaption">Datapoints for the ball plotted in RGB and YCbCr colorspaces. Observe how the enclosing shape is of a weird shape. It would be ideal to create a custom color-space which converts this weird shape into some simple shape which can be enclosed like a cube or a cuboid or a sphere or an ellipsoid. Designing a space like that is generally not trivial hence we emply a method of fitting this weird shape as a sum of simple shapes like an ellipsoid.</div>
-</div>
-
-In this case, one has to come up with a weird looking fancy function to bound the color which is generally mathematically very difficult and computationally very expensive. An easy trick mathematicians like to do in such cases (which is generally a very good approximation with less compuational cost) is to represent the fancy function as a sum of known simple functions. We love gaussians so let us use a sum of gaussians to model our fancy function. Let us write our formulation down mathematically. Let the posterior be defined by a sum of $$K$$ scaled gaussians given by:
+### Clustering using a Gaussian Mixture Model (GMM)
+However, if you are trying to find clusters for a multi-modal distribution a simple gaussian model will not suffice.
+In this case, one has to come up with a weird looking fancy function to bound the points which is generally mathematically very difficult and computationally very expensive. An easy trick mathematicians like to do in such cases (which is generally a very good approximation with less computational cost) is to represent the fancy function as a sum of known simple functions. We love gaussians so let us use a sum of gaussians to model our fancy function. Let us write our formulation down mathematically. Let the posterior be defined by a sum of $$K$$ scaled gaussians given by:
 
 $$
-p(C_l \vert x) = \sum_{i=1}^k \pi_i \mathcal{N}(x, \mu_i, \Sigma_i)
+p(C_i \vert x) = \sum_{i=1}^k \pi_i \mathcal{N}(x, \mu_i, \Sigma_i)
 $$
 
-Here, $$\pi_i$$, $$\mu_i$$ and $$\Sigma_i$$ respectively define the scaling factor, mean and co-variance of the $$k$$<sup>th</sup> gaussian. The optimization problem in hand is to maximize the probability that the above model is correct, i.e., to find the parameters $$\pi_k, \mu_k, \Sigma_k$$ such that one would maximize the corectness of $$p(C_l \vert x)$$. Just a simple probability function doesnt have very pretty mathematical properties. So a general trick mathematicians/machine learning people follow is to take the logarithm of the probability function and maximize that. This works well because of the [monotonicity](http://mathworld.wolfram.com/MonotonicFunction.html) of the logarithm function. This setup is formally called **Maximum Likelihood Estimation (MLE)** and can be mathematically written as:
+Here, $$\pi_i$$, $$\mu_i$$ and $$\Sigma_i$$ respectively define the scaling factor, mean and co-variance of the $$i$$<sup>th</sup> gaussian. The optimization problem in hand is to maximize the probability that the above model is correct, i.e., to find the parameters $$\pi_k, \mu_k, \Sigma_k$$ such that one would maximize the corectness of $$p(C_i \vert x)$$. Just a simple probability function doesnt have very pretty mathematical properties. So a general trick mathematicians/machine learning people follow is to take the logarithm of the probability function and maximize that. This works well because of the [monotonicity](http://mathworld.wolfram.com/MonotonicFunction.html) of the logarithm function. This setup is formally called **Maximum Likelihood Estimation (MLE)** and can be mathematically written as:
 
 $$
-\underset{\{ \mu_1, \mu_2, \cdots, \mu_k, \Sigma_1, \Sigma_2, \cdots, \Sigma_k, \pi_1, \pi_2, \cdots, \pi_k\}}{\operatorname{argmax}} \sum_{i=1}^N \log p(x_i)
+\underset{\{ \mu_1, \mu_2, \cdots, \mu_k, \Sigma_1, \Sigma_2, \cdots, \Sigma_k, \pi_1, \pi_2, \cdots, \pi_k\}}{\operatorname{argmax}} \sum_{i=1}^N \ln \sum_{k=1}^K\pi_k\mathcal{N}(x_i \vert \mu_k, \Sigma_k
 $$
 
-where $$N$$ is the number of training samples. The above is not a simple function and generally has no closed form solution. To solve for the parameters $$\Theta = \{ \mu_1, \mu_2, \cdots, \mu_k, \Sigma_1, \Sigma_2, \cdots, \Sigma_k, \pi_1, \pi_2, \cdots, \pi_k\}$$ of the above problem, we have to use an iterative procedure. 
+where $$N$$ is the number of training samples. The above is not a simple function and generally has no closed form solution. To solve for the parameters $$\Theta = \{ \mu_1, \mu_2, \cdots, \mu_k, \Sigma_1, \Sigma_2, \cdots, \Sigma_k, \pi_1, \pi_2, \cdots, \pi_k\}$$ of the above problem, we have to use an iterative procedure, called the Expectation-Maximization algorithm. 
 
 - Initialization:
 Randomly choose $$\pi_i, \mu_i, \Sigma_i \qquad \forall i \in [1, k]$$
