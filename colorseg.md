@@ -23,12 +23,12 @@ p(C_i\vert x) = \frac{p(x \vert C_i)p(C_i)}{\sum_{i=1}^K p(x \vert C_i)p(C_i)}
 $$
 
 
-$$p(C_i \vert x)$$ is the conditional probability of a cluster label given the cluster observation and is called the **Posterior**. $$p(x \vert C_i)$$ is the conditional probability of cluster observation given the cluster label and is generally called the **Likelihood**. $$p(C_i)$$ is the probability of that cluster occuring and is called the **Prior**. The prior is used to increase/decrease the probability of certain clusters. If nothing about the prior is known, a common choice is to use a uniform distribution, i.e., all the clusters are equally likely. This type of clustering is an unsupervised leaerning problem. Unsupervised means that we do not have labeled "training" examples from which we can understand the cluster we are looking for. 
+$$p(C_i \vert x)$$ is the conditional probability of a cluster label given the cluster observation and is called the **Posterior**. $$p(x \vert C_i)$$ is the conditional probability of cluster observation given the cluster label and is generally called the **Likelihood**. $$p(C_i)$$ is the probability of that cluster occuring and is called the **Prior**. The prior is used to increase/decrease the probability of certain clusters. If nothing about the prior is known, a common choice is to use a uniform distribution, i.e., all the clusters are equally likely. This type of clustering is an unsupervised learning problem. Unsupervised means that we do not have labeled "training" examples from which we can understand the cluster we are looking for. 
 
 For the purpose of easy discussion, we want to look for the points that are similae to each other and are more likely to come from the same distribution and hence grouped together. The Likelihood is generally modelled as a normal/gaussian distribution given by the following equation:
 
 $$
-p(x \vert Orange) = \frac{1}{\sqrt{(2 \pi)^3 \vert \Sigma \vert}}\exp{(\frac{-1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu))} = \mathcal{N(x \vert \mu, \Sigma)}
+p(x \vert \mu,\Sigma) = \frac{1}{\sqrt{(2 \pi)^3 \vert \Sigma \vert}}\exp{(\frac{-1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu))} = \mathcal{N(x \vert \mu, \Sigma)}
 $$
 
 Here, $$\vert \Sigma \vert$$ denotes the determinant of the matrix $$\Sigma$$. The dimensions of the above terms are as follows: $$\Sigma \in \mathbb{R}^{3 \times 3}, x,\mu \in \mathbb{3 \times 1}, p(x \vert Orange) \in \mathbb{R}^1$$. 
