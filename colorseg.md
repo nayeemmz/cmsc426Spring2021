@@ -14,15 +14,15 @@ Table of Contents:
 
 <a name='gaussian'></a>
 ### Clustering using a Single Gaussian
-You may think of this problem as assigning a color label to each pixel. Each distribution may represents a red, green or blue cluster. We want to cluster a pixel(point) as red, green or blue as we have a total of three classifiers one for each color. Let us formulate the problem mathematically. In each classifier, we want to find $$p(C_l \vert x)$$. Here $$C_l$$ denotes the cluster label. So as you expect the first classifier will give you the following $$p(C_1 \vert x)$$, i.e., probability that the pixel is the first cluster or may be belong to the red channel. Note that $$1 - p(C_1 \vert x)$$ gives the probability that the pixel is not from cluster 1 which includes both cluster 2 and 3 points (pixels). 
+You may think of this problem as assigning a color label to each pixel. Each distribution may represent a red, green or blue cluster. We want to cluster a pixel(point) as red, green or blue as we have a total of three classifiers, one for each color. Let us formulate the problem mathematically. In each classifier, we want to find $$p(C_i \vert x)$$. Here $$C_i$$ denotes the cluster label. So as you expect the first classifier will give you the following $$p(C_1 \vert x)$$, i.e., probability that the pixel is the first cluster or may be belong to the red channel. Note that $$1 - p(C_1 \vert x)$$ gives the probability that the pixel is not from cluster 1 which includes both cluster 2 and 3 points (pixels). 
 
-Estimating $$p(C_l \vert x)$$ directly is too difficult. Luckily, we have Bayes rule to rescue us! Bayes rule applied onto $$p(C_l \vert x)$$ gives us the following:
+Estimating $$p(C_i \vert x)$$ directly is too difficult. Luckily, we have Bayes rule to rescue us! Bayes rule applied onto $$p(C_i \vert x)$$ gives us the following:
 
 $$
-p(C_l \vert x) = \frac{p(x \vert C_l)p(C_l)}{\sum_{i=1}^k p(x\vert C_i)p(C_i)}
+p(C_i \vert x) = \frac{p(x \vert C_i)p(C_i)}{\sum_{i=1}^k p(x\vert C_i)p(C_i)
 $$
 
-$$p(C_l \vert x)$$ is the conditional probability of a cluster label given the cluster observation and is called the **Posterior**. $$p(x \vert C_l)$$ is the conditional probability of cluster observation given the cluster label and is generally called the **Likelihood**. $$p(C_l)$$ is the probability of that cluster occuring and is called the **Prior**. The prior is used to increase/decrease the probability of certain clusters. If nothing about the prior is known, a common choice is to use a uniform distribution, i.e., all the clusters are equally likely. This type of clustering is an unsupervised leaerning problem. Unsupervised means that we do not have "training" examples from which we can understand the cluster we are looking for. 
+$$p(C_i \vert x)$$ is the conditional probability of a cluster label given the cluster observation and is called the **Posterior**. $$p(x \vert C_i)$$ is the conditional probability of cluster observation given the cluster label and is generally called the **Likelihood**. $$p(C_i)$$ is the probability of that cluster occuring and is called the **Prior**. The prior is used to increase/decrease the probability of certain clusters. If nothing about the prior is known, a common choice is to use a uniform distribution, i.e., all the clusters are equally likely. This type of clustering is an unsupervised leaerning problem. Unsupervised means that we do not have labeled "training" examples from which we can understand the cluster we are looking for. 
 
 For the purpose of easy discussion, we want to look for the points that are similae to each other and are more likely to come from the same distribution and hence grouped together. The Likelihood is generally modelled as a normal/gaussian distribution given by the following equation:
 
