@@ -21,9 +21,7 @@ Estimating $$p(C_i \vert x)$$ directly is too difficult. Luckily, we have Bayes 
 $$
 p(C_i\vert x) = \frac{p(x \vert C_i)p(C_i)}{\sum_{i=1}^K p(x \vert C_i)p(C_i)}
 $$
-$$
-p(C_i \vert x) = \frac{p(x \vert C_i)p(C_i)}{\sum_{i=1}^k p(x\vert C_i)p(C_i)
-$$
+
 
 $$p(C_i \vert x)$$ is the conditional probability of a cluster label given the cluster observation and is called the **Posterior**. $$p(x \vert C_i)$$ is the conditional probability of cluster observation given the cluster label and is generally called the **Likelihood**. $$p(C_i)$$ is the probability of that cluster occuring and is called the **Prior**. The prior is used to increase/decrease the probability of certain clusters. If nothing about the prior is known, a common choice is to use a uniform distribution, i.e., all the clusters are equally likely. This type of clustering is an unsupervised leaerning problem. Unsupervised means that we do not have labeled "training" examples from which we can understand the cluster we are looking for. 
 
