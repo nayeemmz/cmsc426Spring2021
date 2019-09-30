@@ -19,6 +19,9 @@ You may think of this problem as assigning a color label to each pixel. Each dis
 Estimating $$p(C_i \vert x)$$ directly is too difficult. Luckily, we have Bayes rule to rescue us! Bayes rule applied onto $$p(C_i \vert x)$$ gives us the following:
 
 $$
+p(C_i\vert x)
+$$
+$$
 p(C_i \vert x) = \frac{p(x \vert C_i)p(C_i)}{\sum_{i=1}^k p(x\vert C_i)p(C_i)
 $$
 
