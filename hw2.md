@@ -67,7 +67,7 @@ YourDirectoryID_proj1.zip.
 For each section of the project, explain briefly what you did, and describe any interesting problems you encountered and/or solutions you implemented.  You must include the following details in your writeup:
 
 - Your choice of initialization method.
-- Explain why GMM is better than a single gaussian.
+- Explain why GMM is better than a single Gaussian.
 - Present your clustering results for the datasets and show the 1D Gaussians for each.
 - Explain strengths and limitations of clustering using GMM. 
 - Explain the effect of picking fewer or more number of Gaussians in GMM on clustering this data.
