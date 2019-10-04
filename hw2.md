@@ -47,7 +47,7 @@ You may download the data from [here](/cmsc426fall2019/assets/hw2/data.csv). Thi
 
 1. Write Python code to cluster the three distributions using a [Single Gaussian](https://nayeemmz.github.io/cmsc426fall2019/colorseg/#gaussian) [30 points]
 2. Write Python code to cluster the three distributions using a [Gaussian Mixture Model](https://nayeemmz.github.io/cmsc426fall2019/colorseg/#gmm) [40 points] 
-3. Plot all the GMM ellipsoids [10 points].
+3. Plot all the GMM ellipsoids [10 points]. 
 4. Write a report [20 points]
 
 You are **NOT** allowed to use any built-in Python library code for GMM. To draw ellipses you may find the following [documentation](https://matplotlib.org/devdocs/gallery/statistics/confidence_ellipse.html) helpful.
@@ -70,6 +70,7 @@ For each section of the project, explain briefly what you did, and describe any 
 - Explain why GMM is better than a single gaussian.
 - Present your clustering results for the datasets and show the 1D Gaussians for each.
 - Explain strengths and limitations of clustering using GMM. 
+- Explain the effect of picking fewer or more number of Gaussians in GMM on clustering this data.
 
 As usual, your report must be full English sentences, **not** commented code. There is a word limit of 1500 words and no minimum length requirement
 
