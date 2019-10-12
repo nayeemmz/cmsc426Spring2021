@@ -68,7 +68,8 @@ For each section of the project, explain briefly what you did, and describe any 
 
 - Your choice of initialization method.
 - Explain why GMM is better than a single Gaussian.
-- Present your clustering results for the datasets and show the 1D Gaussians for each.
+- Present your clustering results for the datasets and show the Gaussians for each in a 2D heat map or a 3D scatter plot.
+The following [link](https://matplotlib.org/mpl_toolkits/mplot3d/tutorial.html) would help with the 3D scatter plot. 
 - Explain strengths and limitations of clustering using GMM. 
 - Explain the effect of picking fewer or more number of Gaussians in GMM on clustering this data.
 
