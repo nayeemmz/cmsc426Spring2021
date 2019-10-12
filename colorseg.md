@@ -25,7 +25,7 @@ $$p(C_k \vert x)$$ is the conditional probability of a cluster label given the c
 For the purpose of easy discussion, we want to look for the points that are similar to each other and are more likely to come from the same distribution and hence grouped together. The Likelihood is generally modelled as a normal/Gaussian distribution given by the following equation:
 
 $$
-p(x \vert \mu,\Sigma) = \frac{1}{\sqrt{(2 \pi)^3 \vert \Sigma \vert}}\exp{(\frac{-1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu))} = \mathcal{N(x \vert \mu, \Sigma)}
+p(x \vert \mu,\Sigma) = \frac{1}{\sqrt{(2 \pi)^2 \vert \Sigma \vert}}\exp{(\frac{-1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu))} = \mathcal{N(x \vert \mu, \Sigma)}
 $$
 
 Here, $$\vert \Sigma \vert$$ denotes the determinant of the matrix $$\Sigma$$. The dimensions of the above terms are as follows: $$\Sigma \in \mathbb{R}^{2 \times 2}, x,\mu \in \mathbb{2 \times 1}, p(x \vert \mu, \Sigma) \in \mathbb{R}^1$$.
