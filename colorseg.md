@@ -25,7 +25,7 @@ In this lecture, we'll introduce how a camera forms an image, and how we can ide
 But first, a bit of motivation.  An intelligent system senses the world and responds in some way.  For a robot, this means interacting with the environment via its actuators:
 
 <div class="fig figcenter fighighlight">
-  <img src="/assets/colorseg/IntelligentAgent.png" width="60%">
+  <img src="/cmsc426fall2019/assets/colorseg/IntelligentAgent.png" width="60%">
   <div class="figcaption">Intelligent Agent (Robot) interacting with the environment and sensing the world.</div>
 </div>
 
@@ -40,7 +40,7 @@ In project 1, you'll get a flavor of what goes behind the scenes in a typical vi
 
 
 <div class="fig figcenter fighighlight">
-  <img src="/assets/colorseg/nao2.jpg" width="80%"> 
+  <img src="/cmsc426fall2019/assets/colorseg/nao2.jpg" width="80%"> 
   <div class="figcaption">Nao robot.</div>
 </div>
 
@@ -63,7 +63,7 @@ The next factor controlling the brightness of the image is the <b>ISO</b>. To un
 
 
 <div class="fig figcenter fighighlight">
-  <img src="/assets/colorseg/exposuretriangle.jpg">
+  <img src="/cmsc426fall2019/assets/colorseg/exposuretriangle.jpg">
   <div class="figcaption">Effects of ISO, Aperture, Shutter speed on the image. </div>
 </div>
 
@@ -78,11 +78,11 @@ To sense color, rather than grayscale, the image sensor must be able to differen
 
 
 <div class="fig figcenter fighighlight">
-  <img src="/assets/colorseg/bayer.png">
+  <img src="/cmsc426fall2019/assets/colorseg/bayer.png">
   <div class="figcaption">Left: The Bayer arrangement of color filters on the pixel array of an image sensor. Right: Profile/cross-section of sensor. </a>
 </div>
   <br>
-  <img src="/assets/colorseg/bayer2.png">
+  <img src="/cmsc426fall2019/assets/colorseg/bayer2.png">
   <div class="figcaption">1. Original scene. 2. Output of a 120\(\times\)80-pixel sensor with a Bayer filter. 3. Output color-coded with Bayer filter colors. 4. Reconstructed image after interpolating missing color information. 5. Full RGB version at 120\(\times\)80-pixels for comparison (e.g. as a film scan might appear).</div>
 </div>
 
@@ -97,7 +97,7 @@ $$ L_{res}=\int L(\lambda)f(\lambda) d\lambda$$
 
 Note that a completely different scene can reflect a different spectrum of light ($$f'(\lambda)$$). Because of the way the detectors work, $$ S_{res}, M_{res}, L_{res}$$ could have the **exact** same value. This means that one cannot distinguish the two scenes by color. This is because the eyes "see" a 3D projection of the $$\infty$$-dimensional hilbert space of the spectrum. This is mathematically represented as $$\mathbb{R}^\infty \rightarrow \mathbb{R}^3$$. Color blindess is the result of missing one of the receptors or the S, M, L receptors become too similar to each other. This in-turn reduces the dimentionality from three to two or one.  This is in a sense taking the PCA of the infinite dimensional spectrum in your eyes. 
 <div class="fig figcenter fighighlight">
-  <img src="/assets/colorseg/LightSpectrum2.png" width="50%">
+  <img src="/cmsc426fall2019/assets/colorseg/LightSpectrum2.png" width="50%">
   <div class="figcaption">The response of S, M and L detectors to \(f(\lambda)\) and  \(f'(\lambda)\) might look exactly the same. This is because both \(f(\lambda)\) and  \(f'(\lambda)\) are \(\infty\)-dimensional functions and only 3-dimensions of it are measured by the RGB (S, M and L) cone cells.</div>
 </div>
 
@@ -165,10 +165,10 @@ $$
 Keen readers might observe that HSV is a non-linear transformation of the RGB color space, and YCbCr is a linear transformation.  The RGB color cube looks like a rotated cuboid in YCbCr space. (Look at ``rgb2hsv, hsv2rgb, rgb2ycbcr, ycbcr2rgb`` functions in MATLAB and play around. **A fun exercise would be to try to plot the RGB color cube in different color spaces!** )
 
 <div class="fig figcenter fighighlight">
-  <img src="/assets/colorseg/colorspaces.png">
+  <img src="/cmsc426fall2019/assets/colorseg/colorspaces.png">
   <div class="figcaption">Left to right: Represenation of RGB color cube in RGB, HSV and YCbCr color spaces. </div>
   <br>
-  <img src="/assets/colorseg/colorspacesnaoimg.png">
+  <img src="/cmsc426fall2019/assets/colorseg/colorspacesnaoimg.png">
   <div class="figcaption">Nao robot view in RGB, HSV and YCbCr colorspaces.</div>
 </div>
 
@@ -195,7 +195,7 @@ $$
 where $$x^r, x^g, x^b$$ represent the red, green and blue channel values of a particular pixel. 
 
 <div class="fig figcenter fighighlight">
-  <img src="/assets/colorseg/colorthresholderapp.png">
+  <img src="/cmsc426fall2019/assets/colorseg/colorthresholderapp.png">
   <div class="figcaption">Color Thresholder app in MATLAB with a sample input image from a nao's camera.</div>
 </div>
 
@@ -278,7 +278,7 @@ Modelling the likelihood as a gaussian is beneficial because a little light vari
 However, if you are trying to find a color in different lighting conditions a simple gaussian model will not suffice because the colors may not be bounded well by an ellipsoid. 
 
 <div class="fig figcenter fighighlight">
-  <img src="/assets/colorseg/ballindiffcolorspaces.png">
+  <img src="/cmsc426fall2019/assets/colorseg/ballindiffcolorspaces.png">
   <div class="figcaption">Datapoints for the ball plotted in RGB and YCbCr colorspaces. Observe how the enclosing shape is of a weird shape. It would be ideal to create a custom color-space which converts this weird shape into some simple shape which can be enclosed like a cube or a cuboid or a sphere or an ellipsoid. Designing a space like that is generally not trivial hence we emply a method of fitting this weird shape as a sum of simple shapes like an ellipsoid.</div>
 </div>
 
@@ -350,14 +350,14 @@ here $$\sigma$$ is a parameter to be estimated. You might be wondering what shap
 
 
 <div class="fig figcenter fighighlight">
-  <img src="/assets/colorseg/rgbgmm.png">
+  <img src="/cmsc426fall2019/assets/colorseg/rgbgmm.png">
   <div class="figcaption">Left: Datapoints of the orange ball and GMM fit using spherical \(\Sigma\). Right: GMM fit using ellipsoidal \(\Sigma\). Notice that the ellipsoidal variant has less non-orange pixels which will be classified as orange, i.e., lesser false positives and false negatives and is more accurate.</div>
 </div>
 
 One might think, what if I design a custom transformation to create a new colorspace from RGB where the data points are enclosed in a simple shape like an ellipsoid? That would work wonderfully well. I designed a custom colorspace to do exactly that (which is my secret recipe). You will have to figure out your own secret recipe to do it. The datapoints and the GMM fit for this colorspace is shown below:
 
 <div class="fig figcenter fighighlight">
-  <img src="/assets/colorseg/customcolorspace3.png">
+  <img src="/cmsc426fall2019/assets/colorseg/customcolorspace3.png">
   <div class="figcaption">Left: Datapoints of the orange ball in the custom colorspace. Look at how the datapoint space looks like an ellipsoid Right: GMM fit using ellipsoidal \(\Sigma\). Notice that the GMM fit looks exactly like one single gaussian which shows that the performance of GMM over this colorspace would exactly be the same as a single gaussian fit. This is very beneficial because we can reduce the computation cost of training and testing significantly.</div>
 </div>
 
@@ -365,13 +365,13 @@ One might think, what if I design a custom transformation to create a new colors
 ## Estimation of distance to the orange ball
 
 <div class="fig figcenter fighighlight">
-  <img src="/assets/colorseg/naokicking.png" width="35%">
+  <img src="/cmsc426fall2019/assets/colorseg/naokicking.png" width="35%">
   <div class="figcaption">Nao robot looking at the ball from it's bottom camera.</div>
   <br>
-  <img src="/assets/colorseg/naokickingimg.png" width="35%">
+  <img src="/cmsc426fall2019/assets/colorseg/naokickingimg.png" width="35%">
   <div class="figcaption">Orange ball candidates after thresholding using GMM. One can remove the noise using morphological operations.</div>
   <br>
-  <img src="/assets/colorseg/naokickingimg2.png" width="35%">
+  <img src="/cmsc426fall2019/assets/colorseg/naokickingimg2.png" width="35%">
   <div class="figcaption">Orange ball looks different from different distances (\(d\)) and different head tilt angles (\(\theta\)). See how the ellipse's shape and size changes with repsect to distance and angle. It is not very easy to separate the effects of distance and angle on the shape and size of the ball on the image.</div>
 </div>
 
