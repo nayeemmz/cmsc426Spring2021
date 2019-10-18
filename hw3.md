@@ -4,8 +4,6 @@ mathjax: true
 title: Color Segmentation using GMM
 permalink: /2019/hw/hw3/
 ---
-**This article is written by [Chethan Parameshwara](http://analogicalnexus.github.io).**
-Please contact **Chethan Parameshwara** if there are any errors.
 
 Table of Contents:
 - [Deadline](#due)
@@ -17,7 +15,7 @@ Table of Contents:
 
 <a name='due'></a>
 ## Deadline
-11:59PM, Tuesday, Feb 19, 2019
+11:59PM, Saturday, Oct 26, 2019
 
 <a name='intro'></a>
 ## Introduction
