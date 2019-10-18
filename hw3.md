@@ -20,7 +20,7 @@ Table of Contents:
 <a name='intro'></a>
 ## Introduction
 
-Have you ever played with these adorable Nao robots? Click on the image to watch a cool demo.  
+Have you ever played with these adorable Nao robots? Click on the image to watch a cool demo.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=Gy_wbhQxd_0
 " target="_blank"><img src="http://img.youtube.com/vi/Gy_wbhQxd_0/0.jpg"
@@ -43,9 +43,9 @@ To make logistics easier, we have collected camera data from Nao robot on behalf
 ### Problem Statement
 0. Prepare the data: Extract the regions of the ball from each of the training images. For example, you can use the [*roipoly*](https://github.com/jdoepfert/roipoly.py) function to do so. Please note that since it is a Python script you would have to extract these features outside of the Jupyter notebook. The image points obtained this way are the data that you will use to train your color model.
 1. Cluster the orange ball using a [Single Gaussian](https://nayeemmz.github.io/cmsc426fall2019/colorseg/#gaussian). You may use the Python code from previous homework. [30 points]
-2. Cluster the orange ball using a [Gaussian Mixture Model](https://nayeemmz.github.io/cmsc426fall2019/colorseg/#gmm). You may use the Python code from the previous homework. [40 points] 
-3. Estimate the [distance](https://nayeemmz.github.io/cmsc426fall2019/colorseg/#distest) to the ball [20 points]. 
-4. Plot all the [GMM ellipsoids](/cmsc426fall2019/assets/hwk3/homework_hw3_draw_ellipsoid.ipynb) [10 points].
+2. Cluster the orange ball using a [Gaussian Mixture Model](https://nayeemmz.github.io/cmsc426fall2019/colorseg/#gmm). You may use the Python code from the previous homework. [40 points]
+3. Estimate the [distance](https://nayeemmz.github.io/cmsc426fall2019/colorseg/#distest) to the ball [20 points].
+4. Plot all the [GMM ellipsoids](/cmsc426fall2019/assets/hwk3/draw_ellipsoid.ipynb) [10 points].
 
 To help you with code implementation, we have given the pseudocode :-)
 
