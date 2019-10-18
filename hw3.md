@@ -45,7 +45,7 @@ To make logistics easier, we have collected camera data from Nao robot on behalf
 1. Cluster the orange ball using a [Single Gaussian](https://nayeemmz.github.io/cmsc426fall2019/colorseg/#gaussian). You may use the Python code from previous homework. [30 points]
 2. Cluster the orange ball using a [Gaussian Mixture Model](https://nayeemmz.github.io/cmsc426fall2019/colorseg/#gmm). You may use the Python code from the previous homework. [40 points] 
 3. Estimate the [distance](https://nayeemmz.github.io/cmsc426fall2019/colorseg/#distest) to the ball [20 points]. 
-4. Plot all the GMM ellipsoids [10 points].
+4. Plot all the [GMM ellipsoids]( https://gitlab.com/Krasjet/cmsc426-f19-dev/blob/master/homework/hw3/draw_ellipsoid.ipynb) [10 points].
 
 To help you with code implementation, we have given the pseudocode :-)
 
