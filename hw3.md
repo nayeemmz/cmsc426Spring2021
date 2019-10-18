@@ -51,7 +51,7 @@ To help you with code implementation, we have given the pseudocode :-)
 
 
 <div class="fig fighighlight">
-  <img src="/assets/proj1/proj1_image.PNG" width="100%">
+  <img src="/cmsc426fall2019/assets/proj1/proj1_image.PNG" width="100%">
   <div class="figcaption">
   </div>
   <div style="clear:both;"></div>
