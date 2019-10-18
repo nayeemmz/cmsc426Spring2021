@@ -60,37 +60,28 @@ To help you with code implementation, we have given the pseudocode :-)
 <a name='sub'></a>
 ## Submission Guidelines
 
-<b> We will deduct points if your submission does not comply with the following guidelines.</b>
-
-Please submit the project <b> once </b> for your group -- there's no need for each member to submit
-it.
 
 ### File tree and naming
 
-Your submission on Canvas must be a zip file, following the naming convention **YourDirectoryID_proj1.zip**.  For example, xyz123_proj1.zip.  The file **must have the following directory structure**.
+Your submission on Canvas must be a zip file, following the naming convention **YourDirectoryID_hw3.zip**.  For example, xyz123_hw3.zip.  The file **must have the following directory structure**.
 
 YourDirectoryID_proj1.zip.
  - train_images/.
  - test_images/.
  - results/.
  - GMM.m
- - trainGMM.m
- - testGMM.m
- - measureDepth.m
- - plotGMM.m
+ - trainGMM.ipynb
+ - testGMM.ipynb
+ - measureDepth.ipynb
+ - plotGMM.ipynb
  - report.pdf
 
 ### Report
-Logistics and bookkeeping you **must** include at the top of your report (-5 points for each one that's missing):
-
- - The name of each group member.
- - A brief (one paragraph or less) description of what each group member contributed to the project.
-
 
 For each section of the project, explain briefly what you did, and describe any interesting problems you encountered and/or solutions you implemented.  You must include the following details in your writeup:
 
 - Your choice of color space, initialization method and number of gaussians in the GMM.
-- Explain why GMM is better than a single gaussian.
+- Explain why GMM is better than a single Gaussian.
 - Present your distance estimate and cluster segmentation results for each test image.
 - Explain strengths and limitations of your algorithm. Also, explain why the algorithm failed on some test images.
 
@@ -98,4 +89,4 @@ As usual, your report must be full English sentences, **not** commented code. Th
 
 <a name='coll'></a>
 ## Collaboration Policy
-You are encouraged to discuss the ideas with your peers. However, the code should be your own, and should be the result of you exercising your own understanding of it. If you reference anyone else's code in writing your project, you must properly cite it in your code (in comments) and your writeup. For the full honor code refer to the CMSC426 Fall 2018 website.
+You are encouraged to discuss the ideas with your peers. However, the code should be your own, and should be the result of you exercising your own understanding of it. If you reference anyone else's code in writing your project, you must properly cite it in your code (in comments) and your writeup. For the full honor code refer to the CMSC426 Fall 2019 website.
