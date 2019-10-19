@@ -20,7 +20,7 @@ Table of Contents:
 <a name='intro'></a>
 
 ## Introduction
-In this lecture, we'll introduce how a camera forms an image, and how we can identify objects of a known color by manipulating color-spaces.
+In this lecture, we'll introduce how a camera forms an image, and how we can identify objects of a known color by manipulating color spaces.
 
 But first, a bit of motivation.  An intelligent system senses the world and responds in some way.  For a robot, this means interacting with the environment via its actuators:
 
@@ -29,7 +29,7 @@ But first, a bit of motivation.  An intelligent system senses the world and resp
   <div class="figcaption">Intelligent Agent (Robot) interacting with the environment and sensing the world.</div>
 </div>
 
-The robot's sensors and movements are noisy.  For example, an autonomous car might know that it is about 5ft. away from a pedestrian, give or take a few inches.  The robot can improve its estimate by combining information from multiple sensors.  A good estimate of the world also helps the robot interact with its environment more accurately:  whenever a robot moves, because its motors are not perfect, its movements are noisy.  To counteract this, the robot can continuously monitor the state of the world to make sure it has accomplished what it intended to.
+The robot's sensors and movements are noisy.  For example, an autonomous car might know that it is about 5ft away from a pedestrian, give or take a few inches.  The robot can improve its estimate by combining information from multiple sensors.  A good estimate of the world also helps the robot interact with its environment more accurately:  whenever a robot moves, because its motors are not perfect, its movements are noisy. To counteract this, the robot can continuously monitor the state of the world to make sure it has accomplished what it intended to.
 
 <a name='visionpipeline'></a>
 
@@ -44,7 +44,7 @@ In homework 3, you'll get a flavor of what goes behind the scenes in a typical v
   <div class="figcaption">Nao robot.</div>
 </div>
 
-In Robocup, the soccer field is bright green, the ball is bright orange, and the goal-posts are bright yellow.  If we separate the image into these three color classes, we can identify if/where these objects are in the image.  A sample pipeline is: 1) the robot acquires an image, 2) classifies each pixel as belonging to one of the color classes ("soccer-field-green", "ball-orange", or "goal-post-yellow"), and 3) groups the labled pixels and classifies the objects.  This information is then passed on to a higher-level planning algorithm, which makes high-level decisions like "kick the ball".
+In Robocup, the soccer field is bright green, the ball is bright orange, and the goal-posts are bright yellow.  If we separate the image into these three color classes, we can identify if/where these objects are in the image.  A sample pipeline is: 1) the robot acquires an image, 2) classifies each pixel as belonging to one of the color classes ("soccer-field-green", "ball-orange", or "goal-post-yellow"), and 3) groups the labeled pixels and classifies the objects.  This information is then passed on to a higher-level planning algorithm, which makes high-level decisions like "kick the ball".
 
 
 <a name='colimaging'></a>
@@ -59,7 +59,7 @@ The <b>aperture</b> is the amount of opening of the lens.   For example, the len
 However, aperture size is a trade-off:  a smaller aperture also means less light is let into the
 lens, reducing performance at night or low-light. There is no silver bullet to solve this problem. But a rule of thumb in vision/robotics is to disregard focus very close to the camera (say, within 1m), and set the aperture large enough to let in enough light, but small enough that objects further than 1m are in focus.  (Note, a very small aperture also leads to an effect called "diffraction" which leads to a "softer" image.)
 
-The next factor controlling the brightness of the image is the <b>ISO</b>. To understand it, you'll need to understand some of the electronics behind a digital image sensor.  Each pixel is generally a capacitor/transistor which converts photos/light into some voltage, which can be measured by a circuit in the camera. Think of this as light turning a dial/volume knob, telling you how much light hits a particular pixel. The volatge level measured per pixel can be amplifed by a number, much as you can amplifying the volume on your headphones. ISO controls this amplification factor. As you might expect, a higher ISO means a brighter image and vice-versa. Why not just set a small aperture and increase your ISO to the maximum value?  Increasing ISO comes at a cost: a lot of noise. So, one must find a balance between amplification and noise.
+The next factor controlling the brightness of the image is the <b>ISO</b>. To understand it, you'll need to understand some of the electronics behind a digital image sensor.  Each pixel is generally a capacitor/transistor which converts photos/light into some voltage, which can be measured by a circuit in the camera. Think of this as light turning a dial/volume knob, telling you how much light hits a particular pixel. The voltage level measured per pixel can be amplified by a number, much as you can amplifying the volume on your headphones. ISO controls this amplification factor. As you might expect, a higher ISO means a brighter image and vice-versa. Why not just set a small aperture and increase your ISO to the maximum value?  Increasing ISO comes at a cost: a lot of noise. So, one must find a balance between amplification and noise.
 
 
 <div class="fig figcenter fighighlight">
@@ -70,12 +70,10 @@ The next factor controlling the brightness of the image is the <b>ISO</b>. To un
 
 The last factor in the exposure triangle is the <b>shutter speed</b>. This is the amount of time the camera/imager collects light. The voltage measured will be a sum of all the photons collected while the shutter is active/open. A longer shutter speed lets in more light, but will blur any motion.
 
-The camera's auto mode generally selects the best balance of all the exposure triangle parameters based on some heuristic. (Look at [this cool paper](https://github.com/cchen156/Learning-to-See-in-the-Dark) which cheats the exposure traingle with Deep Learning. This paper can predict the noiseless detail which would be obtained from a long exposure given a super short noisy exposure. What a time to be alive! A version of this is used in the Google Pixel phones for the night mode.)
+The camera's auto mode generally selects the best balance of all the exposure triangle parameters based on some heuristic. (Look at [this cool paper](https://github.com/cchen156/Learning-to-See-in-the-Dark) which cheats the exposure triangle with Deep Learning. This paper can predict the noiseless detail which would be obtained from a long exposure given a super short noisy exposure. What a time to be alive! A version of this is used in the Google Pixel phones for the night mode.)
 
 
-To sense color, rather than grayscale, the image sensor must be able to differentiate between different wavelengths of light.  A simple way of doing this is to split each pixel into three "sub-pixels" of red, green, and blue.  One can select a color by using the dye of the same color on the sub-pixel (grayscale has a transparent dye). But having three sub-pixels for each pixel is very expensive, and is generally only used in high end cameras costing thousands of dollars.  More commonly, the sub-pixels are tiled in a pattern caled the "Bayer pattern", shown below.  The missing colors are interpolated using a simple interpolation algorithm. The RGB image is represented as a three dimentional array (width x height x 3) on the computer.
-
-
+To sense color, rather than grayscale, the image sensor must be able to differentiate between different wavelengths of light.  A simple way of doing this is to split each pixel into three "sub-pixels" of red, green, and blue.  One can select a color by using the dye of the same color on the sub-pixel (grayscale has a transparent dye). But having three sub-pixels for each pixel is very expensive, and is generally only used in high end cameras costing thousands of dollars.  More commonly, the sub-pixels are tiled in a pattern called the "Bayer pattern", shown below.  The missing colors are interpolated using a simple interpolation algorithm. The RGB image is represented as a three dimensional array (width x height x 3) on the computer.
 
 <div class="fig figcenter fighighlight">
   <img src="/cmsc426fall2019/assets/colorseg/bayer.png">
@@ -87,7 +85,7 @@ To sense color, rather than grayscale, the image sensor must be able to differen
 </div>
 
 
-Why use RGB for the color image and not something else? The answer lies in the human retina, which has 3 types of cone cells: red, green, and blue.  We can model the activation/response/sensitivity of a cone cell as some unimodal distribution function (a distriution with only one peak).  The three kinds of cone cells are sensitive to Small ($$S(\lambda)$$), Medium ($$M(\lambda)$$) and Long ($$L(\lambda)$$) wavelengths of visible light which coincide with red, green and blue colored light. Think of these cone cells as very sensitive to red, green or blue light. Any scene reflects a arbitrary spectrum of light (or signal represnted as $$f(\lambda)$$). One might wonder what the response of red sensitive cone cells will look like on this input light spectrum. One can represent the response of the S, M and L detectors/cone cells by a super simplified model given by:
+Why use RGB for the color image and not something else? The answer lies in the human retina, which has 3 types of cone cells: red, green, and blue.  We can model the activation/response/sensitivity of a cone cell as some unimodal distribution function (a distribution with only one peak).  The three kinds of cone cells are sensitive to Small ($$S(\lambda)$$), Medium ($$M(\lambda)$$) and Long ($$L(\lambda)$$) wavelengths of visible light which coincide with red, green and blue colored light. Think of these cone cells as very sensitive to red, green or blue light. Any scene reflects a arbitrary spectrum of light (or signal represented as $$f(\lambda)$$). One might wonder what the response of red sensitive cone cells will look like on this input light spectrum. One can represent the response of the S, M and L detectors/cone cells by a super simplified model given by:
 
 $$ S_{res}=\int S(\lambda)f(\lambda) d\lambda$$
 
@@ -95,7 +93,7 @@ $$ M_{res}=\int M(\lambda)f(\lambda) d\lambda$$
 
 $$ L_{res}=\int L(\lambda)f(\lambda) d\lambda$$
 
-Note that a completely different scene can reflect a different spectrum of light ($$f'(\lambda)$$). Because of the way the detectors work, $$ S_{res}, M_{res}, L_{res}$$ could have the **exact** same value. This means that one cannot distinguish the two scenes by color. This is because the eyes "see" a 3D projection of the $$\infty$$-dimensional hilbert space of the spectrum. This is mathematically represented as $$\mathbb{R}^\infty \rightarrow \mathbb{R}^3$$. Color blindess is the result of missing one of the receptors or the S, M, L receptors become too similar to each other. This in-turn reduces the dimentionality from three to two or one.  This is in a sense taking the PCA of the infinite dimensional spectrum in your eyes.
+Note that a completely different scene can reflect a different spectrum of light ($$f'(\lambda)$$). Because of the way the detectors work, $$ S_{res}, M_{res}, L_{res}$$ could have the **exact** same value. This means that one cannot distinguish the two scenes by color. This is because the eyes "see" a 3D projection of the $$\infty$$-dimensional Hilbert space of the spectrum. This is mathematically represented as $$\mathbb{R}^\infty \rightarrow \mathbb{R}^3$$. Color blindness is the result of missing one of the receptors or the S, M, L receptors become too similar to each other. This in-turn reduces the dimensionality from three to two or one.  This is in a sense taking the PCA of the infinite dimensional spectrum in your eyes.
 <div class="fig figcenter fighighlight">
   <img src="/cmsc426fall2019/assets/colorseg/LightSpectrum2.png" width="50%">
   <div class="figcaption">The response of S, M and L detectors to \(f(\lambda)\) and  \(f'(\lambda)\) might look exactly the same. This is because both \(f(\lambda)\) and  \(f'(\lambda)\) are \(\infty\)-dimensional functions and only 3-dimensions of it are measured by the RGB (S, M and L) cone cells.</div>
@@ -104,6 +102,7 @@ Note that a completely different scene can reflect a different spectrum of light
 
 <a name='colorspace'></a>
 ## RGB and other Color Spaces
+
 The colors RGB can be represented in a 3D vector space. Think of this as X, Y and Z co-ordinate of a vector space representing colors. In most generic cameras, 8-bits are used to represent each color channel (the values range from 0-255). This means that an RGB pixel has 24-bits of data represented as a triplet of **\[Red, Green, Blue\]**. A value of \[0,0,0\] represents pure black, \[255,255,255\] represents pure white, \[255,0,0\] represents pure red and so on. Gray is any color with equal values for all the three channels.
 We can visualize RGB space in three dimensions as a unit cube (for an 8-bit color space, we'd divide by 255 to make it unit length). But if colors are just a vector space, can't we transform them to make a different space? Indeed, we can; this gives rise to color spaces like Hue Saturation Value (HSV) and Luminance and chroma (YCbCr). If $$[R, G, B]$$ represents a sample color in the RGB color space, then the equivalent HSV color space value is given by,
 
@@ -113,7 +112,7 @@ $$ G' = \frac{G}{255} $$
 
 $$ B' = \frac{B}{255} $$
 
-$$ C_{max} = \max{\left(R', G', B'\right)}  $$
+$$ C_{max} = \max{\left(R', G', B'\right)} $$
 
 $$ C_{min} = \min{\left(R', G', B'\right)}  $$
 
@@ -139,7 +138,7 @@ $$
 \end{cases}
 $$
 
-Value is calulated as follows:
+Value is calculated as follows:
 
 $$
 V = C_{max}
@@ -174,32 +173,24 @@ Keen readers might observe that HSV is a non-linear transformation of the RGB co
 
 <a name='colorclassification'></a>
 ## Color Classification
-Back to homework 3: the Nao robot wants to classify each pixel as a set of discrete colors (i.e., green of the grass field, orange of the soccer ball, and yellow of the goal post). Particularly, we are interested in finding the orange pixels because this represents the ball. As mentioned before, in RGB color space each pixel is represented as a vector in $$ \mathbb{R}^3$$. Let us define the problem mathematically. Say each pixel is represented by $$x=[r,g,b]^T \in \mathbb{R}^3$$. There exist $$k$$ color classes. We want to model the probability of a pixel belonging to a color class $$C_k$$ given the pixel value $$x$$, denoted by $$p(C_k \vert x)$$.
 
+Back to homework 3: the Nao robot wants to classify each pixel as a set of discrete colors (i.e. green of the grass field, orange of the soccer ball, and yellow of the goal post). Particularly, we are interested in finding the orange pixels because this represents the ball. As mentioned before, in RGB color space each pixel is represented as a vector in $$\mathbb{R}^3$$. Let us define the problem mathematically. Say each pixel is represented by $$x=[r,g,b]^T \in \mathbb{R}^3$$. We want to model each color of class $\ell$ using a probability distribution $$p_{\ell}(x)$$, which represent the probability that a color vector $$x$$ belongs to the color $$\ell$$. In our case, we want to find a model for all the "orange" pixels, i.e. $$p_{\text{orange}}(x)$$.
 
 <a name='colorthresh'></a>
 ### Color Thresholding
-If we assume each pixel belongs to only one color class, i.e., color classes are mutually exclusive \[1\], the hard classification problem can be mathematically defined as follows:
 
-<!-- https://stackoverflow.com/questions/36174987/how-to-typeset-argmin-and-argmax-in-markdown -->
-$$
-C_k^*(x) = \underset{C_k}{\operatorname{argmax}} p(C_k\vert x)
-$$
-
-Here, $$C_k^*(x)$$ represents the most probable color class that pixel belongs to. For eg. if the color is closer to orange than red then the pixel will be called orange. This can be done using the [Color Thresholder app](https://www.mathworks.com/help/images/ref/colorthresholder-app.html) in MATLAB. In RGB space, thresholding can be thought of selecting pixels in a cube defined by some minimum and maximum value in each channel (RGB), i.e., you are selecting all the pixels in a cube whose faces are defined by the minimum and maximum value in each channel. This can be mathematically formulated as:
+A naive way to check if a color vector is "orange" is to simply define a minimum and maximum value for each color channel and check if the vector is between the threshold.
 
 $$
 x_{sel} = \{x \vert x^r \in [R_{min}, R_{max}], x^g \in [G_{min}, G_{max}], x^b \in [B_{min}, B_{max}]\}
 $$
 
-where $$x^r, x^g, x^b$$ represent the red, green and blue channel values of a particular pixel.
+where $$x^r, x^g, x^b$$ represent the red, green and blue channel values of a particular pixel. MATLAB has a interactive [Color Thresholder](https://www.mathworks.com/help/images/ref/colorthresholder-app.html) app dedicated to color thresholding, but you can achieve a similar result using OpenCV's [`cv2.inRange`](https://docs.opencv.org/master/da/d97/tutorial_threshold_inRange.html) function. In RGB space, thresholding can be thought of selecting pixels in a cube defined by some minimum and maximum value in each channel (RGB), i.e., you are selecting all the pixels in a cube whose faces are defined by the minimum and maximum value in each channel.
 
 <div class="fig figcenter fighighlight">
   <img src="/cmsc426fall2019/assets/colorseg/colorthresholderapp.png">
-  <div class="figcaption">Color Thresholder app in MATLAB with a sample input image from a nao's camera.</div>
+  <div class="figcaption">Color Thresholded app in MATLAB with a sample input image from a nao's camera.</div>
 </div>
-
-\[1\] This is like saying "if a pixel is classified as orange it cannot be classified as red" though in reality a red pixel could have some amount of orange and vice-versa.  This comes from that fact that the camera sensor percieves a 3-dimensional projection of the $$\infty$$-dimensional hilbert space projection of the light spectrum.
 
 <a name='gaussian'></a>
 ### Color Classification using a Single Gaussian
