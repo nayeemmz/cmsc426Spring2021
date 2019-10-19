@@ -272,7 +272,7 @@ $$
 where $$N$$ is the number of training samples. The above is not a simple function and generally has no closed form solution. To solve for the parameters $$\Theta = \{ \mu_1, \mu_2, \cdots, \mu_K, \Sigma_1, \Sigma_2, \cdots, \Sigma_K, \pi_1, \pi_2, \cdots, \pi_K\}$$ of the above problem, we have to use an iterative procedure.
 
 - Initialization:
-Randomly choose $$\pi_k, \mu_k, \Sigma_k \qquad \forall k \in [1, K]$$
+Randomly choose $$\pi_k, \mu_k, \Sigma_k$$ for any $$k \in [1, K]$$.
 - Alternate until convergence:
 	- Expectation Step or E-step: Evaluate the model/Assign points to clusters
   Cluster Weight $$ \gamma_{n,k} = \frac{\pi_k p_{\text{orange}}(x_n \vert \Theta_k)}{\sum_{k=1}^K \pi_k p_{\text{orange}}(x_n \vert \Theta_k)} $$, where $$n$$ is the data point index, and $$k$$ is the cluster index.
@@ -353,7 +353,7 @@ Now that we have robustly estimated the pixels which are "orange", we want to id
 
 First step, let us identify the pixels which belong to the orange ball. This is relatively easy, one can use simple [morphological operations](https://docs.opencv.org/master/d9/d61/tutorial_py_morphological_ops.html) available in OpenCV to do it.
 
-For the second step, one could just fit a simple parametric regression model (you have to choose the model yourself, just like homework 1) to estimate distance from different parameters based on the image. For example, area of the ball on the image decreases with distance (generally follows a inverse square curve). The [contours](https://docs.opencv.org/trunk/d3/d05/tutorial_py_table_of_contents_contours.html) in OpenCV might be useful here.
+For the second step, one could just fit a simple parametric regression model (you have to choose the model yourself, just like in homework 1) to estimate distance from different parameters based on the image. For example, area of the ball on the image decreases with distance (generally follows a inverse square curve). The [contours](https://docs.opencv.org/trunk/d3/d05/tutorial_py_table_of_contents_contours.html) in OpenCV might be useful here.
 
 Use the data provided and any feature you like, to obtain a model to estimate distance. For a more fancy method look at [this paper](http://www.cis.upenn.edu/~kostas/mypub.dir/thomas17ral.pdf).
 
