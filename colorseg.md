@@ -325,7 +325,7 @@ here $$\sigma$$ is a parameter to be estimated. You might be wondering what shap
 
 <div class="fig figcenter fighighlight">
   <img src="/cmsc426fall2019/assets/colorseg/rgbgmm.png">
-  <div class="figcaption">Left: Data points of the orange ball and GMM fit using spherical \(\Sigma\). Right: GMM fit using ellipsoidal $$\Sigma$$. Notice that the ellipsoidal variant has less non-orange pixels which will be classified as orange, i.e., lesser false positives and false negatives and is more accurate.</div>
+  <div class="figcaption">Left: Data points of the orange ball and GMM fit using spherical \(\Sigma\). Right: GMM fit using ellipsoidal \(\Sigma\). Notice that the ellipsoidal variant has less non-orange pixels which will be classified as orange, i.e., lesser false positives and false negatives and is more accurate.</div>
 </div>
 
 One might think, what if I design a custom transformation to create a new color space from RGB where the data points are enclosed in a simple shape like an ellipsoid? That would work wonderfully well. I designed a custom color space to do exactly that (which is my secret recipe). You will have to figure out your own secret recipe to do it. The data points and the GMM fit for this color space is shown below:
