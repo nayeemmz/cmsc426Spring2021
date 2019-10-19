@@ -202,7 +202,6 @@ Say we have a number of training samples of the color orange. You might ask why 
 $$
 p_\text{orange}(x) = \frac{1}{\sqrt{(2 \pi)^3 \vert \Sigma \vert}}\exp{(\frac{-1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu))} = \mathcal{N(x \vert \mu, \Sigma)},
 $$
-which is an ellipsoid in $$\mathbb{R}^3$$.
 
 Here, $$\vert \Sigma \vert$$ denotes the determinant of the matrix $$\Sigma$$. The dimensions of the above terms are as follows: $$\Sigma \in \mathbb{R}^{3 \times 3}, x,\mu \in \mathbb{3 \times 1}, p(x \vert \text{orange}) \in \mathbb{R}^1$$.
 
