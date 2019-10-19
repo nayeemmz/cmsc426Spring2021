@@ -351,9 +351,9 @@ One might think, what if I design a custom transformation to create a new color 
 
 Now that we have robustly estimated the pixels which are "orange", we want to identify the pixels which belong to the orange ball and eventually find the distance to the ball.
 
-First step, let us identify the pixels which belong to the orange ball. This is relatively easy, one can use simple [morphological operations](https://docs.opencv.org/master/d9/d61/tutorial_py_morphological_ops.html) available in OpenCV to do it.
+First step, let us identify the pixels which belong to the orange ball. This is relatively easy, you can first clean up the image using some [morphological operations](https://docs.opencv.org/master/d9/d61/tutorial_py_morphological_ops.html) in OpenCV. Then find a [contour](https://docs.opencv.org/trunk/d3/d05/tutorial_py_table_of_contents_contours.html) of the orange ball.
 
-For the second step, one could just fit a simple parametric regression model (you have to choose the model yourself, just like in homework 1) to estimate distance from different parameters based on the image. For example, area of the ball on the image decreases with distance (generally follows a inverse square curve). The [contours](https://docs.opencv.org/trunk/d3/d05/tutorial_py_table_of_contents_contours.html) in OpenCV might be useful here.
+For the second step, you could fit a simple parametric regression model to estimate distance from different parameters based on the image (of course, you have to choose the model yourself, just like in homework 1). For example, area of the ball on the image decreases with distance (generally follows a inverse square curve). OpenCV has some functions that work with [contours](https://docs.opencv.org/trunk/d3/d05/tutorial_py_table_of_contents_contours.html). They might be useful here.
 
 Use the data provided and any feature you like, to obtain a model to estimate distance. For a more fancy method look at [this paper](http://www.cis.upenn.edu/~kostas/mypub.dir/thomas17ral.pdf).
 
