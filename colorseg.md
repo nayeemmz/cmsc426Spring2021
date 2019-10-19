@@ -1,3 +1,4 @@
+---
 layout: page
 mathjax: true
 permalink: /colorseg/
