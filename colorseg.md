@@ -189,7 +189,7 @@ where $$x^r, x^g, x^b$$ represent the red, green and blue channel values of a pa
 
 <div class="fig figcenter fighighlight">
   <img src="/cmsc426fall2019/assets/colorseg/colorthresholderapp.png">
-  <div class="figcaption">Color Thresholded app in MATLAB with a sample input image from a nao's camera.</div>
+  <div class="figcaption">Color Thresholder app in MATLAB with a sample input image from a nao's camera.</div>
 </div>
 
 <a name='gaussian'></a>
@@ -203,7 +203,7 @@ $$
 p_\text{orange}(x) = \frac{1}{\sqrt{(2 \pi)^3 \vert \Sigma \vert}}\exp{(\frac{-1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu))} = \mathcal{N(x \vert \mu, \Sigma)},
 $$
 
-Here, $$\vert \Sigma \vert$$ denotes the determinant of the matrix $$\Sigma$$. The dimensions of the above terms are as follows: $$\Sigma \in \mathbb{R}^{3 \times 3}, x,\mu \in \mathbb{3 \times 1}, p(x \vert \text{orange}) \in \mathbb{R}^1$$.
+Here, $$\vert \Sigma \vert$$ denotes the determinant of the matrix $$\Sigma$$. The dimensions of the above terms are as follows: $$\Sigma \in \mathbb{R}^{3 \times 3}, x,\mu \in \mathbb{3 \times 1}, p_{\text{orange}}(x) \in \mathbb{R}^1$$.
 
 You might be asking why we used a Gaussian distribution to model the data. The answer is simple, when you average a lot of (theoretically $$\infty$$) independently identically distributed random samples, their distribution tends to become a Gaussian. This is formally called the [**Central Limit Theorem**](https://www.khanacademy.org/math/ap-statistics/sampling-distribution-ap/sampling-distribution-mean/v/central-limit-theorem).
 
@@ -235,13 +235,13 @@ Observe that the above matrix is a **square** matrix and is a **symmetric** matr
 
 An important property to know about $$\Sigma$$ is that it is a **Positive Semi-Definite (PSD)** Matrix and is denoted mathematically as $$\Sigma \succeq 0$$. This means that the [eigenvalues](http://mathworld.wolfram.com/Eigenvalue.html) are non-negative (either positive or zero). This physically means that you cannot have a negative semi-axes for the ellipse/ellipsoid which makes sense. The [eigenvectors ](http://mathworld.wolfram.com/Eigenvector.html) of $$\Sigma$$ tell you the orientation of the ellipsoid in 3D. We have provided you with a [function](/cmsc426fall2019/assets/hwk3/draw_ellipsoid.ipynb) to plot the confidence ellipsoid.
 
-Now that we have a probability density function for the distribution of "orange" pixels, we can check the if a pixel $$x$$ is "orange" by checking if the probability density is larger than some threshold $$\tau$$
+Now that we have a probability density function for the distribution of "orange" pixels, we can check the if a pixel $$x$$ is "orange" by checking if the value of the probability density function (pdf) at $$x$$ is larger than some threshold $$\tau$$
 
 $$
 p_{\text{orange}}(x) \ge \tau
 $$
 
-Here, $$\tau$$ is a user chosen threshold which signifies the confidence score. If the  This method definitely works much better than the [simpler color thresholding method](#colorthresh). All your data is being thresholded by an ellipsoid (3D ellipse) instead of a cube as before. You might be wondering why a Gaussian looks like an ellipsoid? The covariance matrix represents the semi-axes of the ellipsoid. In fact the inverse of square root of diagonal values of $$\Sigma$$ gives the semi-axes of the ellipsoid. As you would expect if $$x \in \mathbb{R}^{3 \times 1}$$, the Gaussian would look like an ellipse. Learn more about these cool Gaussians [here](https://en.wikipedia.org/wiki/Multivariate_normal_distribution).
+Here, $$\tau$$ is a user chosen threshold which signifies the confidence score. If you are not comfortable thinking about the value of a pdf at a point $$a$$, consider the probability that a value $$x$$ is between an $$\varepsilon$$-neighbourhood of $$a$$, i.e. $$P(|x-a| < \varepsilon)$$, for very small $$\varepsilon$$. This method definitely works much better than the [simpler color thresholding method](#colorthresh). All your data is being thresholded by an ellipsoid (3D ellipse) instead of a cube as before. You might be wondering why a Gaussian looks like an ellipsoid? The covariance matrix represents the semi-axes of the ellipsoid. In fact the inverse of square root of diagonal values of $$\Sigma$$ gives the semi-axes of the ellipsoid. As you would expect if $$x \in \mathbb{R}^{3 \times 1}$$, the Gaussian would look like an ellipse. Learn more about these cool Gaussians [here](https://en.wikipedia.org/wiki/Multivariate_normal_distribution).
 
 Modelling our data as a Gaussian is beneficial because a little light variation generally makes the colors spread out in an ellipsoid form, i.e., the actual color is in the middle and color deviates from the center in all directions resembling an ellipse. This is one of the major reasons why a simple Gaussian model works so well for color segmentation.
 
@@ -252,15 +252,18 @@ However, if you are trying to find a color in different lighting conditions a si
 
 <div class="fig figcenter fighighlight">
   <img src="/cmsc426fall2019/assets/colorseg/ballindiffcolorspaces.png">
-  <div class="figcaption">Datapoints for the ball plotted in RGB and YCbCr colorspaces. Observe how the enclosing shape is of a weird shape. It would be ideal to create a custom color-space which converts this weird shape into some simple shape which can be enclosed like a cube or a cuboid or a sphere or an ellipsoid. Designing a space like that is generally not trivial hence we emply a method of fitting this weird shape as a sum of simple shapes like an ellipsoid.</div>
+  <div class="figcaption">Data points for the ball plotted in RGB and YCbCr colorspaces. Observe how the enclosing shape is of a weird shape. It would be ideal to create a custom color-space which converts this weird shape into some simple shape which can be enclosed like a cube or a cuboid or a sphere or an ellipsoid. Designing a space like that is generally not trivial hence we employ a method of fitting this weird shape as a sum of simple shapes like an ellipsoid.</div>
 </div>
 
-In this case, one has to come up with a weird looking fancy function to bound the color which is generally mathematically very difficult and computationally very expensive. An easy trick mathematicians like to do in such cases (which is generally a very good approximation with less compuational cost) is to represent the fancy function as a sum of known simple functions. We love gaussians so let us use a sum of gaussians to model our fancy function. Let us write our formulation down mathematically. We will model the distribution of our data using a sum of $$K$$ scaled Gaussians:
+In this case, one has to come up with a weird looking fancy function to bound the color which is generally mathematically very difficult and computationally very expensive. An easy trick mathematicians like to do in such cases (which is generally a very good approximation with less computational cost) is to represent the fancy function as a sum of known simple functions. We love Gaussians so let us use a sum of Gaussians to model our fancy function. Let us write our formulation down mathematically. We will model the distribution of our "orange" pixels using a sum of $$K$$ scaled Gaussians
+
 $$
-p(x) = \sum_{k=1}^K \pi_k \mathcal{N}(x, \mu_k, \Sigma_k)
+p_{\text{orange}}(x) = \sum_{k=1}^K \pi_k \mathcal{N}(x, \mu_k, \Sigma_k).
 $$
 
-Here, $$\pi_k$$, $$\mu_k$$ and $$\Sigma_k$$ respectively define the scaling factor, mean and co-variance of the $$k$$<sup>th</sup> Gaussian. The optimization problem in hand is to maximize the probability that the above model is correct, i.e., to find the parameters $$\pi_k, \mu_k, \Sigma_k$$ such that one would maximize the correctness of $$p(C_k \vert x)$$. Just a simple probability function doesn't have very pretty mathematical properties. So a general trick mathematicians/machine learning people follow is to take the logarithm of the probability function and maximize that. This works well because of the [monotonicity](http://mathworld.wolfram.com/MonotonicFunction.html) of the logarithm function. This setup is formally called **Maximum Likelihood Estimation (MLE)** and can be mathematically written as:
+Note that unlike the previous homework, where we try to find the **internal** structure of a distribution using GMM, here we are simply **modeling** a subpopulation using a linear combination of Gaussian distributions.
+
+Here, $$\pi_k$$, $$\mu_k$$ and $$\Sigma_k$$ respectively define the scaling factor, mean and co-variance of the $$k$$<sup>th</sup> Gaussian. The optimization problem in hand is to maximize the probability that the above model is correct, i.e., to find the parameters $$\Theta_k = \{\pi_k, \mu_k, \Sigma_k\}$$ such that one would maximize the correctness of $$p(\Theta_k \vert x)$$. Just a simple probability function doesn't have very pretty mathematical properties. So a general trick mathematicians/machine learning people follow is to take the logarithm of the probability function and maximize that. This works well because of the [monotonicity](http://mathworld.wolfram.com/MonotonicFunction.html) of the logarithm function. This setup is formally called **Maximum Likelihood Estimation** (MLE) and can be mathematically written as:
 
 $$
 \underset{\{ \mu_1, \mu_2, \cdots, \mu_k, \Sigma_1, \Sigma_2, \cdots, \Sigma_k, \pi_1, \pi_2, \cdots, \pi_k\}}{\operatorname{argmax}} \sum_{n=1}^N \log p(x_n)
