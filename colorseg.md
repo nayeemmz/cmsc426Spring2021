@@ -1,4 +1,3 @@
----
 layout: page
 mathjax: true
 permalink: /colorseg/
@@ -174,7 +173,7 @@ Keen readers might observe that HSV is a non-linear transformation of the RGB co
 <a name='colorclassification'></a>
 ## Color Classification
 
-Back to homework 3: the Nao robot wants to classify each pixel as a set of discrete colors (i.e. green of the grass field, orange of the soccer ball, and yellow of the goal post). Particularly, we are interested in finding the orange pixels because this represents the ball. As mentioned before, in RGB color space each pixel is represented as a vector in $$\mathbb{R}^3$$. Let us define the problem mathematically. Say each pixel is represented by $$x=[r,g,b]^T \in \mathbb{R}^3$$. We want to model each color of class $\ell$ using a probability distribution $$p_{\ell}(x)$$, which represent the probability that a color vector $$x$$ belongs to the color $$\ell$$. In our case, we want to find a model for all the "orange" pixels, i.e. $$p_{\text{orange}}(x)$$.
+Back to homework 3: the Nao robot wants to classify each pixel as a set of discrete colors (i.e. green of the grass field, orange of the soccer ball, and yellow of the goal post). Particularly, we are interested in finding the orange pixels because this represents the ball. As mentioned before, in RGB color space each pixel is represented as a vector in $$\mathbb{R}^3$$. Let us define the problem mathematically. Say each pixel is represented by $$x=[r,g,b]^T \in \mathbb{R}^3$$. We want to model each color of class $\ell$ using a probability distribution $$p_{\ell}(x)$$, which represent the probability that a color vector $$x$$ belongs to the color $$\ell$$. In our case, we want to find a model for all the "orange" pixels, i.e. $$p_{\text{orange}}(x) = p(x \,|\, \text{orange})$$.
 
 <a name='colorthresh'></a>
 ### Color Thresholding
@@ -194,36 +193,30 @@ where $$x^r, x^g, x^b$$ represent the red, green and blue channel values of a pa
 
 <a name='gaussian'></a>
 ### Color Classification using a Single Gaussian
-This is good for most basic cases but is bad for robotics because we said that everything (sensors and actuators) is noisy and we want to model the world in a probabilistic manner. This means that instead of saying a pixel is orange/red we want to say that the pixel is orange with 70% probability and red with 30% probability. This is denoted as $$p(C_k\vert x)$$ as mentioned before. Because we are in 2018 and everything is machine learning driven, let us treat the problem in hand as a machine learning problem. Let us say each pixel is being classified by a binary classifier per class (i.e., we have one classifier per color we want to classify). If we want to classify a pixel as red, orange or green we have a total of three classifiers one for each color. Let us formulate the problem mathematically. In each classifier, we want to find $$p(C_k \vert x)$$. Here $$C_k$$ denotes the color label, in our case they will be green or orange or yellow. So as you expect the green classifier will give you the following $$p(Green \vert x)$$, i.e., probability that the pixel is green. Note that $$1 - p(Green \vert x)$$ gives the probability that the pixel is not green which includes both orange and yellow pixels.
 
-Estimating $$p(C_k \vert x)$$ directly is too difficult. Luckily, we have Bayes rule to rescue us! Bayes rule applied onto $$p(C_k \vert x)$$ gives us the following:
+This is good for most basic cases but is bad for robotics because we said that everything (sensors and actuators) is noisy and we want to model the world in a probabilistic manner. For the purpose of easy discussion, let us say we want to classify a pixel as orange. To do this we need to make the computer know how "orange" color looks like.
 
-$$
-p(C_k \vert x) = \frac{p(x \vert C_k)p(C_k)}{\sum_{k^\prime=1}^K p(x\vert C_{k^\prime})p(C_{k^\prime})}
-$$
-
-$$p(C_k \vert x)$$ is the conditional probability of a color label given the color observation and is called the **Posterior**. $$p(x \vert C_k)$$ is the conditional probability of color observation given the color label and is generally called the **Likelihood**. $$p(C_k)$$ is the probability of that color class occurring and is called the **Prior**. The prior is used to increase/decrease the probability of certain colors. For eg., one would generally see more green in the robocup because the field is green in color and the robot mostly looks at the ground. If nothing about the prior is known, a common choice is to use a uniform distribution, i.e., all the colors are equally likely. Let us consider the problem of color classification as a supervised learning problem now. Supervised means that we have some number of "training" examples from which we can understand the color we are looking for.
-
-For the purpose of easy discussion, let us say we want to classify a pixel as orange. To do this we need to make the computer know how orange color looks like. Say we have a number of training samples of the color orange. You might ask why do we need so many samples? The answer is lighting and sensor noise changes the way orange looks in the image every so slightly and the computer has to learn all these different shades of orange. The next question one might ask, how many samples do we need? This is a hard question to answer. It depends on the variety more than quantity of samples. It is better to have samples with more variation you want to cater to than a lot of very similar looking samples of data. Let us mathematically model the right hand side of $$p(Orange \vert x)$$. As we discussed earlier, Prior can be modelled as a uniform distribution, i.e., $$p(Orange)=0.5$$ and $$p(\sim Orange)=0.5$$ (probability of not orange). The Likelihood is generally modelled as a normal/Gaussian distribution given by the following equation:
+Say we have a number of training samples of the color orange. You might ask why do we need so many samples? The answer is lighting and sensor noise changes the way orange looks in the image every so slightly and the computer has to learn all these different shades of orange. The next question one might ask, how many samples do we need? This is a hard question to answer. It depends on the variety more than quantity of samples. It is better to have samples with more variation you want to cater to than a lot of very similar looking samples of data. To capture the distribution of our "orange" pixels, the simplest approach is to model our data with a single Gaussian distribution
 
 $$
-p(x \vert Orange) = \frac{1}{\sqrt{(2 \pi)^3 \vert \Sigma \vert}}\exp{(\frac{-1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu))} = \mathcal{N(x \vert \mu, \Sigma)}
+p_\text{orange}(x) = \frac{1}{\sqrt{(2 \pi)^3 \vert \Sigma \vert}}\exp{(\frac{-1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu))} = \mathcal{N(x \vert \mu, \Sigma)},
 $$
+which is an ellipsoid in $$\mathbb{R}^3$$.
 
-Here, $$\vert \Sigma \vert$$ denotes the determinant of the matrix $$\Sigma$$. The dimensions of the above terms are as follows: $$\Sigma \in \mathbb{R}^{3 \times 3}, x,\mu \in \mathbb{3 \times 1}, p(x \vert Orange) \in \mathbb{R}^1$$.
+Here, $$\vert \Sigma \vert$$ denotes the determinant of the matrix $$\Sigma$$. The dimensions of the above terms are as follows: $$\Sigma \in \mathbb{R}^{3 \times 3}, x,\mu \in \mathbb{3 \times 1}, p(x \vert \text{orange}) \in \mathbb{R}^1$$.
 
-You might be asking why we used a Gaussian distribution to model the likelihood. The answer is simple, when you average a lot of (theoretically $$\infty$$) independently identically distributed random samples, their distribution tends to become a gaussian. This is formally called the [**Central Limit Theorem**](https://www.khanacademy.org/math/ap-statistics/sampling-distribution-ap/sampling-distribution-mean/v/central-limit-theorem).
+You might be asking why we used a Gaussian distribution to model the data. The answer is simple, when you average a lot of (theoretically $$\infty$$) independently identically distributed random samples, their distribution tends to become a Gaussian. This is formally called the [**Central Limit Theorem**](https://www.khanacademy.org/math/ap-statistics/sampling-distribution-ap/sampling-distribution-mean/v/central-limit-theorem).
 
-All the math explanation is cool but how do we implement this? It's simpler than you think. All you have to do is find the mean ($$\mu$$) and covariance ($$\Sigma$$) of the likelihood gaussian distribution. Let us assume that we have $$N$$ samples for the class 'Orange' where each sample is of size $$\mathbb{R}^{3 \times 1}$$ representing the red, green and blue channel information at a particular pixel. The empirical mean $$\mu$$ is computed as follows:
+All the math explanation is cool but how do we implement this? It's simpler than you think. All you have to do is find the mean ($$\mu$$) and covariance ($$\Sigma$$) of the Gaussian distribution. Let us assume that we have $$N$$ samples of "orange" pixels where each sample is of dimension $$\mathbb{R}^{3 \times 1}$$ representing the red, green and blue channel information at a particular pixel. The empirical mean $$\mu$$ is computed as follows:
 
 $$
 \mu = \frac{1}{N}\sum_{n=1}^N x_n
 $$
 
-here $$n$$ denotes the sample number. The empirical co-variance $$\Sigma$$ is computed as follows:
+Here $$n$$ denotes the sample number. The empirical co-variance $$\Sigma$$ is computed as follows:
 
 $$
-\Sigma = \frac{1}{N}\sum_{i=1}^N (x_i-\mu)(x_i-\mu)^T
+\Sigma = \frac{1}{N}\sum_{n=1}^N (x_n-\mu)(x_n-\mu)^T
 $$
 
 Clearly, $$\mu \in \mathbb{3 \times 1}$$ and $$\Sigma \in \mathbb{R}^{3 \times 3}$$. $$\Sigma$$ is an awesome matrix and has some cool properties. Let us discuss a few of them.
@@ -240,33 +233,22 @@ $$
 
 Observe that the above matrix is a **square** matrix and is a **symmetric** matrix. Here, $$\sigma_R, \sigma_G, \sigma_B$$ denote the variance in each of the individual channels. $$\sigma_R^2, \sigma_G^2, \sigma_B^2$$ are the variance in each of the R, G and B channels. $$\sigma_R \sigma_G, \sigma_G \sigma_B, \sigma_R \sigma_B$$ are the correlation terms and show the co-occurence of one channel over other. Mathematically, it signifies the vector projection of one channel over the other.
 
-An important property to know about $$\Sigma$$ is that it is a **Positive Semi-Definite (PSD)** Matrix and is denoted mathematically as $$\Sigma \succeq 0$$. This means that the [eigenvalues](http://mathworld.wolfram.com/Eigenvalue.html) are non-negative (either positive or zero). This physically means that you cannot have a negative semi-axes for the ellipse/elliposoid which makes sense. The [eigenvectors ](http://mathworld.wolfram.com/Eigenvector.html) of $$\Sigma$$ tell you the orientation of the elliposoid in 3D. A function [like this](https://www.mathworks.com/matlabcentral/fileexchange/4705-error_ellipse?focused=3890020&tab=function) can help you plot the covariance ellipsoids.
+An important property to know about $$\Sigma$$ is that it is a **Positive Semi-Definite (PSD)** Matrix and is denoted mathematically as $$\Sigma \succeq 0$$. This means that the [eigenvalues](http://mathworld.wolfram.com/Eigenvalue.html) are non-negative (either positive or zero). This physically means that you cannot have a negative semi-axes for the ellipse/ellipsoid which makes sense. The [eigenvectors ](http://mathworld.wolfram.com/Eigenvector.html) of $$\Sigma$$ tell you the orientation of the ellipsoid in 3D. We have provided you with a [function](/cmsc426fall2019/assets/hwk3/draw_ellipsoid.ipynb) to plot the confidence ellipsoid.
 
-Now that we have both the prior and likelihood defined we can find the posterior easily:
-
-$$
-p(C_k \vert x) = \frac{p(x \vert C_k)p(C_k)}{\sum_{k^\prime=1}^K p(x\vert C_{k^\prime})p(C_{k^\prime})}
-$$
-
-Because we just want to find the colors by some thresholding later, we can drop the denominator in the above expression if we don't care about the absolute scale of the probability summing to 1. For most thresholding purposes, we can do the following approximation:
+Now that we have a probability density function for the distribution of "orange" pixels, we can check the if a pixel $$x$$ is "orange" by checking if the probability density is larger than some threshold $$\tau$$
 
 $$
-p(C_k \vert x) \propto p(x \vert C_k)p(C_k)
+p_{\text{orange}}(x) \ge \tau
 $$
 
-So using the following expression one can identify pixels which are 'Orange' (or confidently Orange).
+Here, $$\tau$$ is a user chosen threshold which signifies the confidence score. If the  This method definitely works much better than the [simpler color thresholding method](#colorthresh). All your data is being thresholded by an ellipsoid (3D ellipse) instead of a cube as before. You might be wondering why a Gaussian looks like an ellipsoid? The covariance matrix represents the semi-axes of the ellipsoid. In fact the inverse of square root of diagonal values of $$\Sigma$$ gives the semi-axes of the ellipsoid. As you would expect if $$x \in \mathbb{R}^{3 \times 1}$$, the Gaussian would look like an ellipse. Learn more about these cool Gaussians [here](https://en.wikipedia.org/wiki/Multivariate_normal_distribution).
 
-$$
-p(C_k \vert x) \ge \tau
-$$
-
-Here, $$\tau$$ is a user chosen threshold which signifies the confidence score. This method definitely works much better than the [simpler color thresholding method](#colorthresh). All your data is being thresholded by an ellipsoid (3D ellipse) instead of a cube as before. You might be wondering why a gaussian looks like an ellipsoid? The covariance matrix represents the semi-axes of the ellipsoid. In fact the inverse of square root of diagonal values of $$\Sigma$$ gives the semi-axes of the ellipsoid. As you would expect if $$x \in \mathbb{R}^{3 \times 1}$$, the gaussian would look like an ellipse. Learn more about these cool gaussians [here](https://en.wikipedia.org/wiki/Multivariate_normal_distribution).
-
-Modelling the likelihood as a gaussian is beneficial because a little light variation generally makes the colors spread out in an ellipsoid form, i.e., the actual color is in the middle and color deviates from the center in all directions resembling an ellipse. This is one of the major reasons why a simple gaussian model works so well for color segmentation.
+Modelling our data as a Gaussian is beneficial because a little light variation generally makes the colors spread out in an ellipsoid form, i.e., the actual color is in the middle and color deviates from the center in all directions resembling an ellipse. This is one of the major reasons why a simple Gaussian model works so well for color segmentation.
 
 <a name='gmm'></a>
 ### Color Classification using a Gaussian Mixture Model (GMM)
-However, if you are trying to find a color in different lighting conditions a simple gaussian model will not suffice because the colors may not be bounded well by an ellipsoid.
+
+However, if you are trying to find a color in different lighting conditions a simple Gaussian model will not suffice because the colors may not be bounded well by an ellipsoid.
 
 <div class="fig figcenter fighighlight">
   <img src="/cmsc426fall2019/assets/colorseg/ballindiffcolorspaces.png">
