@@ -263,20 +263,19 @@ $$
 
 Note that unlike the previous homework, where we try to find the **internal** structure of a distribution using GMM, here we are simply **modeling** a subpopulation using a linear combination of Gaussian distributions.
 
-Here, $$\pi_k$$, $$\mu_k$$ and $$\Sigma_k$$ respectively define the scaling factor, mean and co-variance of the $$k$$<sup>th</sup> Gaussian. The optimization problem in hand is to maximize the probability that the above model is correct, i.e., to find the parameters $$\Theta_k = \{\pi_k, \mu_k, \Sigma_k\}$$ such that one would maximize the correctness of $$p(\Theta_k \vert x)$$. Just a simple probability function doesn't have very pretty mathematical properties. So a general trick mathematicians/machine learning people follow is to take the logarithm of the probability function and maximize that. This works well because of the [monotonicity](http://mathworld.wolfram.com/MonotonicFunction.html) of the logarithm function. This setup is formally called **Maximum Likelihood Estimation** (MLE) and can be mathematically written as:
+Here, $$\pi_k$$, $$\mu_k$$ and $$\Sigma_k$$ respectively define the scaling factor, mean and co-variance of the $$k$$<sup>th</sup> Gaussian. The optimization problem in hand is to maximize the probability that the above model is correct, i.e., to find the parameters $$\Theta_k = \{\pi_k, \mu_k, \Sigma_k\}$$ such that one would maximize the correctness of $$p_{\text{orange}}(\Theta_k \vert x)$$. Just a simple probability function doesn't have very pretty mathematical properties. So a general trick mathematicians/machine learning people follow is to take the logarithm of the probability function and maximize that. This works well because of the [monotonicity](http://mathworld.wolfram.com/MonotonicFunction.html) of the logarithm function. This setup is formally called **Maximum Likelihood Estimation** (MLE) and can be mathematically written as:
 
 $$
-\underset{\{ \mu_1, \mu_2, \cdots, \mu_k, \Sigma_1, \Sigma_2, \cdots, \Sigma_k, \pi_1, \pi_2, \cdots, \pi_k\}}{\operatorname{argmax}} \sum_{n=1}^N \log p(x_n)
+\underset{\{ \mu_1, \mu_2, \cdots, \mu_k, \Sigma_1, \Sigma_2, \cdots, \Sigma_k, \pi_1, \pi_2, \cdots, \pi_k\}}{\operatorname{argmax}} \sum_{n=1}^N \log p_{\text{orange}}(x_n)
 $$
 
-where $$N$$ is the number of training samples. The above is not a simple function and generally has no closed form solution. To solve for the parameters $$\Theta = \{ \mu_1, \mu_2, \cdots, \mu_k, \Sigma_1, \Sigma_2, \cdots, \Sigma_k, \pi_1, \pi_2, \cdots, \pi_k\}$$ of the above problem, we have to use an iterative procedure.
+where $$N$$ is the number of training samples. The above is not a simple function and generally has no closed form solution. To solve for the parameters $$\Theta = \{ \mu_1, \mu_2, \cdots, \mu_K, \Sigma_1, \Sigma_2, \cdots, \Sigma_K, \pi_1, \pi_2, \cdots, \pi_K\}$$ of the above problem, we have to use an iterative procedure.
 
 - Initialization:
 Randomly choose $$\pi_k, \mu_k, \Sigma_k \qquad \forall k \in [1, K]$$
 - Alternate until convergence:
 	- Expectation Step or E-step: Evaluate the model/Assign points to clusters
-  Cluster Weight $$ \gamma_{n,k} = \frac{\pi_k p(x_n \vert C_k)}{\sum_{k=1}^K \pi_k p(x_n \vert C_k)} $$
-	\\(n\\) is the data point index, \\(k\\) is the cluster index.
+  Cluster Weight $$ \gamma_{n,k} = \frac{\pi_k p_{\text{orange}}(x_n \vert \Theta_k)}{\sum_{k=1}^K \pi_k p_{\text{orange}}(x_n \vert \Theta_k)} $$, where $$n$$ is the data point index, and $$k$$ is the cluster index.
 	- Maximization Step or M-step: Evaluate best parameters $$\Theta$$ to best fit the points
 
 	$$
@@ -292,25 +291,25 @@ Randomly choose $$\pi_k, \mu_k, \Sigma_k \qquad \forall k \in [1, K]$$
   \pi_k = \frac{1}{N}\sum_{n=1}^N \gamma_{n,k}
 	$$
 
-Convergence is defined as $$\sum_{k=1}^K\| \mu_k^{t+1} -  \mu_k^{t}\| \le \tau$$ where $$k$$ denotes the cluster number, $$t$$ denotes the iteration number and $$\tau$$ is some user defined threshold. To understand more about the mathematical derivation which is fairly involved go to [this link](https://alliance.seas.upenn.edu/~cis520/dynamic/2017/wiki/index.php?n=Lectures.EM).
+Convergence is defined as $$\sum_{k=1}^K\| \mu_k^{(t+1)} -  \mu_k^{(t)}\| \le \tau$$ where $$k$$ denotes the cluster number, $$t$$ denotes the iteration number and $$\tau$$ is some user defined threshold. To understand more about the mathematical derivation which is fairly involved go to [this link](https://alliance.seas.upenn.edu/~cis520/dynamic/2017/wiki/index.php?n=Lectures.EM).
 
-Now that we have estimated/learnt all the parameters in our model, i.e., $$\Theta = \{ \mu_1, \mu_2, \cdots, \mu_K, \Sigma_1, \Sigma_2, \cdots, \Sigma_K, \pi_1, \pi_2, \cdots, \pi_K\}$$ we can estimate the posterior probability using the following equation:
-
-$$
-p(C_k \vert x) = \sum_{k=1}^K \pi_k \mathcal{N}(x, \mu_k, \Sigma_k)
-$$
-
-Finally, one can use the following expression to identify pixels which are 'Orange' (or confidently Orange).
+Now that we have estimated/learnt all the parameters $$\Theta$$ in our model, we can calculate the probability density function using
 
 $$
-p(C_k \vert x) \ge \tau
+p_{\text{orange}}(x) = \sum_{k=1}^K \pi_k \mathcal{N}(x, \mu_k, \Sigma_k)
 $$
 
-here $$\tau$$ is some user defined threshold.
+Finally, we can identify if a pixel is "orange" by checking if
+
+$$
+p_{\text{orange}}(x) \ge \tau
+$$
+
+Here $$\tau$$ is some user defined threshold.
 
 <a name='gmmcases'></a>
 ### Different cases for $$\Sigma$$ in GMM
-We said that we were modelling our fancy functions as a sum of simple functions like a gaussian. One might wonder why cant we make further asumptions about the gaussian. Yes we can! The gaussian we described before uses an ellipsoid, i.e., all the diagonal elements of $$\Sigma$$ are different. One can say that all our diagonal elements are the same and non-diagonal elements are zero, i.e., $$\Sigma$$ has the following form:
+We said that we were modelling our fancy functions as a sum of simple functions like a Gaussian. One might wonder why cant we make further assumptions about the Gaussian. Yes we can! The Gaussian we described before uses an ellipsoid, i.e., all the diagonal elements of $$\Sigma$$ are different. One can say that all our diagonal elements are the same and non-diagonal elements are zero, i.e., $$\Sigma$$ has the following form
 
 $$
 \Sigma = \sigma^2\begin{bmatrix}
@@ -321,19 +320,19 @@ $$
 $$
 
 
-here $$\sigma$$ is a parameter to be estimated. You might be wondering what shape a $$\Sigma$$ like the one described above represents. It's simple, a sphere! This gives lesser flexibility in fitting the model as the shape is simpler but has lesser number of parameters. A comparison of GMM fit on the data using spherical $$\Sigma$$ and elliposoidal $$\Sigma$$ is shown below:
+here $$\sigma$$ is a parameter to be estimated. You might be wondering what shape a $$\Sigma$$ like the one described above represents. It's simple, a sphere! This gives lesser flexibility in fitting the model as the shape is simpler but has lesser number of parameters. A comparison of GMM fit on the data using spherical $$\Sigma$$ and ellipsoidal $$\Sigma$$ is shown below:
 
 
 <div class="fig figcenter fighighlight">
   <img src="/cmsc426fall2019/assets/colorseg/rgbgmm.png">
-  <div class="figcaption">Left: Datapoints of the orange ball and GMM fit using spherical \(\Sigma\). Right: GMM fit using ellipsoidal \(\Sigma\). Notice that the ellipsoidal variant has less non-orange pixels which will be classified as orange, i.e., lesser false positives and false negatives and is more accurate.</div>
+  <div class="figcaption">Left: Data points of the orange ball and GMM fit using spherical \(\Sigma\). Right: GMM fit using ellipsoidal $$\Sigma$$. Notice that the ellipsoidal variant has less non-orange pixels which will be classified as orange, i.e., lesser false positives and false negatives and is more accurate.</div>
 </div>
 
-One might think, what if I design a custom transformation to create a new colorspace from RGB where the data points are enclosed in a simple shape like an ellipsoid? That would work wonderfully well. I designed a custom colorspace to do exactly that (which is my secret recipe). You will have to figure out your own secret recipe to do it. The datapoints and the GMM fit for this colorspace is shown below:
+One might think, what if I design a custom transformation to create a new color space from RGB where the data points are enclosed in a simple shape like an ellipsoid? That would work wonderfully well. I designed a custom color space to do exactly that (which is my secret recipe). You will have to figure out your own secret recipe to do it. The data points and the GMM fit for this color space is shown below:
 
 <div class="fig figcenter fighighlight">
   <img src="/cmsc426fall2019/assets/colorseg/customcolorspace3.png">
-  <div class="figcaption">Left: Datapoints of the orange ball in the custom colorspace. Look at how the datapoint space looks like an ellipsoid Right: GMM fit using ellipsoidal \(\Sigma\). Notice that the GMM fit looks exactly like one single gaussian which shows that the performance of GMM over this colorspace would exactly be the same as a single gaussian fit. This is very beneficial because we can reduce the computation cost of training and testing significantly.</div>
+  <div class="figcaption">Left: Data points of the orange ball in the custom color space. Look at how the data point space looks like an ellipsoid Right: GMM fit using ellipsoidal \(\Sigma\). Notice that the GMM fit looks exactly like one single Gaussian which shows that the performance of GMM over this color space would exactly be the same as a single Gaussian fit. This is very beneficial because we can reduce the computation cost of training and testing significantly.</div>
 </div>
 
 <a name='distest'></a>
@@ -347,13 +346,16 @@ One might think, what if I design a custom transformation to create a new colors
   <div class="figcaption">Orange ball candidates after thresholding using GMM. One can remove the noise using morphological operations.</div>
   <br>
   <img src="/cmsc426fall2019/assets/colorseg/naokickingimg2.png" width="35%">
-  <div class="figcaption">Orange ball looks different from different distances (\(d\)) and different head tilt angles (\(\theta\)). See how the ellipse's shape and size changes with repsect to distance and angle. It is not very easy to separate the effects of distance and angle on the shape and size of the ball on the image.</div>
+  <div class="figcaption">Orange ball looks different from different distances (\(d\)) and different head tilt angles (\(\theta\)). See how the ellipse's shape and size changes with respect to distance and angle. It is not very easy to separate the effects of distance and angle on the shape and size of the ball on the image.</div>
 </div>
 
-Now that we have robustly estimated the pixels which are 'Orange', we want to identify the pixels which belong to the orange ball and eventually find the distance to the ball. First step, let us identify the pixels which belong to the orange ball. This is relatively easy, one can use simple morphological operations available in OpenCV to do it. For the second step, one could just fit a simple parametric regression model (choose a model of your choice) to estimate distance from different parameters based on the image. For example, area of the ball on the image decreases with distance (generally follows a inverse square curve). Use the data provided and any feature you like, to obtain a model to estimate distance. For a more fancy method look at [this paper](http://www.cis.upenn.edu/~kostas/mypub.dir/thomas17ral.pdf). The following OpenCV functions would be helpful:
+Now that we have robustly estimated the pixels which are "orange", we want to identify the pixels which belong to the orange ball and eventually find the distance to the ball.
 
- - [Morphological operations](https://docs.opencv.org/master/d9/d61/tutorial_py_morphological_ops.html)
- - [Contours](https://docs.opencv.org/trunk/d3/d05/tutorial_py_table_of_contents_contours.html)
+First step, let us identify the pixels which belong to the orange ball. This is relatively easy, one can use simple [morphological operations](https://docs.opencv.org/master/d9/d61/tutorial_py_morphological_ops.html) available in OpenCV to do it.
+
+For the second step, one could just fit a simple parametric regression model (you have to choose the model yourself, just like homework 1) to estimate distance from different parameters based on the image. For example, area of the ball on the image decreases with distance (generally follows a inverse square curve). The [contours](https://docs.opencv.org/trunk/d3/d05/tutorial_py_table_of_contents_contours.html) in OpenCV might be useful here.
+
+Use the data provided and any feature you like, to obtain a model to estimate distance. For a more fancy method look at [this paper](http://www.cis.upenn.edu/~kostas/mypub.dir/thomas17ral.pdf).
 
 Congrats! You have now built a robust vision system to identify an orange ball, estimate distance to it on a nao robot for robocup soccer.
 
