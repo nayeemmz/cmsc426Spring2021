@@ -26,7 +26,6 @@ Have you ever played with these adorable Nao robots? Click on the image to watch
 " target="_blank"><img src="http://img.youtube.com/vi/Gy_wbhQxd_0/0.jpg"
 alt=" Nao robot demo " width="480" height="360" border="0" /></a>
 
-
 Nao robots are star players in RoboCup, an annual autonomous robot soccer competitions.
 We are planning to build the Maryland RoboCup team to compete in RoboCup 2019, we need your help.
 Would you like to help us in Nao's soccer training? We need to train Nao to detect a soccer ball and estimate the depth of the ball to know how far to kick.
@@ -41,6 +40,9 @@ To make logistics easier, we have collected camera data from Nao robot on behalf
 
 <a name='pro'></a>
 ### Problem Statement
+
+Please read the [tutorial](https://nayeemmz.github.io/cmsc426fall2019/colorseg/) before moving on to the assignment.
+
 1. Prepare the data: Extract the regions of the ball from each of the training images. For example, you can use the [*roipoly*](https://github.com/jdoepfert/roipoly.py) function to do so. Please note that since it is a Python script you would have to extract these features outside of the Jupyter notebook. The image pixels obtained this way are the data that you will use to train your color model.
 2. Model the "orange" ball using a [Single Gaussian](https://nayeemmz.github.io/cmsc426fall2019/colorseg/#gaussian). You may use the Python code from previous homework. [20 points]
 3. Model the "orange" ball using a [Gaussian Mixture Model](https://nayeemmz.github.io/cmsc426fall2019/colorseg/#gmm). Here you need to experiment with the parameters yourself. You may use the Python code from the previous homework. [30 points]
