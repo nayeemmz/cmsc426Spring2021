@@ -45,8 +45,8 @@ You may download the data from [here](/cmsc426fall2019/assets/hw2/data.csv). Thi
 <a name='pro'></a>
 ### Problem Statement
 
-1. Write Python code to cluster the three distributions using a [Single Gaussian](https://nayeemmz.github.io/cmsc426fall2019/homework_hw2_colorseg/#gaussian) [30 points]
-2. Write Python code to cluster the three distributions using a [Gaussian Mixture Model](https://nayeemmz.github.io/cmsc426fall2019/homework_hw2_colorseg/#gmm) [40 points] 
+1. Write Python code to cluster the three distributions using a [Single Gaussian](https://nayeemmz.github.io/cmsc426fall2019/hw2colorseg/#gaussian) [30 points]
+2. Write Python code to cluster the three distributions using a [Gaussian Mixture Model](https://nayeemmz.github.io/cmsc426fall2019/hw2colorseg/#gmm) [40 points] 
 3. Plot all the GMM ellipsoids [10 points]. 
 4. Write a report [20 points]
 
