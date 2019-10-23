@@ -1,7 +1,7 @@
 ---
 layout: page
 mathjax: true
-permalink: /homework_hw2_colorseg/
+permalink: /hw2colorseg/
 ---
 
 Table of Contents:
