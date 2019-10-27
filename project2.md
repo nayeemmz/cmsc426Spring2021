@@ -22,7 +22,7 @@ Table of Contents:
 
 The aim of this project is to implement an end-to-end pipeline for panorama stitching. We all use the panorama mode on our smart-phones--you'll implement a pipeline which does the same basic thing!
 
-This document just provides an overview of what you need to do.  For a full breakdown of how each step in the pipeline works, see <a href="/pano/">the course notes for this project</a>.
+This document just provides an overview of what you need to do.  For a full breakdown of how each step in the pipeline works, see <a href="/cmsc426fall2019/pano/">the course notes for this project</a>.
 
 <a name='system_overview'></a>
 ## System Overview
@@ -30,7 +30,7 @@ This document just provides an overview of what you need to do.  For a full brea
 Here's a system diagram, showing each step in your panorama-stitching pipeline:
 
 <div class="fig figcenter fighighlight">
-  <img src="/assets/proj2/system_diagram.png" width="100%">
+  <img src="/cmsc426fall2019/assets/proj2/system_diagram.png" width="100%">
 </div>
 
 
@@ -59,11 +59,6 @@ This also includes three sets of "training images". Twenty-four hours before the
 
 When writing your program, you can assume that input images will always follow the filename convention "1.jpg", "2.jpg", etc.
 
-#### Functions Allowed
-
-For this project, imfilter, conv2, imrotate, im2double, rgb2gray, fspecial, imtransform, imwarp (and imref2d), meshgrid, sub2ind, ind2sub and all other plotting and matrix operation/manipulation functions are allowed.
-
-
 <a name='sub'></a>
 ## Submission Guidelines
 
@@ -87,7 +82,6 @@ Your submission on Canvas must be a zip file, following the naming convention **
 
 In the Jupyter notebook, your code should load the images in `Images/input/` and display a resulting panorama in the end.
 
-
 ### Report
 **You will be graded primarily based on your report.**  We want
 you to demonstrate an understanding of the concepts involved in the project, and to show the output
@@ -109,7 +103,7 @@ As usual, your report must be full English sentences, **not** commented code. Th
 ## Collaboration Policy
 We encourage you to work closely with your groupmates, including collaborating on writing code.  With students outside your group, you may discuss methods and ideas but may not share code.
 
-For the full collaboration policy, including guidelines on citations and limitations on using online resources, see <a href="http://prg.cs.umd.edu/cmsc426">the course website</a>.
+For the full collaboration policy, including guidelines on citations and limitations on using online resources, see <a href="http://www.cs.umd.edu/class/fall2019/cmsc426-0201/">the course website</a>.
 
 ## Acknowledgements
 This fun project was inspired by a similar project in UPenn's <a href="https://alliance.seas.upenn.edu/~cis581/wiki/index.php?title=CIS_581:_Computer_Vision_%26_Computational_Photography">CIS581</a> (Computer Vision & Computational Photography).
