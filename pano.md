@@ -47,8 +47,9 @@ The objective of this step is to detect corners such that they are equally distr
 
 To find particular strong corners that are spread across the image, first we need to find $$N_\text{strong}$$ corners. You can find the local maxima of the corner response, i.e. the "strong" corners, using the function `imregionalmax` provided in the startup code. However, when you take a real image, the corner is never perfectly sharp, each corner might get a lot of hits out of the $$N_\text{strong}$$ corners---we want to choose only the $$N_\text{best}$$ best corners after ANMS. In essence, you will get a lot more corners than you should! ANMS will try to find corners which are local maxima.
 
+
 <div class="fig figcenter fighighlight">
-  <img src="/cmsc426fall2019/assets/pano/anms.png" width="100%">
+  <img src="/cmsc426fall2019/assets/pano/anms.jpg" width="100%">
 </div>
 
 Fig 4. shows the output after ANMS. Clearly, the corners are spread across the image.
