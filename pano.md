@@ -23,7 +23,7 @@ Table of Contents:
 <a name='intro'></a>
 ## Introduction
 
-The purpose of this project is to stitch two or more images in order to create one seamless panorama image. Each image should have few repeated local features (around $$30$$--$$50\%$$ or more, empirically chosen). In this project, you need to capture multiple such images. Note that your camera motion should be limited to purely translational or purely rotational around the camera center. The following method of stitching images should work for most image sets but you'll need to be creative for working on harder image sets.
+The purpose of this project is to stitch two or more images in order to create one seamless panorama image using techniques described in the [paper](http://matthewalunbrown.com/papers/cvpr05.pdf) by Matthew Brown et al. Each image should have few repeated local features (around $$30$$--$$50\%$$ or more, empirically chosen). In this project, you need to capture multiple such images. Note that your camera motion should be limited to purely translational or purely rotational around the camera center. The following method of stitching images should work for most image sets but you'll need to be creative for working on harder image sets.
 
 
 <div class="fig figcenter fighighlight">
@@ -45,7 +45,7 @@ For this project, let us consider a set of sample images with much stronger corn
 ## 2. Adaptive Non-Maximal Suppression (or ANMS)
 The objective of this step is to detect corners such that they are equally distributed across the image in order to avoid weird artifacts in warping. Corners in the image can be detected using `cv2.cornerHarris` function with the appropriate parameters. The output is a matrix of corner scores: the higher the score, the higher the probability of that pixel being a corner. You can visualize the output using a [surface plot](https://matplotlib.org/examples/mplot3d/surface3d_demo.html).
 
-To find particular strong corners that are spread across the image, first we need to find $$N_\text{strong}$$ corners. You can find the local maxima of the corner response, i.e. the "strong" corners, using the function `imregionalmax` provided in the startup code. However, when you take a real image, the corner is never perfectly sharp, each corner might get a lot of hits out of the $$N_\text{strong}$$ corners---we want to choose only the $$N$$<sub>best</sub> best corners after ANMS. In essence, you will get a lot more corners than you should! ANMS will try to find corners which are local maxima.
+To find particular strong corners that are spread across the image, first we need to find $$N_\text{strong}$$ corners. You can find the local maxima of the corner response, i.e. the "strong" corners, using the function `imregionalmax` provided in the startup code. However, when you take a real image, the corner is never perfectly sharp, each corner might get a lot of hits out of the $$N_\text{strong}$$ corners---we want to choose only the $$N_\text{best}$$ best corners after ANMS. In essence, you will get a lot more corners than you should! ANMS will try to find corners which are local maxima.
 
 <div class="fig figcenter fighighlight">
   <img src="/cmsc426fall2019/assets/pano/anms.png" width="100%">

@@ -33,7 +33,6 @@ Here's a system diagram, showing each step in your panorama-stitching pipeline:
   <img src="/cmsc426fall2019/assets/proj2/system_diagram.png" width="100%">
 </div>
 
-
 A brief description of each step (you'll implement the steps **in bold**):
 
 - Cylinder Projection:  Project images onto a cylinder, to reduce distortion at the panorama's edges.  For this project, it's optional.
@@ -54,7 +53,7 @@ A brief description of each step (you'll implement the steps **in bold**):
 
 
 ## Project Files and Starter Code
-Please find the starter code at [this link](https://drive.google.com/file/d/1RA-NYd3CErQSqKy0OAlC7LqCgIiuxKiw/view?usp=sharing).
+Please find the starter code at [this link](/cmsc426fall2019/assets/proj2/project2.zip).
 This also includes three sets of "training images". Twenty-four hours before the due date, we'll distribute a "test set" of two more sets of images (look out for an announcement on Piazza).
 
 When writing your program, you can assume that input images will always follow the filename convention "1.jpg", "2.jpg", etc.
@@ -71,16 +70,15 @@ Please submit the project <b> once </b> for your group -- there's no need for ea
 Your submission on Canvas must be a zip file, following the naming convention **YourDirectoryID_proj2.zip**.  For example, xyz123_proj2.zip.  The file **must have the following directory structure**:
 
 - YourDirectoryID_proj2.zip/
-    - Code/
+    - code/
         - panorama.ipynb
-        - \*(any dependencies of panorama.ipynb)
-    - Images/
+    - images/
         - input/
-        - CustomSet1,2/
+        - custom1,2/
         - (all of the other train and test images)
     - report.pdf
 
-In the Jupyter notebook, your code should load the images in `Images/input/` and display a resulting panorama in the end.
+In the Jupyter notebook, your code should load the images in `images/input/` and display a resulting panorama in the end.
 
 ### Report
 **You will be graded primarily based on your report.**  We want
