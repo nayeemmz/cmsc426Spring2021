@@ -15,7 +15,7 @@ Table of Contents:
 
 <a name='due'></a>
 ## Deadline
-TBD
+11:59PM, Friday, Nov. 10, 2019
 
 <a name='intro'></a>
 ## Introduction
