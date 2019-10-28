@@ -62,7 +62,7 @@ Fig 4. shows the output after ANMS. Clearly, the corners are spread across the i
 ## 3. Feature Descriptor
 In the previous step, you found the feature points (locations of the N best best corners after ANMS are called the feature points). You need to describe each feature point by a feature vector, this is like encoding the information at each feature points by a vector. One of the easiest feature descriptor is described next.
 
-Take a patch of size $$40 \times 40$$ centered around the subpixel position of the key point (See figure 4 of the [paper](http://matthewalunbrown.com/papers/cvpr05.pdf) by Matthew Brown et al.). You can take the upper left corner as the subpixel position of a pixel so that the pixel position of (0,0) is at the origin. You might also need to do some padding for features near the edges.
+Take a patch of size $$40 \times 40$$ centered around the subpixel position of the key point (See figure 4 of the [paper](http://matthewalunbrown.com/papers/cvpr05.pdf)). You can take the upper left corner as the subpixel position of a pixel so that the pixel position of (0,0) is at the origin. You might also need to do some padding for features near the edges.
 
 <div class="fig figcenter fighighlight">
   <img src="/cmsc426fall2019/assets/pano/subpixel.png" width="30%">
@@ -109,9 +109,9 @@ $$
 \end{align*}
 $$
 
-In the above equations, $$f$$ is the focal length of the lens in pixels (feel free to experiment with values, generally values range from 100 to 500, however this totally depends on the camera and can lie outside this range). The original image coordinates are $$(x, y)$$ and the transformed image coordinates (in cylindrical coordinates) are $$(x' ,y')$$. $$x_c$$ and $$y_c$$ are the image center coordinates. Note that, $$x$$ is the column number and $$y$$ is the row number in MATLAB.
+In the above equations, $$f$$ is the focal length of the lens in pixels (feel free to experiment with values, generally values range from 100 to 500, however this totally depends on the camera and can lie outside this range). The original image coordinates are $$(x, y)$$ and the transformed image coordinates (in cylindrical coordinates) are $$(x' ,y')$$. $$x_c$$ and $$y_c$$ are the image center coordinates. Note that $$x$$ is the column number and $$y$$ is the row number in numpy.
 
-<p style="background-color:#ddd; padding:5px"><b>Note:</b> You might need to use np.meshgrid and vectorized code to speed up the computation. Using loops will TAKE FOREVER!</p>
+<p style="background-color:#ddd; padding:5px"><b>Note:</b> You might need to use numpy.meshgrid and vectorized code to speed up the computation. Using loops will TAKE FOREVER!</p>
 
 A sample input image and its cylindrical projection is shown in Fig. 7.
 
