@@ -53,7 +53,7 @@ To find particular strong corners that are spread across the image, first we nee
 Fig 4. shows the output after ANMS. Clearly, the corners are spread across the image.
 <div class="fig figcenter fighighlight">
   <img src="/cmsc426fall2019/assets/pano/anms-output.png" width="100%">
-  <div class="figcaption"> Fig. 4: Output of ANMS on first 2 images. </div>
+  <div class="figcaption"> Fig. 4: Output of ANMS on first 2 images. Note that if you are using matplotlib to plot the corners. You have to flip the indices to get the (x,y) coordinates, since matrix indexing starts from upper left corner, while the origin is at the bottom left corner.  </div>
 </div>
 
 <a name='feat-descriptor'></a>
