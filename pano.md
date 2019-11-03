@@ -53,7 +53,7 @@ To find particular strong corners that are spread across the image, first we nee
 Fig 4. shows the output after ANMS. Clearly, the corners are spread across the image.
 <div class="fig figcenter fighighlight">
   <img src="/cmsc426fall2019/assets/pano/anms-output.png" width="100%">
-  <div class="figcaption"> Fig. 4: Output of ANMS on first 2 images. Note that if you are using matplotlib to plot the corners. You have to flip the indices to get the (x,y) coordinates, since matrix indexing starts from upper left corner, while the origin is at the bottom left corner.  </div>
+  <div class="figcaption"> Fig. 4: Output of ANMS on first 2 images. Note that if you are using matplotlib to plot the corners. You have to flip the indices to get the (x,y) coordinates, since the first index of a matrix indexes vertical direction (columns), and the second index indexes horizontal direction (rows), whereas (x,y) coordinates is exactly the opposite. </div>
 </div>
 
 <a name='feat-descriptor'></a>
@@ -126,7 +126,9 @@ with black pixels, fill them using some weighted combination of its neighbours (
 
 <a name='blending'></a>
 ## 7. Blending Images:
-Panorama can be produced by overlaying the pairwise aligned images to create the final output image. You can use OpenCV's [`cv2.warpPerspective`](https://docs.opencv.org/master/da/d54/group__imgproc__transform.html#gaf73673a7e8e18ec6963e3774e6a94b87) here. Feel free to implement `warpPerspective` or similar function yourself. You can apply a bilinear interpolation when you copy pixel values, but taking the maximum or average of pixel values should also works with some visible artifacts. Feel free to use any third party code for warping and transforming images. Fig. 8 shows the panorama output for the image set in Fig. 3.
+Panorama can be produced by overlaying the pairwise aligned images to create the final output image. You can use OpenCV's [`cv2.warpPerspective`](https://docs.opencv.org/master/da/d54/group__imgproc__transform.html#gaf73673a7e8e18ec6963e3774e6a94b87) here. Feel free to implement `warpPerspective` or similar function yourself. Again, notice the distinction between matrix indices and coordinates. `cv2.warpPerspective` will wrap the coordinates of the image (i.e. $$x$$ is horizontal direction, $$y$$ is vertical direction), not the matrix indices (for `I[m,n]`, $$n$$ is horizontal direction (columns), $$m$$ is vertical direction (rows)). Make sure you estimate the homography using coordinates instead of matrix indices. After you have the homography matrix, you might need to do multiply it with a translation matrix to move the image onto the canvas.
+
+You can apply a bilinear interpolation when you copy pixel values, but taking the maximum or average of pixel values should also works with some visible artifacts. Feel free to use any third party code for warping and transforming images. Fig. 8 shows the panorama output for the image set in Fig. 3.
 <div class="fig figcenter fighighlight">
   <img src="/cmsc426fall2019/assets/pano/pano-output.png" width="80%">
   <div class="figcaption"> Fig. 8: Final Panorama output. </div>
