@@ -70,10 +70,10 @@ Now apply Gaussian blur (feel free to play around with the parameters, check out
 
 <a name='feat-match'></a>
 ## 4. Feature Matching
-In the previous step, you encoded each key point by a $$64\times1$$ feature vector. Now, you want to match the feature points in the two images so you can stitch the images together. In computer vision terms, this step is referred to as  finding feature correspondences within the 2 images. Pick a point in image 1, compute the sum of square difference between all points in image 2. Take the ratio of best match (lowest distance) to the second best match (second lowest distance) and if this is below some ratio keep the matched pair otherwise reject it. Repeat this for all points in image 1. You will be left with only the confident feature correspondences and these points will be used to estimate the transformation between the 2 images also called **Homography**. You can use OpenCV's [`cv2.drawMatches`](https://docs.opencv.org/master/d4/d5d/group__features2d__draw.html) function to visualize the corresponding features. You would get something similar to Fig. 5 for the first two images.
+In the previous step, you encoded each key point by a $$64\times1$$ feature vector. Now, you want to match the feature points in the two images so you can stitch the images together. In computer vision terms, this step is referred to as  finding feature correspondences within the 2 images. Pick a point in image 1, compute the sum of square difference between all points in image 2. Take the ratio of best match (lowest distance) to the second best match (second lowest distance) and if this is below some ratio keep the matched pair otherwise reject it. Repeat this for all points in image 1. You will be left with only the confident feature correspondences and these points will be used to estimate the transformation between the 2 images also called **Homography**. You can use the `drawMatches` function provided in the startup code, which is simply a wrapper around [`cv2.drawMatches`](https://docs.opencv.org/master/d4/d5d/group__features2d__draw.html), to visualize the corresponding features. You would get something similar to Fig. 5 for the first two images.
 
 <div class="fig figcenter fighighlight">
-  <img src="/cmsc426fall2019/assets/pano/feat-match.png" width="100%">
+  <img src="/cmsc426fall2019/assets/pano/matches2.png" width="100%">
   <div class="figcaption"> Fig. 5: Matches of the first 2 images. </div>
 </div>
 
