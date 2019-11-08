@@ -15,7 +15,7 @@ Table of Contents:
 
 <a name='due'></a>
 ## Deadline
-11:59PM, Friday, Nov. 10, 2019
+11:59PM, Sunday, Nov. 10, 2019
 
 <a name='intro'></a>
 ## Introduction
