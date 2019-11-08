@@ -82,9 +82,9 @@ In the previous step, you encoded each key point by a $$64\times1$$ feature vect
 We now have matched all the features correspondences but not all matches will be right. To remove incorrect matches, we will use a robust method called **Random Sampling Consensus** or **RANSAC** to compute the homography.
 
 The steps of RANSAC are:
-1. Select four feature pairs (at random), $$p_i$$ from image 1, $$p_i^\prime$$ from image 2.
+1. Select the coordinates (not matrix indices) of four feature pairs (at random), $$p_i$$ from image 1, $$p_i^\prime$$ from image 2.
 2. Compute homography $$H$$ (exact). Use the function `est_homography` that is provided to you. Do not use OpenCV's `cv2.findHomography` function, because RANSAC is included in its implementation.
-3. Apply the homography to each of the points $$\vec{p}_i$$ from image 1. If the distance (or squared distance) between the matching point in image 2 $$\vec{p}_i^\prime$$ and the estimated point $$H\vec{p}_i$$ is below some threshold, then we call it an inlier. Here, $$Hp_i$$ computed using the `apply_homography` function given to you. Collect the all the inliers and the corresponding points in image 2, giving you pair $$(\vec{p}_i, \vec{p}_i^\prime)$$.
+3. Apply the homography to the coordinates of each point $$p_i$$ from image 1. If the distance (or squared distance) between the matching point in image 2 $$\vec{p}_i^\prime$$ and the estimated point $$Hp_i$$ is below some threshold, then we call it an inlier. Here, $$Hp_i$$ computed using the `apply_homography` function given to you. Collect the coordinates of all the inliers and the corresponding points in image 2, giving you pair $$(\vec{p}_i, \vec{p}_i^\prime)$$.
 4. Repeat the last three steps until you have exhausted $$N_\text{max}$$ number of iterations (specified by user) or you found more than percentage of inliers (Say $$90\%$$ for example).
 5. Keep largest set of inliers.
 6. Re-compute least-squares $$\hat{H}$$ estimate on all of the inliers. Use the function `est_homography` given to you.
