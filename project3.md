@@ -49,7 +49,7 @@ There are three steps to this approach.
 
 You will be implementing Scale-Invariant Feature Transform (SIFT) to obtain feature descriptors. Cluster these feature descriptors using k-means clustering algorithm. Use the centroids of the clusters to form a visual dictionary vocabulary. Use this visual vocabulary to make a frequency histogram for each image, based on the frequency of vocabularies in them. In other words you are trying to figure out the number of occurrences of each visual vocabulary word in each image. These histograms are the bag-of-visual-words. The length of the histogram is the same as the number of clusters.
 
-Go over the slides to understand SIFT, K-Means algorithm and bag of features. While you may use Python libraries to run k-means algorithm and to train the Support vector classifier, you would have to write your own code for SIFT. For a detailed description of SIFT, read the the paper, “Distinctive Image Features from Scale-Invariant Keypoints" by David G. Lowe. See bagOfFeatures command in Matlab.
+Go over the slides to understand SIFT, K-Means algorithm and bag of features. While you may use Python libraries to run k-means algorithm and to train the Support vector classifier, you would have to write your own code for SIFT. For a detailed description of SIFT, read the the paper, “Distinctive Image Features from Scale-Invariant Keypoints" by David G. Lowe. 
 
 ## SVM Classifier Training
 
