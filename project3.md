@@ -98,7 +98,7 @@ like.
 File tree and naming
 Your submission on Canvas must be a zip file, following the naming convention YourDirectoryID_proj3.zip. For
 example, xyz123_proj3.zip. The file must have the following directory structure, based on the starter files
-- mysvm.m
+- mysvm.ipynb
 - report.pdf
 
 
