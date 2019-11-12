@@ -24,8 +24,8 @@ Table of Contents:
 In this homework you will implement an image classifier.You will be building Support Vector Machine (SVM)
 classifier to classify images of MNIST digits dataset.
 Supervised classification is a computer vision task of categorizing unlabeled images to different categories or
-classes. This follows the training using labeled images of the same categories. You will be provided with a data
-set of MNIST digits. All of these images will be specifically labeled as being one of the 10 digits, 0-9. You would
+classes. This follows the training using labeled images of the same categories. You may download MNIST digits data
+set from the following [link](http://yann.lecun.com/exdb/mnist/). All of these images will be specifically labeled as being one of the 10 digits, 0-9. You would
 use these labeled images as training data set to train SVM classifier. The classification would be one-vs-all, where
 you would specifically consider one digit at a time to classify and consider it as a positive example and all other
 digits’ images as negative examples. Once the classifier is trained you would test an unlabeled image and classify
@@ -38,6 +38,7 @@ it as one of the 10 digits. This task can be visualized in Figure 1
   <div style="clear:both;"></div>
 </div>
 
+The format of the dataset is ubyte files. One of the ways to load them in Python as a numpy array is using idx2numpy. Use the following starter file to load MNIST data into Numpy arrays.
 
 <a name='part1'></a>
 ## Part 1: Implementation (50 pts)
