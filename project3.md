@@ -38,7 +38,7 @@ it as one of the 10 digits. This task can be visualized in Figure 1
   <div style="clear:both;"></div>
 </div>
 
-The format of the dataset is ubyte files. One of the ways to load them in Python as a numpy array is using idx2numpy. Use the following starter [file](/cmsc426fall2019/assets/proj3/mniststarter.ipynb) to load MNIST data into Numpy arrays.
+The format of the dataset is ubyte files. One of the ways to load them in Python as a numpy array is using idx2numpy. Use the following starter [file](/assets/proj3/mniststarter.ipynb) to load MNIST data into Numpy arrays.
 
 <a name='part1'></a>
 ## Part 1: Implementation (50 pts)
