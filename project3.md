@@ -54,21 +54,18 @@ Go over the slides to understand SIFT, K-Means algorithm and bag of features. Wh
 ## SVM Classifier Training
 
 Train SVM on the resulting histograms (each histogram is a feature vector, with a label) obtained as a bag of visual words in the previous step. For a thorough understanding of SVM, refer to the heavily cited paper, “A Tutorial on
-Support Vector Machines for Pattern Recognition", by Christopher Burges. You can also look at this medium article
-<a href="https://medium.com/machine-learning-101/chapter-2-svm-support-vector-machine-theory-f0812effc72"> https://medium.com/machine-learning-101/chapter-2-svm-support-vector-machine-theory-f0812effc72</a>.
+Support Vector Machines for Pattern Recognition", by Christopher Burges. 
 
-You would need to train the classifier as a one vs. all. 
-See Matlab commands, multisvm and trainImageCategoryClassifier.
+You would need to train the classifier as a one vs. all. Wherein only the digit that you are training for is considered to bt a positive example and every other digit is treated as a negative example. You may use svm from sklearn in Python. 
 
 ## Test your model
 
 Apply the trained classifier to the test image. Here you would test it the following two ways:
 
-- Extract the bag of features for the test image and then pass it as an input to the model you created during
+- Extract the bag of visual words for the test image and then pass it as an input to the model you created during
 training, and,
-- Pass the test image directly to the SVM model without any feature extraction.
+- Pass the test image directly to the trained SVM model without any feature extraction.
 
-See Matlab command predict.
 
 
 <a name='part2'></a>
@@ -92,16 +89,15 @@ and digit 2 was also correctly classified 98% of the time.
 2. A plot showing the histogram of the visual vocabulary during the training phase. You can pick any digit you
 like.
 
-3. Explain in one or two paragraphs your observations about the prediction of a test image, with and without
-extraction of the bag of features.
+3. Images of visual vocabulary for some of the clusters.
 
 
 <a name='sub'></a>
 ## Submission Guidelines
 
 File tree and naming
-Your submission on Canvas must be a zip file, following the naming convention YourDirectoryID_hw3.zip. For
-example, xyz123_hw3.zip. The file must have the following directory structure, based on the starter files
+Your submission on Canvas must be a zip file, following the naming convention YourDirectoryID_proj3.zip. For
+example, xyz123_proj3.zip. The file must have the following directory structure, based on the starter files
 - mysvm.m
 - report.pdf
 
@@ -109,9 +105,9 @@ example, xyz123_hw3.zip. The file must have the following directory structure, b
 ### Report
 
 Please include the plot and confusion matrix as mentioned in part 2. Also include your observations about the
-prediction of test image.
+prediction of test images.
 As usual, your report must be full English sentences,not commented code
 
 <a name='coll'></a>
 ## Collaboration Policy
-You are encouraged to discuss the ideas with your peers. However, the code should be your own, and should be the result of you exercising your own understanding of it. If you reference anyone else's code in writing your project, you must properly cite it in your code (in comments) and your writeup.  For the full honor code refer to the CMSC426 Spring 2019 website
+You are encouraged to work in groups for this project. You may discuss the ideas with your peersfrom other groups. If you reference anyone else's code in writing your project, you must properly cite it in your code (in comments) and your writeup.  For the full honor code refer to the CMSC426 Spring 2019 website
