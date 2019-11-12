@@ -17,7 +17,7 @@ Table of Contents:
 
 <a name='due'></a>
 ## Due Date 
-11:59 PM, SUnday, November 24, 2019
+11:59 PM, Sunday, November 24, 2019
 
 <a name='intro'></a>
 ## Introduction
@@ -47,14 +47,13 @@ There are three steps to this approach.
 
 ## Visual Vocabulary
 
-Use Speeded up robust features (SURF) to find a feature descriptor followed by K-means to obtain a visual
-vocabulary. The number of k-means clusters is the size of our visual vocabulary and the size of our features. Go
-over the slides to understand SURF, K-Means algorithm and bag of features. For a detailed description of SURF
-read the the paper, “SURF: Speeded Up Robust Features" by Bay et al. See bagOfFeatures command in Matlab.
+You will be implementing Scale-Invariant Feature Transform (SIFT) to obtain feature descriptors. Cluster these feature descriptors using k-means clustering algorithm. Use the centroids of the clusters to form a visual dictionary vocabulary. Use this visual vocabulary to make a frequency histogram for each image, based on the frequency of vocabularies in them. In other words you are trying to figure out the number of occurrences of each visual vocabulary word in each image. These histograms are the bag-of-visual-words. The length of the histogram is the same as the number of clusters.
+
+Go over the slides to understand SIFT, K-Means algorithm and bag of features. While you may use Python libraries to run k-means algorithm and to train the Support vector classifier, you would have to write your own code for SIFT. For a detailed description of SIFT, read the the paper, “Distinctive Image Features from Scale-Invariant Keypoints" by David G. Lowe. See bagOfFeatures command in Matlab.
 
 ## SVM Classifier Training
 
-Train SVM on the resulting histograms (each histogram is a feature vector, with a label) obtained as a visual vocabulary in the previous step. For a thorough understanding of SVM, refer to the heavily cited paper, “A Tutorial on
+Train SVM on the resulting histograms (each histogram is a feature vector, with a label) obtained as a bag of visual words in the previous step. For a thorough understanding of SVM, refer to the heavily cited paper, “A Tutorial on
 Support Vector Machines for Pattern Recognition", by Christopher Burges. You can also look at this medium article
 <a href="https://medium.com/machine-learning-101/chapter-2-svm-support-vector-machine-theory-f0812effc72"> https://medium.com/machine-learning-101/chapter-2-svm-support-vector-machine-theory-f0812effc72</a>.
 
