@@ -77,7 +77,7 @@ label. Each cell in this matrix will contain the prediction count. Ideally, we w
 numbers in this matrix to be 0’s, however, that is not always possible. For example in the matrix below with
 100 images of each of the three digits, 0, 1, 2,
 <div class="fig fighighlight">
-  <img src="/assets/hwk3/table.png" width="50%">
+  <img src="/cmsc426fall2019/assets/hwk3/table.png" width="50%">
   <div class="figcaption">
   </div>
   <div style="clear:both;"></div>
