@@ -2,7 +2,7 @@
 layout: page
 mathjax: true
 title: Image Classification Using Bag of Features and Support Vector Machines
-permalink: /2019/hw/hw3/
+permalink: /2019/proj/p3/
 ---
 
 
@@ -17,7 +17,7 @@ Table of Contents:
 
 <a name='due'></a>
 ## Due Date 
-11:59 PM, Saturday, April 27, 2019
+11:59 PM, SUnday, November 24, 2019
 
 <a name='intro'></a>
 ## Introduction
