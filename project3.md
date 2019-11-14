@@ -60,7 +60,7 @@ You would need to train the classifiers as one vs. all. Wherein only the categor
 ## Test your model
 
 Extract the bag of visual words for the test image and then pass it as an input to the SVM models you created during
-training to predict its label.
+training to predict its label. That means it would be tested using all the SVM classifiers and assigned the label that gives the higest score.
 
 
 <a name='part2'></a>
