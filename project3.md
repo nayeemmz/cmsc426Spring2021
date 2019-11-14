@@ -17,7 +17,7 @@ Table of Contents:
 
 <a name='due'></a>
 ## Due Date 
-11:59 PM, Sunday, November 24, 2019
+11:59 PM, Sunday, November 26, 2019
 
 <a name='intro'></a>
 ## Introduction
