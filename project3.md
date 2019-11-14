@@ -38,17 +38,16 @@ it as one of the three categories. This task can be visualized in Figure 1
   <div style="clear:both;"></div>
 </div>
 
-The format of the dataset is ubyte files. One of the ways to load them in Python as a numpy array is using idx2numpy. Use the following starter [file](/assets/proj3/mniststarter.ipynb) to load MNIST data into Numpy arrays.
 
 <a name='part1'></a>
 ## Part 1: Implementation (50 pts)
 
 
-There are three steps to this approach.
+There are three major steps in this approach.
 
-## Visual Vocabulary
+## Creating bag of visual words
 
-You will be implementing Scale-Invariant Feature Transform (SIFT) to obtain feature descriptors. Cluster these feature descriptors using k-means clustering algorithm. Use the centroids of the clusters to form a visual dictionary vocabulary. Use this visual vocabulary to make a frequency histogram for each image, based on the frequency of vocabularies in them. In other words you are trying to figure out the number of occurrences of each visual vocabulary word in each image. These histograms are the bag-of-visual-words. The length of the histogram is the same as the number of clusters.
+You will be implementing Scale-Invariant Feature Transform (SIFT) to obtain feature descriptors. You may use Python libraries to carry out other parts of the project but not SIFT. The descriptor for each image will be matrix of size, $$keypoints \times 128$$. Cluster these feature descriptors using k-means clustering algorithm. Since you may not obtain the same number of kepoints for each image of the training dataset, use the strongest keypoints equivalebt to the image with the least number of keypoints. Use the centroids of the clusters to form a visual dictionary vocabulary. Use this visual vocabulary to make a frequency histogram for each image, based on the frequency of vocabularies in them. In other words you are trying to figure out the number of occurrences of each visual vocabulary word in each image. These histograms are the bag-of-visual-words. The length of the histogram is the same as the number of clusters.
 
 Go over the slides to understand SIFT, K-Means algorithm and bag of features. While you may use Python libraries to run k-means algorithm and to train the Support vector classifier, you would have to write your own code for SIFT. For a detailed description of SIFT, read the the paper, “Distinctive Image Features from Scale-Invariant Keypoints" by David G. Lowe. 
 
