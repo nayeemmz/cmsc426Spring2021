@@ -25,11 +25,11 @@ In this homework you will implement an image classifier.You will be building Sup
 classifier to classify images of Caltech-101 dataset.
 Supervised classification is a computer vision task of categorizing unlabeled images to different categories or
 classes. This follows the training using labeled images of the same categories. You may download Caltech-101 data
-set from the following [link](http://www.vision.caltech.edu/Image_Datasets/Caltech101/#Download). All of these images of each category are stored in a foldr named for that category. You would
-use these labeled images as training data set to train SVM classifier. The classification would be one-vs-all, where
-you would specifically consider one digit at a time to classify and consider it as a positive example and all other
-digits’ images as negative examples. Once the classifier is trained you would test an unlabeled image and classify
-it as one of the 10 digits. This task can be visualized in Figure 1
+set from the following [link](http://www.vision.caltech.edu/Image_Datasets/Caltech101/#Download). All the images of this dataset are stored in folders, named for each category. However, we will be using just three of those categories: airplanes, dolphin and Leopards. You would
+use these labeled images as training data set to train SVM classifier after obtaining a bag (histogram) of visual words for each image. The classification would be one-vs-all, where
+you would specifically consider one image at a time to classify and consider it as a positive example and all other
+category images as negative examples. Once the classifier is trained you would test an unlabeled image and classify
+it as one of the three categories. This task can be visualized in Figure 1
 
 <div class="fig fighighlight">
   <img src="/cmsc426fall2019/assets/proj3/proj3.png" width="100%">
