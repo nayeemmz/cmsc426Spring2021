@@ -66,7 +66,7 @@ training to predict its label.
 <a name='part2'></a>
 ## Part 2: - What to submit (50 points)
 
-1. Show a $`3 \times 3'$ confusion matrix with categories as its rows and columns. It is used to determine the
+1. Show a 3 x 3 confusion matrix with categories as its rows and columns. It is used to determine the
 accuracy of your classifier. In this matrix the rows are the actual category label and the columns are the predicted
 label. Each cell in this matrix will contain the prediction count. Ideally, we would like all the off-diagonal
 numbers in this matrix to be 0’s, however, that is not always possible. For example in the matrix below with
