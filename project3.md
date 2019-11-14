@@ -22,10 +22,10 @@ Table of Contents:
 <a name='intro'></a>
 ## Introduction
 In this homework you will implement an image classifier.You will be building Support Vector Machine (SVM)
-classifier to classify images of MNIST digits dataset.
+classifier to classify images of Caltech-101 dataset.
 Supervised classification is a computer vision task of categorizing unlabeled images to different categories or
-classes. This follows the training using labeled images of the same categories. You may download MNIST digits data
-set from the following [link](http://yann.lecun.com/exdb/mnist/). All of these images will be specifically labeled as being one of the 10 digits, 0-9. You would
+classes. This follows the training using labeled images of the same categories. You may download Caltech-101 data
+set from the following [link](http://www.vision.caltech.edu/Image_Datasets/Caltech101/#Download). All of these images of each category are stored in a foldr named for that category. You would
 use these labeled images as training data set to train SVM classifier. The classification would be one-vs-all, where
 you would specifically consider one digit at a time to classify and consider it as a positive example and all other
 digits’ images as negative examples. Once the classifier is trained you would test an unlabeled image and classify
