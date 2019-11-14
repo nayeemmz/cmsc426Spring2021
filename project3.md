@@ -105,4 +105,4 @@ As usual, your report must be full English sentences,not commented code
 
 <a name='coll'></a>
 ## Collaboration Policy
-You are encouraged to work in groups for this project. You may discuss the ideas with your peersfrom other groups. If you reference anyone else's code in writing your project, you must properly cite it in your code (in comments) and your writeup.  For the full honor code refer to the CMSC426 Fall 2019 website
+You are encouraged to work in groups for this project. You may discuss the ideas with your peers from other groups. If you reference anyone else's code in writing your project, you must properly cite it in your code (in comments) and your writeup.  For the full honor code refer to the CMSC426 Fall 2019 website
