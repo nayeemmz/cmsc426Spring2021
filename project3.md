@@ -53,43 +53,38 @@ Go over the slides to understand SIFT, K-Means algorithm and bag of features. Wh
 
 ## SVM Classifier Training
 
-Train SVM on the resulting histograms (each histogram is a feature vector, with a label) obtained as a bag of visual words in the previous step. For a thorough understanding of SVM, refer to the heavily cited paper, “A Tutorial on
-Support Vector Machines for Pattern Recognition", by Christopher Burges. 
+Train SVM on the resulting histograms (each histogram is a feature vector, with a label) obtained as a bag of visual words in the previous step. For a thorough understanding of SVM, refer to the heavily cited [paper](https://www.di.ens.fr/~mallat/papiers/svmtutorial.pdf), by Christopher Burges. 
 
-You would need to train the classifier as a one vs. all. Wherein only the digit that you are training for is considered to bt a positive example and every other digit is treated as a negative example. You may use svm from sklearn in Python. 
+You would need to train the classifiers as one vs. all. Wherein only the category that you are training for is considered to be a positive example and the other two categories are treated as negative examples. You may use svm from sklearn in Python. 
 
 ## Test your model
 
-Apply the trained classifier to the test image. Here you would test it the following two ways:
-
-- Extract the bag of visual words for the test image and then pass it as an input to the model you created during
-training, and,
-- Pass the test image directly to the trained SVM model without any feature extraction.
-
+Extract the bag of visual words for the test image and then pass it as an input to the SVM models you created during
+training to predict its label.
 
 
 <a name='part2'></a>
 ## Part 2: - What to submit (50 points)
 
-1. Show a 10 × 10 confusion matrix with digits from 0-9 as its rows and columns. It is used to determine the
-accuracy of your classifier. In this matrix the rows are the actual digit label and the columns are the predicted
+1. Show a $`3 \times 3'$ confusion matrix with categories as its rows and columns. It is used to determine the
+accuracy of your classifier. In this matrix the rows are the actual category label and the columns are the predicted
 label. Each cell in this matrix will contain the prediction count. Ideally, we would like all the off-diagonal
 numbers in this matrix to be 0’s, however, that is not always possible. For example in the matrix below with
-100 images of each of the three digits, 0, 1, 2,
+100 images of each of the three categories, airplanes, dolpin, Leopards,
 <div class="fig fighighlight">
   <img src="/cmsc426fall2019/assets/hwk3/table.png" width="50%">
   <div class="figcaption">
   </div>
   <div style="clear:both;"></div>
 </div>
-the confusion matrix can be read as, digit 0 was correctly classified as a 0, 93 times, and wrongly classified as
-1 and 2, two times and five times, respectively. Similarly, digit 1 was correctly classified 98 out of 100 times
-and digit 2 was also correctly classified 98% of the time.
+the confusion matrix can be read as, airplane was correctly classified as an airplane, 93 times, and wrongly classified as
+dolphin and leopard, two times and five times, respectively. Similarly, dolphin was correctly classified 98 out of 100 times
+and leopard was also correctly classified 98% of the time.
 
-2. A plot showing the histogram of the visual vocabulary during the training phase. You can pick any digit you
+2. A plot showing the histogram of the visual vocabulary during the training phase. You can pick any image you
 like.
 
-3. Images of visual vocabulary for some of the clusters.
+3. Some of the image patches corresponding to the words in the visual vocaubulary (cluster centroids).
 
 
 <a name='sub'></a>
