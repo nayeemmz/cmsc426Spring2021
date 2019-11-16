@@ -5,8 +5,6 @@ title: Image Classification Using Bag of Features and Support Vector Machines
 permalink: /2019/proj/p3/
 ---
 
-
-
 Table of Contents:
 - [Due Date](#due)
 - [Introduction](#intro)
@@ -16,7 +14,7 @@ Table of Contents:
 - [Collaboration Policy](#coll)
 
 <a name='due'></a>
-## Due Date 
+## Due Date
 11:59 PM, Tuesday, November 26, 2019
 
 <a name='intro'></a>
@@ -49,19 +47,18 @@ There are three major steps in this approach.
 
 You will be implementing Scale-Invariant Feature Transform (SIFT) to obtain feature descriptors and not use a library for it. For the rest of the project you may use Python libaries. The descriptor for each image will be a matrix of size, $`keypoints \times 128'$. If there are different number of keypoints for different images, you may use only the strongest keypoints determined by the image having the smallest number of keypoints. Once the descriptors for each keypoint are obtained you may stack them for the entire training set. Use this matrix of feature descriptors as a training input to k-means clustering algorithm. The centroids of the clusters form a visual dictionary vocabulary. Use this visual vocabulary to make a frequency histogram for each image, based on the frequency of vocabularies in them. In other words you are trying to figure out the number of occurrences of each visual vocabulary word in each image. These histograms are the bag of visual words. The length of the histogram is the same as the number of clusters.
 
-Go over the slides to understand SIFT, K-Means algorithm and bag of features. While you may use Python libraries to run k-means algorithm and to train the Support vector classifier, you would have to write your own code for SIFT. For a detailed description of SIFT, read the following [paper](https://www.cs.ubc.ca/~lowe/papers/ijcv04.pdf'). For the bag of visual words technique, follow the graphic above and read the following [paper](https://www.cs.cmu.edu/~efros/courses/LBMV07/Papers/csurka-eccv-04.pdf).
+Go over the slides to understand SIFT, K-Means algorithm and bag of features. While you may use Python libraries to run K-means algorithm and to train the Support vector classifier, you would have to write your own code for SIFT. For a detailed description of SIFT, read the following [paper](https://www.cs.ubc.ca/~lowe/papers/ijcv04.pdf). For the bag of visual words technique, follow the graphic above and read the following [paper](https://www.cs.cmu.edu/~efros/courses/LBMV07/Papers/csurka-eccv-04.pdf).
 
 ## SVM Classifier Training
 
-Train SVM on the resulting histograms (each histogram is a feature vector, with a label) obtained as a bag of visual words in the previous step. For a thorough understanding of SVM, refer to the heavily cited [paper](https://www.di.ens.fr/~mallat/papiers/svmtutorial.pdf), by Christopher Burges. 
+Train SVM on the resulting histograms (each histogram is a feature vector, with a label) obtained as a bag of visual words in the previous step. For a thorough understanding of SVM, refer to the heavily cited [paper](https://www.di.ens.fr/~mallat/papiers/svmtutorial.pdf), by Christopher Burges.
 
-You would need to train the classifiers as one vs. all. Wherein only the category that you are training for is considered to be a positive example and the other two categories are treated as negative examples. You may use svm from sklearn in Python. 
+You would need to train the classifiers as one vs. all. Wherein only the category that you are training for is considered to be a positive example and the other two categories are treated as negative examples. You may use svm from sklearn in Python.
 
 ## Test your model
 
 Extract the bag of visual words for the test image and then pass it as an input to the SVM models you created during
-training to predict its label. That means it would be tested using all the SVM classifiers and assigned the label that gives the higest score.
-
+training to predict its label. That means it would be tested using all the SVM classifiers and assigned the label that gives the highest score.
 
 <a name='part2'></a>
 ## Part 2: - What to submit (50 points)
@@ -70,7 +67,7 @@ training to predict its label. That means it would be tested using all the SVM c
 accuracy of your classifier. In this matrix the rows are the actual category label and the columns are the predicted
 label. Each cell in this matrix will contain the prediction count. Ideally, we would like all the off-diagonal
 numbers in this matrix to be 0’s, however, that is not always possible. For example in the matrix below with
-100 images of each of the three categories, airplanes, dolpin, Leopards,
+100 images of each of the three categories, airplanes, dolphin, Leopards,
 <div class="fig fighighlight">
   <img src="/cmsc426fall2019/assets/proj3/confusion.png" width="50%">
   <div class="figcaption">
@@ -84,7 +81,7 @@ and leopard was also correctly classified 98% of the time.
 2. A plot showing the histogram of the visual vocabulary during the training phase. You can pick any image you
 like.
 
-3. Some of the image patches corresponding to the words in the visual vocaubulary (cluster centroids).
+3. Some of the image patches corresponding to the words in the visual vocabulary (cluster centroids).
 
 
 <a name='sub'></a>
@@ -95,7 +92,6 @@ Your submission on Canvas must be a zip file, following the naming convention Yo
 example, xyz123_proj3.zip. The file must have the following directory structure, based on the starter files
 - mysvm.ipynb
 - report.pdf
-
 
 ### Report
 
