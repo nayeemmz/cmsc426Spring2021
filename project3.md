@@ -27,7 +27,7 @@ set from the following [link](http://www.vision.caltech.edu/Image_Datasets/Calte
 use 90% of these labeled images as training data set to train SVM classifier, after obtaining a bag (histogram) of visual words for each image. The classification would be one-vs-all, where
 you would specifically consider one image category at a time to classify and consider it as a positive example and all other
 category images as negative examples. Once the classifier is trained you would test the remaining 10% of the data and predict their label for classification
-as one of the three categories. This task can be visualized in Figure 1
+as one of the three categories. This task can be visualized in Figure 1.
 
 <div class="fig fighighlight">
   <img src="/cmsc426fall2019/assets/proj3/proj3.png" width="100%">
@@ -49,6 +49,8 @@ You will be implementing Scale-Invariant Feature Transform (SIFT) to obtain feat
 
 Go over the slides to understand SIFT, K-Means algorithm and bag of features. While you may use Python libraries to run K-means algorithm and to train the Support vector classifier, you would have to write your own code for SIFT. For a detailed description of SIFT, read the following [paper](https://www.cs.ubc.ca/~lowe/papers/ijcv04.pdf). For the bag of visual words technique, follow the graphic above and read the following [paper](https://www.cs.cmu.edu/~efros/courses/LBMV07/Papers/csurka-eccv-04.pdf).
 
+[Here](/cmsc426fall2019/assets/proj3/regionalextrema.ipynb) is some starter code for extrema detection step.
+
 ## SVM Classifier Training
 
 Train SVM on the resulting histograms (each histogram is a feature vector, with a label) obtained as a bag of visual words in the previous step. For a thorough understanding of SVM, refer to the heavily cited [paper](https://www.di.ens.fr/~mallat/papiers/svmtutorial.pdf), by Christopher Burges.
@@ -69,7 +71,7 @@ label. Each cell in this matrix will contain the prediction count. Ideally, we w
 numbers in this matrix to be 0’s, however, that is not always possible. For example in the matrix below with
 100 images of each of the three categories, airplanes, dolphin, Leopards,
 <div class="fig fighighlight">
-  <img src="/cmsc426fall2019/assets/proj3/confusion.png" width="50%">
+  <img src="/cmsc426fall2019/assets/proj3/confusion.png" widhttps://www.google.com/th="50%">
   <div class="figcaption">
   </div>
   <div style="clear:both;"></div>
