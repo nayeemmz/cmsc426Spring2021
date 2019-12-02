@@ -23,7 +23,7 @@ In this project you will implement a Convolutional Neural Network (CNN) in a ste
 In order to help you implement this you are provided with two jupyter notebook skeletal files. One with backpropagation code implemented and the other without it. These files are as follows: 
 
 <ul>
-  <li>[cnn](https://nayeemmz.github.io/cmsc426fall2019/assets/proj4/cnn.ipynb) - backpropagation algorithm is <b>not</b> implemented in this file. If you would like to give it a try, then start with this file. 
+  <li>(https://nayeemmz.github.io/cmsc426fall2019/assets/proj4/cnn.ipynb)[cnn] - backpropagation algorithm is <b>not</b> implemented in this file. If you would like to give it a try, then start with this file. 
   </li>
   <li> cnn-with-backprop.ipynb - backprop is implemented in this file. Start with this file, if you don't want to try to implement it yourself.
   </li>
