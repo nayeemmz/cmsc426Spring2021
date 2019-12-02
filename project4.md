@@ -26,6 +26,7 @@ In order to help you implement this you are provided with two jupyter notebook s
   <li> cnn.ipynb - backpropagation algorithm is <b>not</b> implemented in this file. If you would like to give it a try, then start with this file. 
   </li>
   <li> cnn-with-backprop.ipynb - backprop is implemented in this file. Start with this file, if you don't want to try to implement it yourself.
+  </li>
 </ul>
 
 
