@@ -1,7 +1,7 @@
 ---
 layout: page
 mathjax: true
-title: Image Classification Using Convolutional Neural Networks
+title: Implementation of Convolutional Neural Networks
 permalink: /2019/proj/p4/
 ---
 
