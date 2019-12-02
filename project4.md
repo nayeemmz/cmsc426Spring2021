@@ -27,10 +27,12 @@ In order to help you implement this you are provided with two jupyter notebook s
   </li>
   <li> cnn-with-backprop.ipynb - backprop is implemented in this file. Start with this file, if you don't want to try to implement it yourself.
 </ul>
+
+
 <b> Note:</b> It is recommended that you start with cnn.ipynb file first and if you struggle with writing backprop code, then only use the cnn-with-backprop.ipynb file. 
 
 
-
+<a name='system_overview'></a>
 ## What to Implement
 
 Most of the implementation details are provided to you in the Jupyter notebooks. You would be required to write code in these files identified by the comments in them. Each location is also identfied with the number of lines of code that would be needed for a particular operation, alongwith the expected output of each cell. This would help you debug the code.
