@@ -14,20 +14,20 @@ Table of Contents:
 
 <a name='due'></a>
 ## Deadline 
-11:59 PM, May 17, 2019
+11:59 PM, Dec. 15, 2019
 
 <a name='intro'></a>
 ## Introduction
-In this project you will implement a convolutional neural network (CNN). You will be building a supervised classifier to classify MNIST digits dataset.  
+In this project you will implement a Convolutional Neural Network (CNN) in a step by step approach.  The goal of this assignment is to help you understand, by building, different components of a CNN. Some of the components include, forward convolution, backward convolution(optional), zero padding, max-pooling and average-pooling. 
 
-Supervised classification is a computer vision task of categorizing unlabeled images to different categories or classes. This follows the training using labeled images of the same categories. You will be provided with a data set of images of MNIST digits. All of these images will be specifically labeled as a specific digit. You would use these labeled images as training data set to train a convolutional neural network. Once the CNN is trained you would test an unlabeled image and classify it as one of the ten digits. This task can be visualized in Figure 1.
+In order to help you implement this you are provided with a jupyter notebook skeletal file. There are two versions of this file, 
 
-<div class="fig fighighlight">
-  <img src="/assets/proj4/mnist.png" width="100%">
-  <div class="figcaption">
-  </div>
-  <div style="clear:both;"></div>
-</div>
+<ul>
+  <li> cnn.ipynb - backpropagation algorithm is not implemented
+  </li>
+</ul>
+
+one with backward-propagation implemented and the other one left for you to implement.
 
 ## Architecture
 Your training and test step would contain the pipeline shown in Figure 2
