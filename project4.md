@@ -20,7 +20,7 @@ Table of Contents:
 ## Introduction
 In this project you will implement a Convolutional Neural Network (CNN) in a step by step approach.  The goal of this assignment is to help you understand, by building, different components of a CNN. Some of the components include, forward convolution, backward convolution(optional), zero padding, max-pooling and average-pooling. You will not be graded for the backpropagation code.
 
-In order to help you implement this you are provided with a  [starer code](/cmsc426fall2019/assets/proj4/proj4-starterFiles.zip)that contains two jupyter notebook skeletal files. One with backpropagation code implemented and the other without it. These files are as follows: 
+In order to help you implement this you are provided with [starer code](/cmsc426fall2019/assets/proj4/proj4-starterFiles.zip) that contains two jupyter notebook skeletal files. One with backpropagation code implemented and the other without it. These files are as follows: 
 
 <ul>
   <li>cnn.ipynb - backpropagation algorithm is <b>not</b> implemented in this file. If you would like to give it a try, then start with this file. 
