@@ -48,4 +48,4 @@ Just one file, cnn.ipynb would be required to be submitted for this project.
 ## Collaboration Policy
 We encourage you to work closely with your groupmates, including collaborating on writing code.  With students outside your group, you may discuss methods and ideas but may not share code.  
 
-For the full collaboration policy, including guidelines on citations and limitations on using online resources, see <a href="https://cmsc426fall2019.github.io/index.html">the course website</a>.
+For the full collaboration policy, including guidelines on citations and limitations on using online resources, see <a href="http://www.cs.umd.edu/class/fall2019/cmsc426-0201/">the course website</a>.
