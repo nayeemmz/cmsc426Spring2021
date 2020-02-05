@@ -20,7 +20,7 @@ Table of Contents:
 <a name='intro'></a>
 ## Introduction
 
-This home work is designed to test your understanding of mathematics tutorial discussed in this [link](https://nayeemmz.github.io/cmsc426fall2019/math-tutorial/). The task is to fit the line to two dimensional data points using different linear least square techniques discussed in the tutorials:
+This home work is designed to test your understanding of mathematics tutorial discussed in this [link](https://nayeemmz.github.io/cmsc426Spring2020/math-tutorial/). The task is to fit the line to two dimensional data points using different linear least square techniques discussed in the tutorials:
 
 - Line fitting using Linear Least Squares
 - Reduce overfitting using Regularization (ridge regression)
@@ -31,7 +31,7 @@ This home work is designed to test your understanding of mathematics tutorial di
 The 2D points data is provided in the form of .csv files (click [here](/cmsc426fall2019/assets/hw1/data.zip) to download). The visualization of data with different noise level is shown in the following figure.
 
 <div class="fig fighighlight">
-  <img src="/cmsc426fall2019/assets/hw1/data.jpg" width="100%">
+  <img src="/cmsc426Spring2020/assets/hw1/data.jpg" width="100%">
   <div class="figcaption">
   </div>
   <div style="clear:both;"></div>
