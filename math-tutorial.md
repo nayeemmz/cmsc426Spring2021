@@ -46,7 +46,7 @@ It is incovinent to write the vector superscript everytime, so a boldface text i
 The cross product between two vectors \\(\mathbf{a}, \mathbf{b}\\) is defined as \\( \mathbf{a} \times \mathbf{b} = \vert \vert \mathbf{a} \vert \vert \vert \vert \mathbf{b} \vert \vert \sin \theta \mathbf{n}\\). Here \\( \mathbf{n}\\) is the vector perpendicular/normal to the plane containing the two vectors \\( \mathbf{a}, \mathbf{b} \\) and \\(\theta\\) is the angle between the two vectors. The direction of the cross product is found using the right hand rule in a right handed coordinate system. 
 
 <div class="fig figleft fighighlight">
-  <img src="/cmsc426fall2019/assets/math/crossproduct.png" width="35%">
+  <img src="/cmsc426Spring2020/assets/math/crossproduct.png" width="35%">
   <div class="figcaption">
     Finding the direction of the cross product by the right-hand rule.
   </div>
@@ -57,7 +57,7 @@ The cross product between two vectors \\(\mathbf{a}, \mathbf{b}\\) is defined as
 An animation of the cross product is shown below:
 
 <div class="fig figleft fighighlight">
-  <img src="/cmsc426fall2019/assets/math/crossproductanimation.gif" width="35%">
+  <img src="/cmsc426Spring2020/assets/math/crossproductanimation.gif" width="35%">
   <div class="figcaption">
    The cross product \( \mathbf{a} \times \mathbf{b}\) (vertical, in purple) changes as the angle between the vectors \( \mathbf{a} \) (blue) and \( \mathbf{b} \) (red) changes. The cross product is always orthogonal to both vectors, and has magnitude zero when the vectors are parallel and maximum magnitude \( \vert \vert \mathbf{a} \vert \vert \vert \vert \mathbf{b} \vert \vert \) when they are orthogonal.
   </div>
@@ -116,7 +116,7 @@ You might be wondering what the intuition to Eigen-decomposition is. The eigenva
 
 
 <div class="fig figcenter fighighlight">
-  <img src="/cmsc426fall2019/assets/math/eigenvectors.png" width="60%">
+  <img src="/cmsc426Spring2020/assets/math/eigenvectors.png" width="60%">
   <div class="figcaption">Eigenvectors of a covariance matrix of data shown in blue. Data is drawn from a gaussian distribution.</div>
 </div>
 
@@ -124,9 +124,9 @@ For a detailed explanation of the visualization look at [this link](http://www.v
 
 
 <div class="fig figcenter fighighlight">
-  <img src="/cmsc426fall2019/assets/math/eigenface1.PNG" width="35%">
+  <img src="/cmsc426Spring2020/assets/math/eigenface1.PNG" width="35%">
   <div class="figcaption">Sample images in the database/training set.</div>
-  <img src="/cmsc426fall2019/assets/math/eigenface2.PNG" width="70%">
+  <img src="/cmsc426Spring2020/assets/math/eigenface2.PNG" width="70%">
   <div class="figcaption">
    Top row: Eigenfaces. Bottom row: How any face can be represented as a linear combination of eigenfaces.</div>
 </div>
@@ -146,9 +146,9 @@ Note that \\(\Sigma\\) here does not refer to the covariance matrix. Here, \\(U\
 The matrix \\(U\\) (left singular values) of \\(A\\) gives us the eigenvectors of \\(AA^T\\). Similarly, as you expect, the matrix \\(V\\) (right singular values) of \\(A\\) gives us the eigenvectors of \\(A^TA\\).  The non-zero singular values of \\(A\\) (found on diagonal entries of \\(\Sigma\\)) are the square roots of non-zero eigenvalues of both \\(AA^T\\) and \\(A^TA\\). 
 
 <div class="fig figcenter fighighlight">
-  <img src="/cmsc426fall2019/assets/math/svd.png" width="35%">
+  <img src="/cmsc426Spring2020/assets/math/svd.png" width="35%">
   <div class="figcaption">Visualization of the matrix multiplications in singular value decomposition.</div>
-  <img src="/cmsc426fall2019/assets/math/svdanimation.gif" width="50%">
+  <img src="/cmsc426Spring2020/assets/math/svdanimation.gif" width="50%">
   <div class="figcaption">
   Visualization of how different components of SVD make up the matrix \(A\).</div>
 </div>
@@ -166,7 +166,7 @@ Let us define the problem in hand first. Assume that we have \\(N\\) points in \
 Let us model the problem mathematically, we have \\(N\\) points in \\(\mathbb{R}^2\\) to which we want to fit the **best-fit** line. The best-line has to be defined before we proceed. One could argue that I can pick any random two points and fit a line and call that the best-fit. However, this solution is the best for those two points and not for all points. If all the points lie on a line one could say that we have an **exact** and **unique** solution, but this rarely happens. The more common version of this problem is that the best-fit line generally would not pass through any of the points. Sample datapoints with their linear least-squares line solution is shown below:
 
 <div class="fig figcenter fighighlight">
-  <img src="/cmsc426fall2019/assets/math/linearregression.png" width="70%">
+  <img src="/cmsc426Spring2020/assets/math/linearregression.png" width="70%">
   <div class="figcaption">Random data points and their linear least-squares line solution.</div>
 </div>
 
