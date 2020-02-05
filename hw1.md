@@ -2,7 +2,7 @@
 layout: page
 mathjax: true
 title: Linear Least Squares
-permalink: /2019/hw/hw1/
+permalink: /2020/hw/hw1/
 ---
 
 Table of Contents:
@@ -15,7 +15,7 @@ Table of Contents:
 
 <a name='due'></a>
 ## Due Date 
-11:59PM, Friday, September 13, 2019
+11:59PM, Friday, February 14, 2020
 
 <a name='intro'></a>
 ## Introduction
