@@ -32,7 +32,7 @@ For a live demo of face recognition in the real time, check out the following [l
 
 In this project the goal is to practice implementation of principal components analysis technique to represent faces in a lower dimensional space and to recognize them. This technique was first presented by Turk and Pentland in their seminal paper [Eigenfaces for Recognition](http://www.face-rec.org/algorithms/PCA/jcn.pdf). You will be implementing this paper following the implementation of the following [case study](http://www.vision.jhu.edu/teaching/vision08/Handouts/case_study_pca1.pdf). You may see some differences between the way the covariance matrix is computed in the original paper and the case study. We will be following the case study so that your implementation is consistent with the rest of the implementation. 
 
-A starter code file to read, display an image and display the pixel values alongwith the training and the test datasets can be downloaded from [here](/cmsc426fall2019/assets/proj1/StarterFiles.zip).
+A starter code file to read, display an image and display the pixel values alongwith the training and the test datasets can be downloaded from [here](/cmsc426Spring2020/assets/proj1/StarterFiles.zip).
 
 <a name='problem'></a>
 ## What you need to do
@@ -78,4 +78,4 @@ As usual, your report must be full English sentences, **not** commented code. Th
 
 <a name='coll'></a>
 ## Collaboration Policy
-You are encouraged to work on this project in groups of three at the most. The code should be your own, and should be the result of you exercising your own understanding of it. If you reference anyone else's code in writing your project, you must properly cite it in your code (in comments) and your writeup. For the full honor code refer to the CMSC426 Fall 2019 website.
+You are encouraged to work on this project in groups of three at the most. The code should be your own, and should be the result of you exercising your own understanding of it. If you reference anyone else's code in writing your project, you must properly cite it in your code (in comments) and your writeup. For the full honor code refer to the CMSC426 Spring 2020 website.
