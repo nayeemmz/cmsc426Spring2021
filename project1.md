@@ -2,7 +2,7 @@
 layout: page
 mathjax: true
 title: Eigenfaces for face recognition
-permalink: /2020/proj/p1/
+permalink: /proj/p1/
 ---
 
 Table of Contents:
