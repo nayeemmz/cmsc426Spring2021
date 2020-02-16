@@ -38,7 +38,7 @@ A starter code file to read, display an image and display the pixel values along
 ## What you need to do
 You are required to do the following:
 - Implement PCA to represent faces onto a lower dimensional space. You would need to do some experimentation to pick the appropriate number of basis vectors in the lower dimensional space, let us say K eigenvectors.
-- Display top K eigenvectors also called the eigenfaces.
+- Display some of the top K eigenvectors also called the eigenfaces.
 - Show few examples of faces represented as a linear combination of the K eigenvectors and compare it with the original image 
 - Perform face recognition in the lower dimensional space on the test images.
 - Write a report.
