@@ -54,7 +54,7 @@ You are **NOT** allowed to use any built-in Python library code for GMM. To draw
 
 
 <a name='intro'></a>
-## Introduction
+## Part II - Introduction
 
 Have you ever played with these adorable Nao robots? Click on the image to watch a cool demo.
 
