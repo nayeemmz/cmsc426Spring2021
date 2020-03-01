@@ -1,7 +1,7 @@
 ---
 layout: page
 mathjax: true
-permalink: /hw2colorseg/
+permalink: /p2colorseg/
 ---
 
 Table of Contents:
