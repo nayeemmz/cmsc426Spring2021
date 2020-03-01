@@ -18,7 +18,7 @@ Table of Contents:
 11:59PM, Friday, March 13, 2020
 
 <a name='intro'></a>
-## Introduction
+## Part I - Introduction
 
 A linear combination of Gaussian distributions forms a superposition formulated as a probabilistic model known as a Gaussian Mixture Model. 
 The purpose of this homework is to practice Gaussian Mixture Models (GMM). More specifically you are required to use GMM's to cluster 2D data that will be provided to you.
