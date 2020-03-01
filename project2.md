@@ -2,7 +2,7 @@
 layout: page
 mathjax: true
 title: Clustering using GMM
-permalink: /2019/hw/hw2/
+permalink: /proj/p2/
 ---
 
 Table of Contents:
@@ -15,7 +15,7 @@ Table of Contents:
 
 <a name='due'></a>
 ## Deadline
-11:59PM, Tuesday, Oct. 12, 2019
+11:59PM, Friday, March 13, 2020
 
 <a name='intro'></a>
 ## Introduction
