@@ -35,7 +35,7 @@ The data for this homework has been generated using three different Gaussian dis
 You may download the data from [here](/cmsc426Spring2020/assets/proj2/data.csv). This data can be visualized as follows:
 <center>
 <div class="fig fighighlight">
-  <img src="/cmsc426Spring2020/assets/proj2/hw2_data.png" width="50%">
+  <img src="/cmsc426Spring2020/assets/proj2/p2_data.png" width="50%">
   <div class="figcaption">
   </div>
   <div style="clear:both;"></div>
