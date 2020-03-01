@@ -88,26 +88,27 @@ Please read the [tutorial](https://nayeemmz.github.io/cmsc426Spring2020/colorseg
 
 ### File tree and naming
 
-Your submission on Canvas must be a zip file, following the naming convention **YourDirectoryID_proj2.zip**.  For example, xyz123_proj2.zip.  The file **must have the following directory structure**.
+Your submission on Canvas must be a zip file, following the naming convention **YourDirectoryID_hw3.zip**. For example, xyz123_hw3.zip. The file **must have the following directory structure**.
 
-YourDirectoryID_proj2.zip.
- - results/.  - your plots
- - GMM.ipynb - include both Single Gaussian as well as GMM code.
+YourDirectoryID_proj1.zip.
+ - train_images/.
+ - test_images/.
+ - results/.
+ - colorseg.ipynb
  - report.pdf [20 points]
+ - ... (models, training data, etc.)
 
 ### Report
 
-For each section of the project, explain briefly what you did, and describe any interesting problems you encountered and/or solutions you implemented.  You must include the following details in your writeup:
+For each section of the project, explain briefly what you did, and describe any interesting problems you encountered and/or solutions you implemented. You must include the following details in your writeup:
 
-- Your choice of initialization method.
+- Your choice of color space, initialization method and number of Gaussians in the GMM.
 - Explain why GMM is better than a single Gaussian.
-- Present your clustering results for the datasets and show the Gaussians for each in a 2D heat map or a 3D scatter plot.
-The following [link](https://matplotlib.org/mpl_toolkits/mplot3d/tutorial.html) would help with the 3D scatter plot. 
-- Explain strengths and limitations of clustering using GMM. 
-- Explain the effect of picking fewer or more number of Gaussians in GMM on clustering this data.
+- Present your distance estimate and segmentation results for each test image.
+- Explain strengths and limitations of your algorithm. Also, explain why the algorithm failed on some test images.
 
 As usual, your report must be full English sentences, **not** commented code. There is a word limit of 1500 words and no minimum length requirement
 
 <a name='coll'></a>
 ## Collaboration Policy
-You are encouraged to discuss the ideas with your peers. However, the code should be your own, and should be the result of you exercising your own understanding of it. If you reference anyone else' code in writing your project, you must properly cite it in your code (in comments) and your writeup. For the full honor code refer to the CMSC426 Fall 2019 website.
+You are encouraged to discuss the ideas with your peers. However, the code should be your own, and should be the result of you exercising your own understanding of it. If you reference anyone else' code in writing your project, you must properly cite it in your code (in comments) and your writeup. For the full honor code refer to the CMSC426 Spring 2020 website.
