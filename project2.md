@@ -32,10 +32,10 @@ There are two types of models that you will be building for this project:
 ## What you need to do
 The data for this homework has been generated using three different Gaussian distributions, mixed together and shuffled. As a result there are three different distributions forming three different clusters. Your goal is to find those clusters. That means, for each of the distributions of the mixture model you would need to find their means ($$\mu$$), mixture coefficients ($$\pi$$) and the covariance matrices ($$\Sigma$$).
 
-You may download the data from [here](/cmsc426fall2019/assets/hw2/data.csv). This data can be visualized as follows:
+You may download the data from [here](/cmsc426Spring2020/assets/proj2/data.csv). This data can be visualized as follows:
 <center>
 <div class="fig fighighlight">
-  <img src="/cmsc426fall2019/assets/hw2/hw2_data.png" width="50%">
+  <img src="/cmsc426Spring2020/assets/proj2/hw2_data.png" width="50%">
   <div class="figcaption">
   </div>
   <div style="clear:both;"></div>
