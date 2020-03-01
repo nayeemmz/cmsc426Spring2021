@@ -88,9 +88,9 @@ Please read the [tutorial](https://nayeemmz.github.io/cmsc426Spring2020/colorseg
 
 ### File tree and naming
 
-Your submission on Canvas must be a zip file, following the naming convention **YourDirectoryID_hw3.zip**. For example, xyz123_hw3.zip. The file **must have the following directory structure**.
+Your submission on Canvas must be a zip file, following the naming convention **YourDirectoryID_proj2.zip**. For example, xyz123_proj2.zip. The file **must have the following directory structure**.
 
-YourDirectoryID_proj1.zip.
+YourDirectoryID_proj2.zip.
  - train_images/.
  - test_images/.
  - results/.
