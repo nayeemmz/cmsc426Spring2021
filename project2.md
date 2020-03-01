@@ -80,17 +80,17 @@ To make logistics easier, we have collected camera data from Nao robot on behalf
 Please read the [tutorial](https://nayeemmz.github.io/cmsc426Spring2020/colorseg/) before moving on to the assignment.
 
 1. Prepare the data: Extract the regions of the ball from each of the training images. For example, you can use the [*roipoly*](https://github.com/jdoepfert/roipoly.py) function to do so. Please note that since it is a Python script you would have to extract these features outside of the Jupyter notebook. The image pixels obtained this way are the data that you will use to train your color model.
-2. Model the "orange" ball using a [Single Gaussian](https://nayeemmz.github.io/cmsc426fall2019/colorseg/#gaussian). You may use the Python code from previous homework. [20 points]
-3. Model the "orange" ball using a [Gaussian Mixture Model](https://nayeemmz.github.io/cmsc426fall2019/colorseg/#gmm). Here you need to experiment with the parameters yourself. You may use the Python code from the previous homework. [30 points]
-4. Plot all the [GMM ellipsoids](https://nayeemmz.github.io/cmsc426fall2019/colorseg/#different-cases-for-sigma-in-gmm). We have provided a [function](/cmsc426fall2019/assets/hwk3/draw_ellipsoid.ipynb) for you. [15 points].
-5. Estimate the [distance](https://nayeemmz.github.io/cmsc426fall2019/colorseg/#distest) to the ball. For each image in the test sets, you should put a bitmask image of the ball location in the `results` folder. Add a suffix to indicate the distance to camera. For example, if you estimate that the ball in `1.jpg` is 40 units away from camera, name the file `1_40.jpg`. If you can't estimate the distance, name the file `1_failed.jpg` [35 points].
+2. Model the "orange" ball using a [Single Gaussian](https://nayeemmz.github.io/cmsc426Spring2020/colorseg/#gaussian). You may use the Python code from previous homework. [20 points]
+3. Model the "orange" ball using a [Gaussian Mixture Model](https://nayeemmz.github.io/cmsc426Spring2020/colorseg/#gmm). Here you need to experiment with the parameters yourself. You may use the Python code from the previous homework. [30 points]
+4. Plot all the [GMM ellipsoids](https://nayeemmz.github.io/cmsc426Spring2020/colorseg/#different-cases-for-sigma-in-gmm). We have provided a [function](/cmsc426fall2019/assets/hwk3/draw_ellipsoid.ipynb) for you. [15 points].
+5. Estimate the [distance](https://nayeemmz.github.io/cmsc426Spring2020/colorseg/#distest) to the ball. For each image in the test sets, you should put a bitmask image of the ball location in the `results` folder. Add a suffix to indicate the distance to camera. For example, if you estimate that the ball in `1.jpg` is 40 units away from camera, name the file `1_40.jpg`. If you can't estimate the distance, name the file `1_failed.jpg` [35 points].
 
 
 ### File tree and naming
 
-Your submission on Canvas must be a zip file, following the naming convention **YourDirectoryID_proj1.zip**.  For example, xyz123_proj1.zip.  The file **must have the following directory structure**.
+Your submission on Canvas must be a zip file, following the naming convention **YourDirectoryID_proj2.zip**.  For example, xyz123_proj2.zip.  The file **must have the following directory structure**.
 
-YourDirectoryID_proj1.zip.
+YourDirectoryID_proj2.zip.
  - results/.  - your plots
  - GMM.ipynb - include both Single Gaussian as well as GMM code.
  - report.pdf
