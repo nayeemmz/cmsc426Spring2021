@@ -111,4 +111,4 @@ As usual, your report must be full English sentences, **not** commented code. Th
 
 <a name='coll'></a>
 ## Collaboration Policy
-You are encouraged to discuss the ideas with your peers. However, the code should be your own, and should be the result of you exercising your own understanding of it. If you reference anyone else' code in writing your project, you must properly cite it in your code (in comments) and your writeup. For the full honor code refer to the CMSC426 Spring 2020 website.
+You are encouraged to work on this project in groups of three at the most. The code should be your own, and should be the result of you exercising your own understanding of it. If you reference anyone else's code in writing your project, you must properly cite it in your code (in comments) and your writeup. For the full honor code refer to the CMSC426 Spring 2020 website.
