@@ -56,8 +56,8 @@ example, xyz123_hw2.zip. The file must have the following directory structure,
 
 ### Report
 
-Please include the original images and SIFT feature descriptor locations. Also include your observations about the
-feature descriptors pertaining to each class of images. For example, was it easier to find keypoints in one category of mages versus others, etc.
+Please include the original images and SIFT feature descriptor locations for all the image you choose to discuss in your report. Also include your observations about the
+feature descriptors pertaining to each class of images. For example, was it easier to find keypoints in one category of images versus others, etc.
 As usual, your report must be full English sentences,not commented code
 
 <a name='coll'></a>
