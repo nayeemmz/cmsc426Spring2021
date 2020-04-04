@@ -34,16 +34,15 @@ You are expected to implement all the parts of the code without using any in-bui
 
 1. hw2.ipynb - A jupyter notebook with the SIFT implementation. You should write different definitions (functions) for each step of the code to make it modular and easy to test and verify.
 2. Few sample images of airplanes, dolphins, and, Leopards and display the key point locations for the feature descriptors using small circles. Something like the following image:
-<center>
-<div class="fig fighighlight">
-  <img src="/cmsc426Spring2020/assets/hw2/dolphin_keypoints.jpg" width="50%">
-  <div class="figcaption">
-  </div>
-  <div style="clear:both;"></div>
-</div>
-  </center>
- You can pick any images you like.
- 
+      <center>
+      <div class="fig fighighlight">
+        <img src="/cmsc426Spring2020/assets/hw2/dolphin_keypoints.jpg" width="50%">
+        <div class="figcaption">
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+        </center>
+      You can pick any images you like.
  3. A report describing the key aspects of the projects including the problems you encountered and how you solved them.
 
 
