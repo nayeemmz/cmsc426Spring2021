@@ -19,7 +19,7 @@ Table of Contents:
 
 <a name='intro'></a>
 ## Introduction
-In this homework you will implement Scale Invariant Feature Transform (SIFT). We will practice it on a set of imasges from Caltech-101 dataset that you would use in a later project as well. You may download Caltech-101 data
+In this homework you will implement Scale Invariant Feature Transform (SIFT). We will practice it on a set of images from Caltech-101 dataset that you would use in a later project as well. You may download Caltech-101 data
 set from the following [link](http://www.vision.caltech.edu/Image_Datasets/Caltech101/#Download). All the images of this dataset are stored in folders, named for each category. However, we will be using just three of those categories: airplanes, dolphin and Leopards. If you would like to try for other categories too, please feel free to do so.  
 
 
