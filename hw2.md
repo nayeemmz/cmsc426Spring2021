@@ -1,7 +1,7 @@
 ---
 layout: page
 mathjax: true
-title: Image Classification Using Bag of Features and Support Vector Machines
+title: Implementation of Scale Invariant Feature Transform (SIFT)
 permalink: /2020/hw/hw2/
 ---
 
