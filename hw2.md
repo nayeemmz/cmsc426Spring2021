@@ -36,7 +36,7 @@ You are expected to implement all the parts of the code without using any in-bui
 2. Few sample images of airplanes, dolphins, and, Leopards and display the key point locations for the feature descriptors using small circles. Something like the following image:
 
 <div class="fig fighighlight">
-  <img src="/assets/hwk2/dolphin_keypoints.jpg" width="50%">
+  <img src="/assets/hw2/dolphin_keypoints.jpg" width="50%">
   <div class="figcaption">
   </div>
   <div style="clear:both;"></div>
