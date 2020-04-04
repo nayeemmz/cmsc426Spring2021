@@ -24,13 +24,13 @@ set from the following [link](http://www.vision.caltech.edu/Image_Datasets/Calte
 
 
 <a name='part1'></a>
-## Part 1: Implementation (50 pts)
+## Part 1: Implementation (70 pts)
 
 You are expected to implement all the parts of the code without using any in-built libraries except for the basic operations from Numpy and Matplotlib for showing results. You may find functions such as imregionalmin, and imregionalmax useful for this project. In addition you may use Scipy for Gaussian filters and if you need cv2 for modifying images such as changing size etc.
 
 
 <a name='part2'></a>
-## Part 2: - What to submit (50 points)
+## Part 2: - What to submit (30 points)
 
 1. hw2.ipynb - A jupyter notebook with the SIFT implementation. You should write different definitions (functions) for each step of the code to make it modular and easy to test and verify.
 2. Few sample images of airplanes, dolphins, and, Leopards and display the key point locations for the feature descriptors using small circles.
