@@ -42,7 +42,6 @@ You are expected to implement all the parts of the code without using any in-bui
   <div style="clear:both;"></div>
 </div>
   </center>
-
  You can pick any images you like.
  
  3. A report describing the key aspects of the projects including the problems you encountered and how you solved them.
