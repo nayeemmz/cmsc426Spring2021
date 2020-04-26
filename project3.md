@@ -2,7 +2,7 @@
 layout: page
 mathjax: true
 title: Image Classification Using Bag of Features and Support Vector Machines
-permalink: /2019/proj/p3/
+permalink: /proj/p3/
 ---
 
 Table of Contents:
