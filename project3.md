@@ -30,7 +30,7 @@ category images as negative examples. Once the classifier is trained you would t
 as one of the three categories. This task can be visualized in Figure 1.
 
 <div class="fig fighighlight">
-  <img src="/cmsc426fall2019/assets/proj3/proj3.png" width="100%">
+  <img src="/cmsc426Spring2020/assets/proj3/proj3.png" width="100%">
   <div class="figcaption">
   </div>
   <div style="clear:both;"></div>
@@ -45,11 +45,11 @@ There are three major steps in this approach.
 
 ## Creating bag of visual words
 
-You will be implementing Scale-Invariant Feature Transform (SIFT) to obtain feature descriptors and not use a library for it. For the rest of the project you may use Python libaries. The descriptor for each image will be a matrix of size, $$keypoints \times 128$$. If there are different number of keypoints for different images, you may use only the strongest keypoints determined by the image having the smallest number of keypoints. Once the descriptors for each keypoint are obtained you may stack them for the entire training set. Use this matrix of feature descriptors as a training input to k-means clustering algorithm. The centroids of the clusters form a visual dictionary vocabulary. Use this visual vocabulary to make a frequency histogram for each image, based on the frequency of vocabularies in them. In other words you are trying to figure out the number of occurrences of each visual vocabulary word in each image. These histograms are the bag of visual words. The length of the histogram is the same as the number of clusters.
+You could use Scale-Invariant Feature Transform (SIFT) from you previous homework to obtain feature descriptors or use a library for it for the purposes of this project. You could also use SURF or HOG features for this project. I will leave that up to you to test. The descriptor for each image will be a matrix of size, $$keypoints \times 128$$. If there are different number of keypoints for different images, you may use only the strongest keypoints determined by the image having the smallest number of keypoints. Once the descriptors for each keypoint are obtained you may stack them for the entire training set. Use this matrix of feature descriptors as a training input to k-means clustering algorithm. The centroids of the clusters form a visual dictionary vocabulary. Use this visual vocabulary to make a frequency histogram for each image, based on the frequency of vocabularies in them. In other words you are trying to figure out the number of occurrences of each visual vocabulary word in each image. These histograms are the bag of visual words. The length of the histogram is the same as the number of clusters. 
 
-Go over the slides to understand SIFT, K-Means algorithm and bag of features. While you may use Python libraries to run K-means algorithm and to train the Support vector classifier, you would have to write your own code for SIFT. For a detailed description of SIFT, read the following [paper](https://www.cs.ubc.ca/~lowe/papers/ijcv04.pdf). For the bag of visual words technique, follow the graphic above and read the following [paper](https://www.cs.cmu.edu/~efros/courses/LBMV07/Papers/csurka-eccv-04.pdf).
+Go over the slides to understand SIFT / SURF / HoG, K-Means algorithm and bag of features. While you may use Python libraries train the Support vector classifier you would write your own code for k-Means algorithm. For a detailed description of the bag of visual words technique, follow the graphic above and read the following [paper](https://www.cs.cmu.edu/~efros/courses/LBMV07/Papers/csurka-eccv-04.pdf).
 
-[Here](/cmsc426fall2019/assets/proj3/regionalextrema.ipynb) is some starter code for extrema detection step.
+<!--[Here](/cmsc426fall2019/assets/proj3/regionalextrema.ipynb) is some starter code for extrema detection step.-->
 
 ## SVM Classifier Training
 
@@ -103,4 +103,4 @@ As usual, your report must be full English sentences,not commented code
 
 <a name='coll'></a>
 ## Collaboration Policy
-You are encouraged to work in groups for this project. You may discuss the ideas with your peers from other groups. If you reference anyone else's code in writing your project, you must properly cite it in your code (in comments) and your writeup.  For the full honor code refer to the CMSC426 Fall 2019 website
+You are encouraged to work in groups for this project. You may discuss the ideas with your peers from other groups. If you reference anyone else's code in writing your project, you must properly cite it in your code (in comments) and your writeup.  For the full honor code refer to the CMSC426 Fall 2020 website
