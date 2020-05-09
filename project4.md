@@ -2,7 +2,7 @@
 layout: page
 mathjax: true
 title: Implementation of Convolutional Neural Networks
-permalink: /2019/proj/p4/
+permalink: /proj/p4/
 ---
 
 Table of Contents:
