@@ -14,7 +14,7 @@ Table of Contents:
 
 <a name='due'></a>
 ## Deadline
-11:59 PM, Dec. 15, 2019
+11:59 PM, May 20, 2020
 
 <a name='intro'></a>
 ## Introduction
@@ -51,4 +51,4 @@ Please add a new section before section 1 in the Jupyter notebook and include
 ## Collaboration Policy
 We encourage you to work closely with your groupmates, including collaborating on writing code.  With students outside your group, you may discuss methods and ideas but may not share code.
 
-For the full collaboration policy, including guidelines on citations and limitations on using online resources, see <a href="http://www.cs.umd.edu/class/fall2019/cmsc426-0201/">the course website</a>.
+For the full collaboration policy, including guidelines on citations and limitations on using online resources, see <a href="http://www.cs.umd.edu/class/Spring2020/cmsc426-0201/">the course website</a>.
