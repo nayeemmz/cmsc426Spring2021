@@ -32,6 +32,7 @@ In order to help you implement this you are provided with [starter code](/cmsc42
   <li> cnn-with-backprop.ipynb - backpropagation algorithm is implemented in this file. Start with this file, if you don't want to try to implement it yourself.
   </li>
   <li> mnist_cnn.ipynb is to be used for our second approach using Tensorflow framework.
+ </li>
 </ul>
 
 
