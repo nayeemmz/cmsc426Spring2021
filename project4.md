@@ -38,18 +38,25 @@ In order to help you implement this you are provided with [starter code](/cmsc42
 
 <b> Note:</b> It is recommended that you start with cnn.ipynb file first and if you struggle with writing backprop code, then only use the cnn-with-backprop.ipynb file.
 
+A detailed description of these files is being skipped here because an elaborate documentation has been included in each one of these files. The comments in the files are self explanatory and include locations where you are required to fill in your code. In addtion, you may refer to the Artificial Neural Networks and Convolutional Neural Networks lectures covered in class.
+
 
 <a name='system_overview'></a>
 ## What to Implement
 
-Most of the implementation details are provided to you in the Jupyter notebooks. You would be required to write code in these files identified by the comments in them. Each location is also identified with the number of lines of code that would be needed for a particular operation, along with the expected output of each cell. This would help you debug the code.
+Most of the implementation details are provided to you in the Jupyter notebooks. You would be required to write code in these files identified by the comments in them. Each location is also identified with the number of lines of code that would be needed for a particular operation. 
 
 
 <a name='sub'></a>
 ## Submission Guidelines
-Just one file, cnn.ipynb would be required to be submitted for this project.
+You are required to submit the following files:
+ * cnn.ipynb for the step by step approach to classify the SINGS data. It should contain your code filled along with the backpropagation algorithm that is provided to you.
+ * mnist_cnn.ipynb for the Tensorflow framework approach to classify MNIST data classification.
+ * report.pdf should contain a detailed description of the learnings from this project, difficulties you faced and the factors that impact classification accuracy of the test dataset. You should include a list of the parameters that you think need to be fine tuned.
+ 
 
-Please add a new section before section 1 in the Jupyter notebook and include
+
+Please add a new markdown cell at the top of your Jupyter notebook and include
  - The name of each group member.
  - A brief (one paragraph or less) description of what each group member contributed to the project.
 
