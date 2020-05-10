@@ -19,18 +19,19 @@ Table of Contents:
 <a name='intro'></a>
 ## Introduction
 In this project you will implement a Convolutional Neural Network (CNN) in two different ways: 
-  * a step by step approach using regular Python, and  
-  * using Tensorflow framework
-  
-The goal of this assignment is to help you understand, by building, different components of a CNN. Some of the components include, forward convolution, backward convolution(optional), zero padding, max-pooling and average-pooling. You will not be graded for the backpropagation code.
+  * a step by step approach using regular Python to perform SIGNS data classification, and  
+  * using Tensorflow framework to perform classification of MNIST digits dataset.
+ 
+The goal of this assignment is to help you understand CNN's by building their different components and to carry out classification tasks. You will be applying your CNN's on the SIGNS and MNIST digits datasets. Although, you are being asked to use the SIGNS dataset in the first approach and the MNIST dataset for the second, you could try both these datasets using both approaches. However, please not that running the first approach on MNIST dataset may be very slow. In both approaches some of the components include, forward convolution, backward convolution(optional), zero padding, max-pooling and average-pooling. You will not be graded for the backpropagation code.
 
-In order to help you implement this you are provided with [starter code](/cmsc426Spring2020/assets/proj4/proj4-starterFiles.zip) that contains two Jupyter notebook skeletal files. One with backpropagation code implemented and the other without it. These files are as follows:
+In order to help you implement this you are provided with [starter code](/cmsc426Spring2020/assets/proj4/proj4-starterFiles.zip) that contains three Jupyter notebook skeletal files and other required supplementary files and images necessary for this project. The files <i>cnn.ipynb</i> and <i>cnn-with-backprop.ipynb</i> are to be used for the step by step approach and the file <i>mnist_cnn.ipynb</i> is to be used for the Tensorflow framework approach. The descriptions of these files are as follows:
 
 <ul>
-  <li>cnn.ipynb - backpropagation algorithm is <b>not</b> implemented in this file. If you would like to give it a try, then start with this file.
+  <li>cnn.ipynb - backpropagation algorithm is <b>not</b> implemented in this file. If you would like to give it a try, then start with this file for the step by step approach.
   </li>
-  <li> cnn-with-backprop.ipynb - backprop is implemented in this file. Start with this file, if you don't want to try to implement it yourself.
+  <li> cnn-with-backprop.ipynb - backpropagation algorithm is implemented in this file. Start with this file, if you don't want to try to implement it yourself.
   </li>
+  <li> mnist_cnn.ipynb is to be used for our second approach using Tensorflow framework.
 </ul>
 
 
