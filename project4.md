@@ -50,9 +50,9 @@ Most of the implementation details are provided to you in the Jupyter notebooks.
 <a name='sub'></a>
 ## Submission Guidelines
 You are required to submit the following files:
- * cnn.ipynb for the step by step approach to classify the SINGS data. It should contain your code filled along with the backpropagation algorithm that is provided to you.
- * mnist_cnn.ipynb for the Tensorflow framework approach to classify MNIST data classification.
- * report.pdf should contain a detailed description of the learnings from this project, difficulties you faced and the factors that impact classification accuracy of the test dataset. You should include a list of the parameters that you think need to be fine tuned.
+ * cnn.ipynb for the step by step approach to classify the SINGS data. It should contain your code filled along with the backpropagation algorithm that is provided to you. (40 points)
+ * mnist_cnn.ipynb for the Tensorflow framework approach to classify MNIST data classification. (40 points)
+ * report.pdf should contain a detailed description of the learnings from this project, difficulties you faced and the factors that impact classification accuracy of the test dataset. You should include a list of the parameters that you think need to be fine tuned. (20 points)
  
 
 
