@@ -18,9 +18,9 @@ Table of Contents:
 
 <a name='intro'></a>
 ## Introduction
-In this project you will implement a Convolutional Neural Network (CNN) in two different ways,: 
-  * a step by step approach using regular Python.  
-  * using Tensorflow
+In this project you will implement a Convolutional Neural Network (CNN) in two different ways: 
+  * a step by step approach using regular Python, and  
+  * using Tensorflow framework
   
 The goal of this assignment is to help you understand, by building, different components of a CNN. Some of the components include, forward convolution, backward convolution(optional), zero padding, max-pooling and average-pooling. You will not be graded for the backpropagation code.
 
