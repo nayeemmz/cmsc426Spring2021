@@ -20,3 +20,5 @@ kramdown:
   auto_ids: true
   syntax_highlighter: rouge
 >>>>>>> 962f901ebacaf503a790a2da645d89bcd69a2a9c
+
+theme: jekyll-theme-cayman
