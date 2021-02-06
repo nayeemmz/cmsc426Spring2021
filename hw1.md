@@ -31,7 +31,7 @@ This home work is designed to test your understanding of mathematics tutorial di
 The 2D points data is provided in the form of .csv files (click [here](/cmsc426fall2021/assets/hw1/data.zip) to download). The visualization of data with different noise level is shown in the following figure.
 
 <div class="fig fighighlight">
-  <img src="/cmsc426Spring2020/assets/hw1/data.jpg" width="100%">
+  <img src="/cmsc426Spring2021/assets/hw1/data.jpg" width="100%">
   <div class="figcaption">
   </div>
   <div style="clear:both;"></div>
