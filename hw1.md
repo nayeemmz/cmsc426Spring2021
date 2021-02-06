@@ -69,7 +69,7 @@ For each section of the homework, explain briefly what you did, and describe any
 - Limitation of ridge regression
 
 
-As usual, your report must be full English sentences,**not** commented code. There is a word limit of 750 words and no minimum length requirement
+As usual, your report must be full English sentences, **not** commented code. There is a word limit of 750 words and no minimum length requirement
 
 <a name='coll'></a>
 ## Collaboration Policy
