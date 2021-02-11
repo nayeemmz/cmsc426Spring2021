@@ -37,12 +37,12 @@ The 2D points data is provided in the form of .csv files (click [here](/cmsc426S
   <div style="clear:both;"></div>
 </div>
 
-Please note that dataset 4 was generated specifically to test overfitting and to fine tune the regularization parameter, $$lambda$$ to overcome overfitting.
+Please note that dataset 4 was generated specifically to test overfitting and to fine tune the regularization parameter, $$lambda$$ to overcome overfitting. This is a single variable data, so you would need to create higher dimensional data (as shown in class). Also, mean center your data before applying ridge regression.
 <a name='pro'></a>
 ### Problem Statement 
 
 - Write Python code to visualize geometric interpretation of eigenvalues/covariance matrix as discussed in this  [link](http://www.visiondummy.com/2014/04/geometric-interpretation-covariance-matrix/) [40 points]  
-- Write Python code for least squares line fitting with and without regularization ( ridge regression ) [40 points] 
+- Write Python code for least squares line fitting with and without regularization ( ridge regression ) [40 points]. 
 - Discuss your results for line fitting in a report. [20 points]
 
 <a name='sub'></a>
