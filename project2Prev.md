@@ -2,7 +2,7 @@
 layout: page
 mathjax: true
 title: Clustering using GMM
-permalink: /proj/p2/
+permalink: /proj/pnnn/
 ---
 
 Table of Contents:
