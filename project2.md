@@ -26,7 +26,7 @@ set from the following [link](http://www.vision.caltech.edu/Image_Datasets/Calte
 <a name='part1'></a>
 ## Part 1: Implementation (70 pts)
 
-You are expected to implement all the parts of the code without using any in-built libraries except for the basic operations from Numpy and Matplotlib for showing results. You may find functions such as imregionalmin, and imregionalmax useful for this project. In addition you may use Scipy for Gaussian filters and if you need cv2 for modifying images such as changing size etc.
+You are expected to implement all the parts of the code without using any in-built libraries except for the basic operations from Numpy and Matplotlib for showing results. You may find functions such as imregionalmin, and imregionalmax provided [here](/cmsc426Spring2021/assets/proj2/image.py) useful for this project. In addition you may use Scipy for Gaussian filters and if you need cv2 for modifying images such as changing size etc.
 
 
 <a name='part2'></a>
