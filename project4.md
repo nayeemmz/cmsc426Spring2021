@@ -19,7 +19,7 @@ Table of Contents:
 <a name='intro'></a>
 ## Introduction
 In this project you will implement a Convolutional Neural Network (CNN) in two different ways: 
-  * a step by step approach using Numppy, and  
+  * a step by step approach using Numpy, and  
   * using Tensorflow framework to perform classification of Cifar10  dataset.
  
 The goal of this assignment is to help you understand CNN's by building their different components. You will be applying your Tensorflow CNN implementation on the CIFAR10 dataset classification. In both approaches some of the components include, forward convolution, backward convolution, zero padding, max-pooling and average-pooling. Backpropagation code is provided to you.
